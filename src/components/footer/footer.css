@@ -1,0 +1,9 @@
+.footer {
+    margin: 2px auto 0 auto;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    max-width: 1280px;
+    max-height: 172px;
+    background-color: #202020; 
+}

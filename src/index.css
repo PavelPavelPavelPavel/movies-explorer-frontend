@@ -1,13 +1,11 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
+@import url(./vendor/normalize.css);
+@import url(./vendor/fonts/fonts.css);
+@import url(./components/app/app.css);
+@import url(./components/main/main.css);
+@import url(./components/footer/footer.css);
+@import url(./components/footer/__text/footer__text.css);
+@import url(./components/footer/__signature/footer__signature-caption.css);
+@import url(./components/footer/__signature/__signature-label/footer__signature-label.css);
+@import url(./components/footer/__signature/__signature-label/_item/footer__signature-label_item.css);
+@import url(./components/footer/__line/footer__line.css);
+@import url(./components/footer/__signature-wrapper/footer__signature-wrapper.css);

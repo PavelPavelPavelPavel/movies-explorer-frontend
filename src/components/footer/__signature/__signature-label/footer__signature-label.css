@@ -1,0 +1,7 @@
+.footer__signature-label {
+    margin: 0 0 0 auto;
+    padding: 0;
+    gap: 20px;
+    display: flex;
+    flex-direction: row;
+}
