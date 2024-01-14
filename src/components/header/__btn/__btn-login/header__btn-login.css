@@ -1,0 +1,14 @@
+.header__btn-login {
+    margin: 21px 70px 21px 0;
+    padding: 0;
+    width: 76px;
+    height: 32px;
+    border-radius: 3px;
+    background-color: #3DDC84;
+    color: #000000;
+    font-family: Inter, Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    cursor: pointer;
+}

@@ -1,0 +1,13 @@
+.header__btn-reg {
+    margin: 29px 30px 29px auto;
+    padding: 0;
+    width: 77px;
+    height: 16px;
+    background-color: inherit;
+    color: #FFFFFF;
+    font-family: Inter, Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    cursor: pointer;
+}

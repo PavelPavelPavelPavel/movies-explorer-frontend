@@ -1,15 +1,18 @@
 import Navbar from "../navbar/Navbar";
+import HeaderBtnAuth from "./__btn/__btn-auth/Header_btn-auth";
+import HeaderBtnLogin from "./__btn/__btn-login/Header__btn-login";
+import HeaderBtnReg from "./__btn/__btn-reg/Header__btn-reg";
 import logo from "../../images/logo.svg";
-import profile from "../../images/profile.svg";
+
 
 function Header() {
     return (
     <header className="header">   
-      <img src={logo} alt="Лого" className="header__icon"></img>
+      <img src={logo} alt="Лого" className="header__icon"></img> 
+        {/* <HeaderBtnReg></HeaderBtnReg>
+        <HeaderBtnLogin></HeaderBtnLogin> */}
       <Navbar></Navbar>
-      <button className="header__btn">
-        <img src ={profile} className="header__btn-img" alt="Иконка торса"></img>
-      </button>
+      <HeaderBtnAuth></HeaderBtnAuth>
     </header>
     );
   }
