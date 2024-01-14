@@ -2,6 +2,16 @@
 @import url(./vendor/fonts/fonts.css);
 @import url(./components/app/app.css);
 @import url(./components/main/main.css);
+@import url(./components/header/header.css);
+@import url(./components/header/__greeting/header__greeting.css);
+@import url(./components/header/__greeting/__greeting-text/header__greeting-text.css);
+@import url(./components/header/__icon/header__icon.css);
+@import url(./components/header/__btn/header__btn.css);
+@import url(./components/header/__btn/__btn-img/header__btn-img.css);
+@import url(./components/navbar/navbar.css);
+@import url(./components/navbar/__item/navbar__item.css);
+@import url(./components/navbar/__item/__item-btn/navbar__item-btn.css);
+@import url(./components/navbar/__drop-list/navbar__drop-list.css);
 @import url(./components/footer/footer.css);
 @import url(./components/footer/__text/footer__text.css);
 @import url(./components/footer/__signature/footer__signature-caption.css);
