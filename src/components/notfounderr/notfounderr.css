@@ -1,0 +1,11 @@
+.notfounderr {
+    margin: auto;
+    padding: 0;
+    max-width: 1280px;
+    height: 100vh;
+    background-color: #202020;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+

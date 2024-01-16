@@ -26,3 +26,7 @@
 @import url(./components/footer/__signature/__signature-label/_item/footer__signature-label_item.css);
 @import url(./components/footer/__line/footer__line.css);
 @import url(./components/footer/__signature-wrapper/footer__signature-wrapper.css);
+@import url(./components/notfounderr/notfounderr.css);
+@import url(./components/notfounderr/__btn/notfounderr__btn.css);
+@import url(./components/notfounderr/__code/notfounderr__code.css);
+@import url(./components/notfounderr/__text/notfounderr__text.css);
