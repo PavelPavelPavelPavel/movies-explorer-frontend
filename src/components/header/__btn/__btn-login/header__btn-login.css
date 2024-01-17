@@ -12,3 +12,13 @@
     line-height: 16px;
     cursor: pointer;
 }
+
+@media screen and (max-width: 450px) {
+    .header__btn-login {
+    margin: 24px 14px 24px 0;
+    padding: 0;
+    width: 54px;
+    height: 26px;
+    font-size: 10px;
+    }
+  }

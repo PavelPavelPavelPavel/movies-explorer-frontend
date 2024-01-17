@@ -30,3 +30,8 @@
 @import url(./components/notfounderr/__btn/notfounderr__btn.css);
 @import url(./components/notfounderr/__code/notfounderr__code.css);
 @import url(./components/notfounderr/__text/notfounderr__text.css);
+@import url(./components/promo/promo.css);
+@import url(./components/promo/__heading/promo__heading.css);
+@import url(./components/promo/__nav/promo__nav.css);
+@import url(./components/promo/__nav/_item/promo__nav_item.css);
+@import url(./components/promo/__nav-btn/promo__nav-btn.css);

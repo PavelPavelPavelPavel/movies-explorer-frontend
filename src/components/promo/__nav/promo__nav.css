@@ -1,0 +1,25 @@
+.promo__nav {
+    margin: 151px auto 30px auto;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+@media screen and (max-width: 800px) {
+    .promo__nav {
+        margin: 314px auto 30px auto;
+    }
+  }
+
+  @media screen and (max-width: 630px) {
+    .promo__nav{
+        margin: 200px auto 30px auto
+    }
+  }
+
+  @media screen and (max-width: 360px) {
+    .promo__nav {
+       margin: 212px auto 12px auto;
+    }
+  }
