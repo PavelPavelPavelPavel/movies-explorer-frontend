@@ -1,0 +1,8 @@
+.aboutproject__description {
+    margin: 70px 70px 0 70px;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+}

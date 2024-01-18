@@ -1,8 +1,6 @@
-.footer__line {
+.line {
     margin: 0 70px 0px 70px;
     padding: 0;
     max-width: 1140px;
     height: 1px;
-    background-color: #424242;
-    border-bottom: 1px solid #424242;
 }

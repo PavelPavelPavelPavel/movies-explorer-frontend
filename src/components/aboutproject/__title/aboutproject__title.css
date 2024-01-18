@@ -1,0 +1,11 @@
+.aboutproject__title {
+    margin: 110px auto 0 70px;
+    padding: 0;
+    max-width: 600;
+    max-height: 27px;
+    font-family: Inter, Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 26.5px;
+    color: #FFFFFF;
+}

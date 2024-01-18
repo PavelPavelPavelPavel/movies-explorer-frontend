@@ -1,0 +1,11 @@
+.aboutproject__description-text {
+    margin: 26px auto 0 auto;
+    padding: 0;
+    max-width: 550px;
+    max-height: 40px;
+    font-family: Inter, Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: #FFFFFF;
+}

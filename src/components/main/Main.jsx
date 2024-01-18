@@ -1,9 +1,11 @@
 import Promo from '../promo/Promo';
+import Aboutproject from '../aboutproject/Aboutproject';
 
 function Main() {
     return (
       <div className="main">
-        <Promo/>
+        {/* <Promo/> */}
+        <Aboutproject/>
       </div>
     );
   }
