@@ -5,3 +5,10 @@
     display: flex;
     flex-direction: row;
 }
+
+@media screen and (max-width: 400px) {
+    .footer__signature-label {
+        flex-direction: column;
+        gap: 12px;
+    }
+  }

@@ -54,4 +54,21 @@
 @import url(./components/techs/__nav/techs__nav.css);
 @import url(./components/techs/__text/techs__text.css);
 @import url(./components/techs/__text-title/techs__text-title.css);
-
+@import url(./components/aboutme/aboutme.css);
+@import url(./components/aboutme/__description/aboutme__description.css);
+@import url(./components/aboutme/__img/aboutme__img.css);
+@import url(./components/aboutme/__name/aboutme__name.css);
+@import url(./components/aboutme/__profession/aboutme__profession.css);
+@import url(./components/aboutme/__title/aboutme__title.css);
+@import url(./components/aboutme/__wrapper-text/aboutme__wrapper-text.css);
+@import url(./components/aboutme/__wrapper/aboutme__wrapper.css);
+@import url(./components/line/_place/line_place_aboutme.css);
+@import url(./components/portfolio/portfolio.css);
+@import url(./components/line/_place/line_place_portfolio.css);
+@import url(./components/portfolio/__link/portfolio__link.css);
+@import url(./components/portfolio/__link/_place/portfolio__link_place_aboutme.css);
+@import url(./components/portfolio/__link/_place/portfolio__link_place_portfolio.css);
+@import url(./components/portfolio/__btn/portfolio__btn.css);
+@import url(./components/portfolio/__img/portfolio__img.css);
+@import url(./components/portfolio/__title/portfolio__title.css);
+@import url(./components/portfolio/__wrapper/portfolio__wrapper.css);

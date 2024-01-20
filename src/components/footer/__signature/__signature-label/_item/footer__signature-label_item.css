@@ -9,3 +9,11 @@
     line-height: 16px;
     list-style-type: none;
 }
+
+@media screen and (max-width: 400px) {
+    .footer__signature-label_item {
+      text-align: center;
+      font-size: 12px;
+      line-height: 14.5px;
+    }
+  }
