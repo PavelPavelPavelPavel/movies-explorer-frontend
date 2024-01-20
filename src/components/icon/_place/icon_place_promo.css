@@ -1,4 +1,4 @@
-.promo__nav-btn {
+.icon_place_promo {
     margin: 0;
     padding: 0;
     width: 96px;
@@ -15,7 +15,7 @@
 }
 
 @media screen and (max-width: 360px) {
-    .promo__nav-btn {
+    .icon_place_promo {
         width: 82px;
         height: 26px;
         font-size: 10px;

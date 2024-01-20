@@ -1,0 +1,21 @@
+.techs__text-title {
+    margin: 90px auto 0 auto;
+    padding: 0;
+    max-width: 600px;
+    max-height: 58px;
+    font-family: Inter, Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    font-size: 50px;
+    line-height: 58px;
+    color: #FFFFFF;
+}
+
+@media screen and (max-width: 500px) {
+    .techs__text-title {
+        margin: 60px auto 0 auto;
+        max-width: 292px;
+        max-height: 36px;
+        font-size: 30px;
+        line-height: 36.3px;
+    }
+  }

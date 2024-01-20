@@ -8,9 +8,17 @@
     background-color: #202020;
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 768px) {
     .aboutproject {
         max-width: 768px;
         max-height: 585px;
+    }
+  }
+
+  @media screen and (max-width: 500px) {
+    .aboutproject {
+        margin: 0 auto;
+        max-width: 320px;
+        max-height: 641px;
     }
   }

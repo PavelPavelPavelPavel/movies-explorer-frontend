@@ -11,3 +11,17 @@
     line-height: 17px;
     color: #000000;
 }
+
+@media screen and (max-width: 770px) {
+    .aboutproject__graph_backend_img {
+        max-width: 140px;
+    }
+  }
+
+  @media screen and (max-width: 500px) {
+    .aboutproject__graph_backend_img {
+        max-height: 13px;
+        font-size: 11px;
+        line-height: 13.3px;
+    }
+  }

@@ -1,0 +1,10 @@
+.line_place_about-project {
+    margin: 23px 70px 0px 70px;
+    border-bottom: 1px solid #DADADA;
+}
+
+@media screen and (max-width: 500px) {
+    .line_place_about-project {
+        margin: 28px 18px 0 18px;
+    }
+  }

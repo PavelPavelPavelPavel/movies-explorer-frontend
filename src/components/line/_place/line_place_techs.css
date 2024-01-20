@@ -1,0 +1,17 @@
+.line_place_techs {
+    margin: 23px 70px 0px 70px;
+    border-bottom: 1px solid #DADADA;
+}
+
+@media screen and (max-width: 500px) {
+    .line_place_techs{
+        margin: 28px 18px 0 18px;
+    }
+  }
+
+  @media screen and (max-width: 500px) {
+    .line_place_techs{
+        margin: 28px 18px 0px 18px;
+        border-bottom: 1px solid #000000;
+    }
+  }

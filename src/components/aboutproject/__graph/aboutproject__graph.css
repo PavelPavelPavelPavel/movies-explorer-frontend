@@ -5,3 +5,10 @@
     grid-template-columns: 1fr 4fr;
     grid-template-rows: auto auto;
 }
+
+@media screen and (max-width: 500px) {
+    .aboutproject__graph {
+        margin: 60px 18px 93px 18px;
+        grid-template-columns: 2fr 4fr;
+    }
+  }

@@ -1,5 +1,5 @@
-.aboutproject__title {
-    margin: 110px auto 0 70px;
+.techs__title {
+    margin: 100px auto 0 70px;
     padding: 0;
     max-width: 600px;
     max-height: 27px;
@@ -11,12 +11,12 @@
 }
 
 @media screen and (max-width: 500px) {
-    .aboutproject__title {
+    .techs__title {
         margin: 70px auto 0 18px;
-        padding: 0;
         max-width: 284px;
-        max-height: 22px;
-        font-size: 18px;
+        max-height: 18px;
+        font-size: 12px;
         line-height: 22px;
     }
   }
+

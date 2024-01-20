@@ -1,0 +1,21 @@
+.icon_place_techs {
+    display: flex;
+    width: 90px;
+    height: 60px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    justify-content: center;
+    align-items: center;
+}
+
+@media screen and (max-width: 770px) {
+    .icon_place_techs {
+        width: 84px;
+        height: 57px;
+        font-size: 12px;
+        line-height: 14.5px;
+    }
+  }
+
+ 

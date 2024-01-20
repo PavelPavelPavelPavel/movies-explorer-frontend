@@ -9,3 +9,24 @@
     line-height: 20px;
     color: #FFFFFF;
 }
+
+
+
+@media screen and (max-width: 770px) {
+    .aboutproject__description-text {
+        max-width: 319px;
+        max-height: 54px;
+        font-size: 12px;
+        line-height: 18px;
+    }
+  }
+
+  @media screen and (max-width: 500px) {
+    .aboutproject__description-text {
+        margin: 16px auto 0 auto;
+        max-width: 284px;
+        max-height: 48px;
+        font-size: 11px;
+        line-height: 16px;
+    }
+  }
