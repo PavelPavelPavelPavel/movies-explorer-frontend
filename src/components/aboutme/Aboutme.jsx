@@ -17,7 +17,7 @@ function Aboutme() {
             потом поменял работу и сейчас устанавливаю кухни.
             Как закончу обучение  - сразу буду искать работу по новой специальности.
             </p>
-            <a href="https://github.com/PavelPavelPavelPavel" className="portfolio__link portfolio__link_place_aboutme">Github</a>
+            <a href="https://github.com/PavelPavelPavelPavel" target="blanc" className="portfolio__link portfolio__link_place_aboutme">Github</a>
           </div>
         <img src={avatar} className="aboutme__img" alt="Фото мужчины"></img>
        </div>

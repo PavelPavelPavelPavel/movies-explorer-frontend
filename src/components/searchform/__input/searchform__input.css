@@ -1,0 +1,18 @@
+.searchform__input {
+    margin: 0;
+    padding: 0 0 0 20px;
+    width: 84vw;
+    height: 50px;
+    border-radius: 8px;
+    background-color: #2F2F2F;
+    border: none;
+    color: #FFFFFF;
+}
+
+.searchform__input::placeholder {
+    color: #8B8B8B;
+    font-family: Inter, Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 20px;
+}

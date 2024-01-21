@@ -72,3 +72,14 @@
 @import url(./components/portfolio/__img/portfolio__img.css);
 @import url(./components/portfolio/__title/portfolio__title.css);
 @import url(./components/portfolio/__wrapper/portfolio__wrapper.css);
+@import url(./components/movies/movies.css);
+@import url(./components/searchform/searchform.css);
+@import url(./components/searchform/__btn-img/searchform__btn-img.css);
+@import url(./components/searchform/__btn-submit/searchform__btn-submit.css);
+@import url(./components/searchform/__checkbox-custom/searchform__checkbox-custom.css);
+@import url(./components/searchform/__checkbox/searchform__checkbox.css);
+@import url(./components/searchform/__input-error/searchform__input-error.css);
+@import url(./components/searchform/__input/searchform__input.css);
+@import url(./components/searchform/__wrapper/searchform__wrapper.css);
+@import url(./components/searchform/__checkbox-capcha/searchform__checkbox-capcha.css);
+@import url(./components/searchform/__checkbox-wrapper/searchform__checkbox-wrapper.css);

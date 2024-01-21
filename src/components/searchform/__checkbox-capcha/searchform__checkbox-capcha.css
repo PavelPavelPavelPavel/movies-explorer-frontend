@@ -1,0 +1,14 @@
+.searchform__checkbox-capcha {
+    margin: 0;
+    padding: 0;
+    color: #FFFFFF;
+    font-family: Inter, Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+}
+
+.searchform__checkbox-capcha:before {
+    content: '';
+    display: block;
+}

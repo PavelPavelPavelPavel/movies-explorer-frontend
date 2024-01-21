@@ -1,0 +1,12 @@
+.searchform__btn-submit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: inherit;
+    border: none;
+    margin: 0;
+    padding: 0;
+    width: 44px;
+    height: 44px;
+    cursor: pointer;
+}
