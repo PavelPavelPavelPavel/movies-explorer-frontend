@@ -1,3 +1,23 @@
 .portfolio__link_place_aboutme {
-    
+    margin: 0;
+    padding: 0;
+    max-width: 46px;
+    max-height: 17px;
+    color: #FFFFFF;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    justify-self: flex-end;
 }
+
+@media screen and (max-width: 800px) {
+    .portfolio__link_place_aboutme {
+        margin: 87px 0 0 0;
+    }
+  }
+
+  @media screen and (max-width: 560px) {
+    .portfolio__link_place_aboutme {
+        margin: 40px auto 0 14px;
+    }
+  }

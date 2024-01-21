@@ -3,3 +3,9 @@
     padding: 0;
     cursor: pointer;
 }
+
+@media screen and (max-width: 360px) {
+    .header__droplist {
+    margin: 15px 14px 0 auto;
+    }
+  }

@@ -7,7 +7,7 @@ function Aboutme() {
        <h2 className="aboutme__title">Студент</h2>
        <div className="line line_place_aboutme"></div>
        <div className="aboutme__wrapper">
-        <div className="aboutme__wrapper-text">
+         <div className="aboutme__wrapper-text">
             <h3 className="aboutme__name">Павел</h3>
             <p className="aboutme__profession">Студент Yandex</p>
             <p className="aboutme__description">
@@ -18,7 +18,7 @@ function Aboutme() {
             Как закончу обучение  - сразу буду искать работу по новой специальности.
             </p>
             <a href="https://github.com/PavelPavelPavelPavel" className="portfolio__link portfolio__link_place_aboutme">Github</a>
-        </div>
+          </div>
         <img src={avatar} className="aboutme__img" alt="Фото мужчины"></img>
        </div>
        <Portfolio/>

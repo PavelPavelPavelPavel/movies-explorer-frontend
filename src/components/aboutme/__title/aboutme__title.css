@@ -1,3 +1,34 @@
 .aboutme__title {
-    
+    margin: 110px auto 0 70px;
+    padding: 0;
+    max-width: 600px;
+    max-height: 27px;
+    color:#FFFFFF;
+    font-family: Inter, Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 27px;
 }
+
+@media screen and (max-width: 800px) {
+    .aboutme__title {
+        margin: 90px auto 0 50px;
+    }
+  }
+
+  @media screen and (max-width: 560px) {
+    .aboutme__title {
+        margin: 70px auto 0 14px;
+        font-size: 18px;
+        line-height: 22px;
+    }
+  }
+
+  @media screen and (max-width: 350px) {
+    .aboutme__title {
+        margin: 70px 14px 0 14px;
+        max-width: 200px;
+        font-size: 18px;
+        line-height: 22px;
+    }
+  }

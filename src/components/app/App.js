@@ -8,9 +8,9 @@ import Notfounderr from '../notfounderr/Notfounderr';
 function App() {
   return (
     <div className="App">
-      {/* <Header></Header> */}
+      <Header></Header>
       <Main />
-      {/* <Footer /> */}
+      <Footer />
       {/* <Notfounderr /> */}
     </div >
   );

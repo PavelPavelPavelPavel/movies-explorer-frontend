@@ -1,10 +1,32 @@
 .aboutme__img {
-    display: block;
-    margin: 0;
+    margin: 0 70px 0 auto;
     padding: 0;
     width: 270px;
     height: 327px;
     border-radius: 10px;
     object-fit: cover;
-    overflow: hidden;
 }
+
+@media screen and (max-width: 800px) {
+    .aboutme__img {
+        width: 255px;
+        height: 307px;
+        margin: 66px 50px 0 auto;
+        gap: 30px
+    }
+}
+
+@media screen and (max-width: 560px) {
+    .aboutme__img {
+        margin: 0 14px 0 14px;
+        width: 292px;
+        height: 352px;
+        flex-direction:column-reverse;
+    }
+  }
+
+  @media screen and (max-width: 350px) {
+    .aboutme__img {
+        margin: 0 auto 0 auto;
+    }
+  }

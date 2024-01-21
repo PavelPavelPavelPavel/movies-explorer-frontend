@@ -1,3 +1,23 @@
 .line_place_aboutme {
-    
+    margin: 23px 70px 0 70px;
+    border-bottom: 1px solid #DADADA;
 }
+
+@media screen and (max-width: 800px) {
+    .line_place_aboutme {
+        margin: 23px 50px 0 50px;
+    }
+}
+
+@media screen and (max-width: 560px) {
+    .line_place_aboutme {
+        margin: 28px 14px 0 14px;
+        max-width: 292px;
+    }
+  }
+
+  @media screen and (max-width: 350px) {
+    .line_place_aboutme {
+        margin: 28px 3px 0 3px;
+    }
+  }

@@ -1,3 +1,26 @@
 .aboutme__wrapper {
-    
+    margin: 66px auto 0 70px;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
 }
+
+@media screen and (max-width: 1000px) {
+    .aboutme__wrapper {
+        gap: 49px
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .aboutme__wrapper {
+        margin: 66px auto 0 50px;
+    }
+}
+
+@media screen and (max-width: 560px) {
+    .aboutme__wrapper {
+       margin: 60px auto 0 auto;
+       flex-direction:column-reverse;
+       gap: 40px;
+    }
+  }

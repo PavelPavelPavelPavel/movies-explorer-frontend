@@ -6,9 +6,9 @@ import Aboutme from '../aboutme/Aboutme';
 function Main() {
     return (
       <div className="main">
-        {/* <Promo/> */}
-        {/* <Aboutproject/> */}
-        {/* <Techs/> */}
+        <Promo/>
+        <Aboutproject/>
+        <Techs/>
         <Aboutme/>
       </div>
     );

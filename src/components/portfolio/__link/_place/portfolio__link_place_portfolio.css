@@ -1,0 +1,28 @@
+.portfolio__link_place_portfolio {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    max-height: 50px;
+    flex-direction: column;
+    justify-content: center;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 50px;
+    color: #FFFFFF;
+    align-self: center;
+}
+
+@media screen and (max-width: 800px) {
+    .portfolio__link_place_portfolio {
+        font-size: 28px;
+    }
+  }
+
+  @media screen and (max-width: 560px) {
+    .portfolio__link_place_portfolio {
+        font-size: 18px;
+        line-height: 28px;
+        max-height: 28px;
+        max-width: 250px;
+    }
+  }
