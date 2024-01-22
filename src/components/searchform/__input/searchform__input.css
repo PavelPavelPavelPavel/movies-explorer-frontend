@@ -1,8 +1,8 @@
 .searchform__input {
     margin: 0;
-    padding: 0 0 0 20px;
-    width: 84vw;
+    padding: 0;
     height: 50px;
+    width: calc(100% - 54px);
     border-radius: 8px;
     background-color: #2F2F2F;
     border: none;
@@ -11,8 +11,24 @@
 
 .searchform__input::placeholder {
     color: #8B8B8B;
+    padding: 0 0 0 20px;
     font-family: Inter, Arial, Helvetica, sans-serif;
     font-weight: 400;
     font-size: 18px;
     line-height: 20px;
 }
+
+@media screen and (max-width: 360px) {
+    .searchform__input {
+      height: 44px;
+    }
+  }
+
+  @media screen and (max-width: 360px) {
+    .searchform__input::placeholder {
+      font-size: 14px;
+      line-height: 18px;
+      color: #8B8B8B;
+      max-width: 238px;
+    }
+  }

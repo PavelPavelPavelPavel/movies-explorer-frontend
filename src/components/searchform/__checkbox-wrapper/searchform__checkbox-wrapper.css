@@ -3,6 +3,12 @@
     padding: 0;
     display: flex;
     flex-direction: row;
-    gap: 12px;
     position: relative;
+}
+
+
+@media screen and (max-width: 770px) {
+    .searchform__checkbox-wrapper {
+      margin: 40px auto 40px auto;
+    }
 }

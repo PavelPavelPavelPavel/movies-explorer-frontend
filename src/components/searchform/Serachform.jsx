@@ -10,8 +10,8 @@ function Searchform() {
         </div>
         <div className="searchform__checkbox-wrapper">
             <input className="searchform__checkbox" id="filter" type="checkbox" aria-checked="false" tabindex="0"/>
-            <label className="searchform__checkbox-capcha" for="filter">Короткометражки</label>
-            <span className="searchform__checkbox-custom"></span>
+            <label className="searchform__checkbox-capcha" for="filter"></label>
+            <span className="searchform__checkbox-custom">Короткометражки</span>
         </div>
       </form>
     );

@@ -1,14 +1,34 @@
 .searchform__checkbox-capcha {
     margin: 0;
     padding: 0;
-    color: #FFFFFF;
-    font-family: Inter, Arial, Helvetica, sans-serif;
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 18px;
+    cursor: pointer;
 }
 
 .searchform__checkbox-capcha:before {
     content: '';
     display: block;
+    width: 34px;
+    height: 14px;
+    margin: 2px 0 0 0;
+    background-image: url("../../../images/searchform-checkbox-disble.svg");
+    background-position: center;
+    border-radius: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.searchform__checkbox-capcha:after {
+    content: '';
+    display: block;
+    width: 34px;
+    height: 14px;
+    margin: 2px 0 0 0;
+    opacity: 0;
+    border-radius: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
 }
