@@ -1,0 +1,23 @@
+.moviecard__name {
+    margin: 0 0 0 14px;
+    padding: 0;
+    max-width: 250px;
+    max-height: 17px;
+    color: #FFFFFF;
+    font-family: Inter, Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 16px;
+    text-align: left;
+    overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+@media screen and (max-width: 715px) {
+    .moviecard__name {
+        max-width: 240px;
+        font-size: 12px;
+        line-height: 14.5px;
+        margin: 0 0 0 10px;
+    }
+  }

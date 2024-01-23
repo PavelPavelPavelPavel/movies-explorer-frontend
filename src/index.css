@@ -74,6 +74,7 @@
 @import url(./components/portfolio/__wrapper/portfolio__wrapper.css);
 @import url(./components/movies/movies.css);
 @import url(./components/searchform/searchform.css);
+@import url(./components/line/_place/line_place_searchform.css);
 @import url(./components/searchform/__btn-img/searchform__btn-img.css);
 @import url(./components/searchform/__btn-submit/searchform__btn-submit.css);
 @import url(./components/searchform/__checkbox-custom/searchform__checkbox-custom.css);
@@ -83,3 +84,15 @@
 @import url(./components/searchform/__wrapper/searchform__wrapper.css);
 @import url(./components/searchform/__checkbox-capcha/searchform__checkbox-capcha.css);
 @import url(./components/searchform/__checkbox-wrapper/searchform__checkbox-wrapper.css);
+@import url(./components/morebtn/morebtn.css);
+@import url(./components/morebtn/__btn/morebtn__btn.css);
+@import url(./components/moviecardlist/moviecardlist.css);
+@import url(./components/moviecard/moviecard.css);
+@import url(./components/moviecard/__description/moviecard__description.css);
+@import url(./components/moviecard/__add/moviecard__add.css);
+@import url(./components/moviecard/__added-icon/moviecard__added-icon.css);
+@import url(./components/moviecard/__duration/moviecard__duration.css);
+@import url(./components/moviecard/__img/moviecard__img.css);
+@import url(./components/moviecard/__name/moviecard__name.css);
+@import url(./components/moviecard/__remove/moviecard__remove.css);
+@import url(./components/moviecard/__wrapper/moviecard__wrapper.css);

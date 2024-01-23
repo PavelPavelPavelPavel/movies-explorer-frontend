@@ -1,0 +1,14 @@
+.moviecard__remove {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    width: 21px;
+    height: 21px;
+    background-image: url("../../../images/remove-card-btn.svg");
+    object-fit: contain;
+    object-position: center;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+}
+

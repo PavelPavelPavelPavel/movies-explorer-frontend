@@ -1,0 +1,15 @@
+.morebtn__btn {
+    margin: 50px auto 80px auto;
+    padding: 0;
+    width: 320px;
+    height: 36px;
+    background-color: inherit;
+    border: 1px solid #424242;
+    border-radius: 6px;
+    font-family: Inter, Arial, Helvetica, sans-serif;
+    align-self: center;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 14.5px;
+    color: #FFFFFF;
+}

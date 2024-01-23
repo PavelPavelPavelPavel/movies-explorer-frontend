@@ -1,6 +1,7 @@
 .searchform {
-    margin: 0;
+    margin: 0;;
     padding: 0;
+    max-width: 1280px;
     display: flex;
     flex-direction: column;
     align-items: center;

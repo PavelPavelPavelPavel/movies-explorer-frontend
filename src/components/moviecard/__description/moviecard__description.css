@@ -1,0 +1,14 @@
+.moviecard__description {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 2px;
+}
+
+@media screen and (max-width: 715px) {
+    .moviecard__description {
+       gap: 8px;
+    }
+  }

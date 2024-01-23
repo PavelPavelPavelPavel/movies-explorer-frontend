@@ -1,9 +1,17 @@
 import Searchform from "../searchform/Serachform";
+import Morebtn from "../morebtn/Morebtn";
+import Moviecardlist from "../moviecardlist/Moviecardlist";
+import Moviecard from "../moviecard/Moviecard";
 
-function Movies() {
+function Movies({movies}) {
     return (
       <div className="movies">
-       <Searchform/>
+       {/* <Searchform/> */}
+       {/* <Morebtn/> */}
+       <Moviecardlist
+        movies={movies}
+       />
+       {/* <Moviecard/> */}
       </div>
     );
   }
