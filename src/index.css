@@ -96,3 +96,12 @@
 @import url(./components/moviecard/__name/moviecard__name.css);
 @import url(./components/moviecard/__remove/moviecard__remove.css);
 @import url(./components/moviecard/__wrapper/moviecard__wrapper.css);
+@import url(./components/profile/profile.css);
+@import url(./components/line/_place/line_place_profile.css);
+@import url(./components/profile/__form-btn/profile__form-btn.css);
+@import url(./components/profile/__form/profile__form.css);
+@import url(./components/profile/__input/profile__input.css);
+@import url(./components/profile/__label/profile__label.css);
+@import url(./components/profile/__logout/profile__logout.css);
+@import url(./components/profile/__title/profile__title.css);
+@import url(./components/profile/__input-wrapper/profile__input-wrapper.css);

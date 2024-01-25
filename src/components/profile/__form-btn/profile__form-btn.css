@@ -1,0 +1,28 @@
+.profile__form-btn {
+   margin: 220px auto 0 auto;;
+   padding: 0;
+   max-width: 410px;
+   max-height: 16px;
+   font-family: Inter, Arial, Helvetica, sans-serif;
+   font-weight: 400;
+   font-size: 13px;
+   line-height: 15.7px;
+   color: #FFFFFF; 
+   text-align: center;
+   background-color: inherit;
+   border: none;
+}
+
+@media screen and (max-width: 770px) {
+    .profile__form-btn {
+        margin: 210px auto 0 auto;
+}
+  }
+
+  @media screen and (max-width: 450px) {
+    .profile__form-btn {
+        margin: 379px auto 0 auto;
+        font-size: 12px;
+        line-height: 14.5px;
+}
+  }

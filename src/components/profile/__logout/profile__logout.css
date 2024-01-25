@@ -1,0 +1,28 @@
+.profile__logout {
+   margin: 16px auto 70px auto;
+   padding: 0;
+   max-width: 410px;
+   max-height: 16px;
+   font-family: Inter, Arial, Helvetica, sans-serif;
+   font-weight: 500;
+   font-size: 13px;
+   line-height: 15.7px;
+   color: #EE3465; 
+   text-align: center;
+   background-color: inherit;
+   border: none;
+}
+
+@media screen and (max-width: 770px) {
+    .profile__logout{
+        margin: 16px auto 269px auto;
+}
+  }
+
+  @media screen and (max-width: 450px) {
+    .profile__logout{
+        margin: 16px auto 40px auto;
+        font-size: 12px;
+        line-height: 14.5px;
+}
+  }

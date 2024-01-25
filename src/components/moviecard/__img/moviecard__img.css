@@ -3,10 +3,8 @@
     padding: 0;
     max-height: 201px;
     max-width: 360px;
+    object-position: center;
     border-radius: 5px;
-    box-sizing: content-box;
-    overflow: hidden;
-    border: none;
 }
 
 @media screen and (max-width: 1210px) {

@@ -1,6 +1,7 @@
 .moviecardlist {
     margin: 70px auto 0 auto;
     padding: 0;
+    height: 100%;
     background-color: #202020;
     display: grid;
     justify-items: center;
@@ -19,8 +20,12 @@
   @media screen and (max-width: 715px) {
     .moviecardlist {
         margin: 40px auto 0 auto;
-        grid-template-columns: repeat(1, 300px);
+        grid-template-columns: repeat(1, 290px);
         row-gap: 39px;
+        column-gap: 0;
     }
   }
+
+
+  
   

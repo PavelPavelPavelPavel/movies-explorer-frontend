@@ -6,6 +6,7 @@ import Footer from '../footer/Footer';
 import Notfounderr from '../notfounderr/Notfounderr';
 import Movies from '../movies/Movies';
 import films from "../../constants";
+import Profile from "../profile/Profile";
 
 
 function App() {
@@ -14,10 +15,11 @@ function App() {
   return (
     <div className="App">
       {/* <Header></Header> */}
-      <Movies
+      {/* <Movies
         movies={movies}
-      />
+      /> */}
       {/* <Main /> */}
+      <Profile />
       {/* <Footer /> */}
       {/* <Notfounderr /> */}
     </div >

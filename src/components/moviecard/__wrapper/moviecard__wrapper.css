@@ -11,7 +11,8 @@
 
 @media screen and (max-width: 715px) {
     .moviecard__wrapper {
-     max-width: 300px;
+     max-width: 290px;
+     gap: 16px;
     }
   }
 
