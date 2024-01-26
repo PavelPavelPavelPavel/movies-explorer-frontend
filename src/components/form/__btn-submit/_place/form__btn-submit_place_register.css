@@ -1,0 +1,9 @@
+.form__btn-submit_place_register {
+    margin: 69px 0 auto 0;
+}
+
+@media screen and (max-width: 450px) {
+    .form__btn-submit_place_register {
+       margin: 157px auto 0 auto;
+    }
+  }

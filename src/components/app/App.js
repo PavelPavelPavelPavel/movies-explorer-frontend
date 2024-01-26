@@ -7,6 +7,8 @@ import Notfounderr from '../notfounderr/Notfounderr';
 import Movies from '../movies/Movies';
 import films from "../../constants";
 import Profile from "../profile/Profile";
+import Register from "../register/Register";
+import Login from "../login/Login";
 
 
 function App() {
@@ -19,7 +21,9 @@ function App() {
         movies={movies}
       /> */}
       {/* <Main /> */}
-      <Profile />
+      {/* <Profile /> */}
+      {/* <Register /> */}
+      <Login />
       {/* <Footer /> */}
       {/* <Notfounderr /> */}
     </div >

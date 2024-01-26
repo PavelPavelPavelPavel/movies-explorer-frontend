@@ -1,6 +1,7 @@
 function Profile() {
     const email = 'email@example.com';
     const name = 'Pavel';
+
     return (
       <article className="profile">
         <h2 className="profile__title">Привет, Павел</h2>
@@ -8,6 +9,7 @@ function Profile() {
             <div className="profile__input-wraper">
               <label for="profileName"  className="profile__label">Имя</label>
               <input 
+              disabled
               type="text" 
               className="profile__input" 
               name="profileName" 
@@ -19,7 +21,8 @@ function Profile() {
             <div className="line line_place_profile"/>
             <div className="profile__input-wraper">
               <label for="profileEmail" className="profile__label">E-mail</label>
-              <input 
+              <input
+              disabled
               type="email" 
               className="profile__input" 
               name="profileEmail" 

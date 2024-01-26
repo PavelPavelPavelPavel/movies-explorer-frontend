@@ -1,0 +1,23 @@
+.form__btn-submit {
+    padding: 0;
+    width: 396px;
+    height: 45px;
+    background-color: #4285F4;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 3px;
+    font-family: Inter, Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 450px) {
+    .form__btn-submit {
+       width: 260px;
+       font-size: 12px;
+       line-height: 14.5px;
+    }
+  }

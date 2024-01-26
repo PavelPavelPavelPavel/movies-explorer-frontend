@@ -1,0 +1,20 @@
+.form__btn {
+    margin: 0;
+    padding: 0;
+    color: #4285F4;
+    background-color: inherit;
+    font-family: Inter, Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 450px) {
+    .form__btn {
+       font-size: 12px;
+       line-height: 14.5px;
+    }
+  }

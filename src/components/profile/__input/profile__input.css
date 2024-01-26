@@ -16,6 +16,11 @@
     white-space: nowrap;
 }
 
+.profile__input:focus {
+    outline: none;
+}
+
+
 @media screen and (max-width: 450px) {
     .profile__input {
         margin: 0;
