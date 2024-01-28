@@ -1,4 +1,4 @@
-.moviecardlist {
+.savedmovies {
     margin: 70px auto 0 auto;
     padding: 0;
     height: 100%;
@@ -11,7 +11,7 @@
 }
 
 @media screen and (max-width: 1210px) {
-    .moviecardlist {
+    .savedmovies {
         grid-template-columns: repeat(2, 339px);
         row-gap: 47px;
         column-gap: 30px;
@@ -19,7 +19,7 @@
   }
 
   @media screen and (max-width: 740px) {
-    .moviecardlist {
+    .savedmovies {
         margin: 40px auto 0 auto;
         grid-template-columns: repeat(1, 280px);
         row-gap: 39px;

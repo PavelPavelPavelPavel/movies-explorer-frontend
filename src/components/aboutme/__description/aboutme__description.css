@@ -26,7 +26,7 @@
     }
   }
 
-  @media screen and (max-width: 350px) {
+  @media screen and (max-width: 360px) {
     .aboutme__description {
         margin: 20px 14px 0 14px;
         max-width: 292px;

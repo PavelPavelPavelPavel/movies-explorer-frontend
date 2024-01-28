@@ -2,7 +2,7 @@ const films = [
     {
         "albumId": 1,
         "id": 2,
-        "title": "reprehenderit est deserunt velit ipsamdfdafasdfsadfsadfsadfsadf",
+        "title": "reprehenderit est deserunt velit ipsamdfdafasdfsadfsadfsadfsadfsdfsadfsadfasdfasdfsadfasfdsadfdsafds",
         "url": "https://sportishka.com/uploads/posts/2022-11/1667591892_42-sportishka-com-p-karibskoe-more-ostrova-instagram-50.jpg",
         "thumbnailUrl": "https://via.placeholder.com/150/771796"
     },
@@ -47,10 +47,25 @@ const film = [
     {
         "albumId": 1,
         "id": 6,
-        "title": "accusamus ea aliquid et amet sequi nemo",
-        "url": "https://via.placeholder.com/600/56a8c2",
+        "title": "accusamus ea aliquid et amet sequi nemo adsfasdfadfadsfadsfasdfsadfsadfsadasdfasdfasdfsaf",
+        "url": "https://sportishka.com/uploads/posts/2022-11/1667591892_42-sportishka-com-p-karibskoe-more-ostrova-instagram-50.jpg",
         "thumbnailUrl": "https://via.placeholder.com/150/56a8c2"
     },
 ]
 
-export default films;
+const SCREEN_SM = 320;
+const SCREEN_MD = 450;
+const SCREEN_LG = 820;
+const SCREEN_XL = 1000;
+const SCREEN_XXL = 1280;
+
+export {
+    SCREEN_SM,
+    SCREEN_MD,
+    SCREEN_LG,
+    SCREEN_XL,
+    SCREEN_XXL,
+    film,
+    films,
+}
+

@@ -11,12 +11,15 @@
     gap: 14px;
 }
 
+
+
 @media screen and (max-width: 715px) {
     .moviecard {
-        max-width: 300px;
-        max-height: 212px;
+        max-width: 290px;
     }
   }
+
+
 
 
 

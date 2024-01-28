@@ -7,7 +7,17 @@
     gap: 10px;
 }
 
-@media screen and (max-width: 665px) {
+@media screen and (max-width: 700px) {
+    .techs__nav {
+        margin: 50px auto 70px auto;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+
+
+@media screen and (max-width: 400px) {
     .techs__nav {
         margin: 50px auto 70px auto;
         display: grid;

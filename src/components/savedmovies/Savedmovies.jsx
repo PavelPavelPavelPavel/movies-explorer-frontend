@@ -1,11 +1,11 @@
 import Moviecard from "../moviecard/Moviecard";
 
 
-function Moviecardlist({movies}) {
+function Savedmovies({saveMovies}) {
 
     return (
-    <section className="moviecardlist">
-    {movies.map((movie) => {
+    <section className="savedmovies">
+    {saveMovies.map((movie) => {
         return (
     <Moviecard
             key={movie.id}
@@ -18,4 +18,4 @@ function Moviecardlist({movies}) {
     )
     }
 
-export default Moviecardlist;
+export default Savedmovies;

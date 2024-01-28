@@ -5,6 +5,7 @@
     height: 327px;
     border-radius: 10px;
     object-fit: cover;
+    border: none;
 }
 
 @media screen and (max-width: 800px) {
@@ -19,13 +20,12 @@
 @media screen and (max-width: 560px) {
     .aboutme__img {
         margin: 0 14px 0 14px;
-        width: 292px;
-        height: 352px;
-        flex-direction:column-reverse;
+        width: 284px;
+        height: 344px;
     }
   }
 
-  @media screen and (max-width: 350px) {
+  @media screen and (max-width: 360px) {
     .aboutme__img {
         margin: 0 auto 0 auto;
     }

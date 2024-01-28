@@ -12,7 +12,7 @@
     white-space: nowrap;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 820px) {
     .promo__heading {
     margin: 350px auto 0 auto;
     padding: 0;
@@ -22,6 +22,7 @@
     line-height: 52px;
     }
   }
+
 @media screen and (max-width: 630px) {
     .promo__heading {
     margin: 250px auto 0 auto;
@@ -33,7 +34,7 @@
     }
   }
 
-  @media screen and (max-width: 360px) {
+  @media screen and (max-width: 400px) {
     .promo__heading {
     margin: 220px auto 0 auto;
     max-width: 292px;

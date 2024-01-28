@@ -19,3 +19,15 @@
         border-radius: 14px;
         cursor: pointer;
     }
+
+    @media screen and (max-width: 1210px) {
+        .moviecard__add {
+            right: 24px;
+        }
+      }
+
+      @media screen and (max-width: 740px) {
+        .moviecard__add {
+            right: 14px;
+        }
+      }

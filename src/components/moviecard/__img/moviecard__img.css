@@ -5,7 +5,10 @@
     max-width: 360px;
     object-position: center;
     border-radius: 5px;
+    object-fit: cover;
+    cursor: pointer;
 }
+
 
 @media screen and (max-width: 1210px) {
     .moviecard__img {
@@ -20,3 +23,5 @@
         max-height: 168px;
     }
   }
+
+ 

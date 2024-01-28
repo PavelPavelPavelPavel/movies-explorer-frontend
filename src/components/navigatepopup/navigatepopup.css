@@ -1,9 +1,18 @@
 .navigatepopup {
-    margin: 0;
-    padding: 0;
+    position: relative;
+    margin: 0 0 0 auto;
     width: 520px;
-    height: 100vh;
     background-color: #202020;
     display: flex;
     flex-direction: column;
+    z-index: 2;
 }
+
+@media screen and (max-width: 555px) {
+    .navigatepopup {
+        width: 100%;
+    }
+}
+
+
+

@@ -1,7 +1,8 @@
 .moviecard__remove {
+    padding: 0;
     position: absolute;
     top: 14px;
-    right: 14px;
+    right: 24px;
     width: 21px;
     height: 21px;
     background-image: url("../../../images/remove-card-btn.svg");
@@ -11,4 +12,10 @@
     border: none;
     cursor: pointer;
 }
+
+@media screen and (max-width: 340px) {
+    .moviecard__remove {
+        right: 14px;
+    }
+  }
 
