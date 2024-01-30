@@ -20,6 +20,7 @@
         cursor: pointer;
     }
 
+
     @media screen and (max-width: 1210px) {
         .moviecard__add {
             right: 24px;

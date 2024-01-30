@@ -2,12 +2,17 @@ import Form from "../form/Form";
 
 function Register() {
 
+    function handleSubmit() {
+        
+    }
+
     return (
         <Form 
             textSubmitBtn = "Зарегистрироваться"
             btnCapcha = "Уже зарегистрированы?"
             btn = "Войти"
             placeBtnSubmit="register"
+            onSubmit={handleSubmit}
             >
             <div className="register">
                 <label className="input__label">Имя</label>

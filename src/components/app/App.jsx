@@ -9,7 +9,6 @@ import Main from '../main/Main';
 import Footer from '../footer/Footer';
 import Notfounderr from '../notfounderr/Notfounderr';
 import Movies from '../movies/Movies';
-import Savedmovies from "../savedmovies/Savedmovies";
 import  { films, film }  from '../../constants';
 import Profile from "../profile/Profile";
 import Register from "../register/Register";
@@ -23,17 +22,40 @@ function App() {
   const [loggedIn, setLoggedIn] = useState(false);
   const [movies, setMovies] = useState([]);
   const [likedMovies, setLikedMovies] = useState([]);
+  const [loc, setLoc] = useState(false);
+  const [greetingText, setGreetingText] = useState('');
 
   useEffect(() => {
     setMovies(films);
     setLikedMovies(film);
   }, []);
 
+  useEffect(() => {
+    if(location.pathname === "/signin")  {
+      setLoc(true);
+      setGreetingText('Рады видеть!');
+    } else if (location.pathname === "/signup") {
+      setLoc(true)
+      setGreetingText('Добро пожаловать!');
+    } else {
+      setLoc(false)
+    }
+  }, [location]);
+
+  function logOut() {
+      navigate('/');
+      setLoggedIn(false);
+  };
+
+
   return (
     <>
       {/* <CurrentUserContext> */}
           <div className="App">
-            <Header login={loggedIn} />
+            <Header login={loggedIn}
+                    loc={loc}
+                    greetingText={greetingText}
+            />
                   <Routes>
                     <Route path='/' 
                     element={
@@ -41,6 +63,12 @@ function App() {
                       <Main />
                       </>}
                       />
+                    <Route path="/signup" element={
+                         <Register />
+                    }/>
+                    <Route path="/signin" element={
+                          <Login />
+                    }/>
                     <Route path='/movies' element={
                       <>
                      <Movies  
@@ -55,12 +83,12 @@ function App() {
                         movies={movies}/>                        
                         </>
                     } />
+                    <Route path="/profile" element={
+                      <Profile logOut={logOut}/>
+                    } />
                     <Route path='*' element={<Notfounderr />} />
-                    {/* <Profile /> */}
-                    {/* <Register /> */}
-                    {/* <Login /> */}
                   </ Routes>
-                  <Footer />
+                  {location.pathname !== "/profile" && !loc && <Footer />}
           </div >
       {/* </CurrentUserContext> */}
     </>

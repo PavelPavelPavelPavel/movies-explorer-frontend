@@ -3,23 +3,41 @@ import { useState, useEffect } from "react";
 import Searchform from "../searchform/Serachform";
 import Morebtn from "../morebtn/Morebtn";
 import Moviecardlist from "../moviecardlist/Moviecardlist";
-import Moviecard from "../moviecard/Moviecard";
 import Savedmovies from "../savedmovies/Savedmovies";
 
 function Movies({movies, saveMovies}) {
   const location = useLocation();
-  console.log(saveMovies)
-  function chekAddFilm () {
+   const favoriteMovies = [];
 
+  useEffect(() => {
+    movies.forEach(item => {
+      for(let i = 0; i < saveMovies.length; i++ ) {
+        let elem = saveMovies[i];
+        if (item.id === elem.id) {
+          favoriteMovies.push(elem);
+        }
+      }
+    })
+ }, [movies])
+    
+    
+  function addToFavorite () {
+      // favoriteMovies.push()
   }
+ 
+
 
     return (
       <div className="movies">
         <Searchform/>
         {location.pathname === '/saved-movies' 
-        ? <Savedmovies saveMovies={saveMovies}/>
+        ? <Savedmovies saveMovies={saveMovies} 
+                       favoriteMovies={favoriteMovies}
+                       />
         :  <Moviecardlist
-        movies={movies}/>}
+              movies={movies}
+              favoriteMovies={favoriteMovies}
+                      />}
        {/* <Morebtn/>  */}
       </div>
     );
