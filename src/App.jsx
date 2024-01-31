@@ -3,16 +3,16 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { Routes, Route, Link, useNavigate, useLocation } from "react-router-dom";
 // import { CurrentUserContext } from "../../contexts/CurrentUserContext";
-import "../../index.css";
-import Header from '../header/Header'
-import Main from '../main/Main';
-import Footer from '../footer/Footer';
-import Notfounderr from '../notfounderr/Notfounderr';
-import Movies from '../movies/Movies';
-import  { films, film }  from '../../constants';
-import Profile from "../profile/Profile";
-import Register from "../register/Register";
-import Login from "../login/Login";
+import "./index.css";
+import Header from './components/header/Header'
+import Main from './components/main/Main';
+import Footer from './components/footer/Footer';
+import Notfounderr from './components/notfounderr/Notfounderr';
+import Movies from './components/movies/Movies';
+import  { films, film }  from './constants';
+import Profile from "./components/profile/Profile";
+import Register from "./components/register/Register";
+import Login from "./components/login/Login";
 
 
 

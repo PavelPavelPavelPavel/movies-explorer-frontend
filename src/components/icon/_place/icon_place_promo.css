@@ -1,9 +1,12 @@
 .icon_place_promo {
+    display: flex;
     width: 96px;
     height: 36px;
     font-weight: 500;
     font-size: 12px;
     line-height: 16px;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
 }
 
