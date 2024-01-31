@@ -1,5 +1,5 @@
 .aboutme__img {
-    margin: 0 70px 0 auto;
+    margin: 0;
     padding: 0;
     width: 270px;
     height: 327px;
@@ -10,10 +10,9 @@
 
 @media screen and (max-width: 800px) {
     .aboutme__img {
+        margin: 0;
         width: 255px;
         height: 307px;
-        margin: 66px 50px 0 auto;
-        gap: 30px
     }
 }
 

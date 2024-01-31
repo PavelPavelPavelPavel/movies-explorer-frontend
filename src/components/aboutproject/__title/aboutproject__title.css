@@ -1,19 +1,26 @@
 .aboutproject__title {
-    margin: 110px auto 0 70px;
-    padding: 0;
-    max-width: 600px;
+    margin: 115px 70px 0 70px;
+    padding: 0 0 23px 0;
     max-height: 27px;
+    max-width: 1140px;
     font-family: Inter, Arial, Helvetica, sans-serif;
     font-weight: 400;
     font-size: 22px;
     line-height: 26.5px;
+    letter-spacing: -0.04em;
     color: #FFFFFF;
+    border-bottom: 1px solid #DADADA;
 }
+
+@media screen and (max-width: 800px) {
+    .aboutproject__title {
+        margin: 90px 50px 0 50px;
+    }
+  }
 
 @media screen and (max-width: 500px) {
     .aboutproject__title {
-        margin: 70px auto 0 18px;
-        padding: 0;
+        margin: 70px 1px8 0 18px;
         max-width: 284px;
         max-height: 22px;
         font-size: 18px;

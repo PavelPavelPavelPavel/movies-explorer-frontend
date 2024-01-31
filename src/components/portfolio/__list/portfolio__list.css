@@ -1,14 +1,14 @@
-.portfolio__wrapper {
-    margin: 0 70px 0 0;
+.portfolio__list {
+    margin: 20px 0 0 0;
     padding: 0;
     display: flex;
     max-height: 50px;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
 }
 
 @media screen and (max-width: 560px) {
-    .portfolio__wrapper {
+    .portfolio__list {
         margin: 20px auto 0 auto;
         max-height: 28px;
     }

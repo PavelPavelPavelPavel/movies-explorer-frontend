@@ -12,8 +12,9 @@
 
 
 
-@media screen and (max-width: 770px) {
+@media screen and (max-width: 800px) {
     .aboutproject__description-text {
+        margin: 22px auto 0 auto;
         max-width: 319px;
         max-height: 54px;
         font-size: 12px;

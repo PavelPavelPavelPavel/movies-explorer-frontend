@@ -7,6 +7,14 @@
     gap: 40px;
 }
 
+@media screen and (max-width: 800px) {
+    .aboutproject__description {
+        margin: 70px 50px 0 50px;
+        gap: 35px;
+    }
+  }
+
+
 @media screen and (max-width: 500px) {
     .aboutproject__description {
     margin: 60px 18px 0 18px;

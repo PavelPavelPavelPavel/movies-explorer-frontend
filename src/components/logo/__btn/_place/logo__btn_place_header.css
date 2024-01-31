@@ -1,22 +1,17 @@
 .logo__btn_place_header {
-        position: absolute;
-        margin: 0;
-        top: 18px;
-        bottom: 18px;
-        left: 70px;
+        margin: 10px 0 0 70px;
+        padding: 0;
+      
     }
     
     @media screen and (max-width: 800px) {
         .logo__btn_place_header {
-          top: 18px;
-          bottom: 18px;
-          left: 30px;
+         margin: 4px 0 0 30px;
         }
       }
     
       @media screen and (max-width: 360px) {
         .logo__btn_place_header {
-        top: 18px;
-        left: 14px;
+       margin: 18px 0 0 14px;
         }
       }

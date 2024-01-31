@@ -5,7 +5,7 @@ import { Routes, Route, Link, useNavigate, useLocation } from "react-router-dom"
 // import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 import "./index.css";
 import Header from './components/header/Header'
-import Main from './components/main/Main';
+import Main from './components/main-landing/Main';
 import Footer from './components/footer/Footer';
 import Notfounderr from './components/notfounderr/Notfounderr';
 import Movies from './components/movies/Movies';
@@ -52,10 +52,12 @@ function App() {
     <>
       {/* <CurrentUserContext> */}
           <div className="App">
+           
             <Header login={loggedIn}
                     loc={loc}
                     greetingText={greetingText}
             />
+             <div className="main">
                   <Routes>
                     <Route path='/' 
                     element={
@@ -88,6 +90,7 @@ function App() {
                     } />
                     <Route path='*' element={<Notfounderr />} />
                   </ Routes>
+                  </div>
                   {location.pathname !== "/profile" && !loc && <Footer />}
           </div >
       {/* </CurrentUserContext> */}

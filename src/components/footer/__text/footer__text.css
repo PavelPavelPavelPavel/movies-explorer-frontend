@@ -1,14 +1,16 @@
 .footer__text {
-  margin: 79px auto 0 auto;
-  padding: 0;
+  margin: 80px 70px 0 70px;
+  padding: 0 0 20px 0;
   max-height: 16px;
   max-width: 1140px;
+  text-align: center;
   border: none;
   color:#8B8B8B;
   font-family: Inter, Arial, Helvetica, sans-serif;
   font-weight: 400;
   font-size: 13px;
   line-height: 16px;
+  border-bottom: 1px solid #424242;
 }
 
 @media screen and (max-width: 360px) {

@@ -1,5 +1,5 @@
 .header__btn-login {
-    margin: 21px 70px 21px 0;
+    margin: 30px 70px 17px 0;
     padding: 0;
     width: 76px;
     height: 32px;
@@ -12,6 +12,13 @@
     line-height: 16px;
     cursor: pointer;
 }
+
+@media screen and (max-width: 800px) {
+    .header__btn-login {
+    margin: 24px 30px 24px 0;
+    }
+  }
+
 
 @media screen and (max-width: 450px) {
     .header__btn-login {

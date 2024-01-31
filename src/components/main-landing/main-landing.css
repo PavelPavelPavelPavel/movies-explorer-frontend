@@ -1,7 +1,9 @@
-.main {
+.main-landing {
+    margin: 0 auto 0 auto;
+    padding: 0;
     display: flex;
     flex-direction: column;
-    width: 100%;
+    max-width: 1280px;
     height: 100%;
     background-color: #202020;
 }

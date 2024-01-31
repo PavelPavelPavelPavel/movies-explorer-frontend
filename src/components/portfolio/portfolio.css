@@ -1,5 +1,6 @@
 .portfolio {
-    margin: 101px auto 125px 70px;
+    margin: 105px 70px 125px 70px;
+    padding: 0;
 }
 
 @media screen and (max-width: 800px) {

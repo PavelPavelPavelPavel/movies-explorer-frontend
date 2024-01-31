@@ -1,13 +1,14 @@
 .portfolio__btn {
     display: flex;
-    justify-content: baseline;
     margin: 20px 0 0 0;
-    padding: 0;
+    justify-content: center;
+    padding: 15px;
     width: 29px;
     height: 60px;
     background-color: inherit;
     border: none;
 }
+
 
 @media screen and (max-width: 800px) {
     .portfolio__btn {

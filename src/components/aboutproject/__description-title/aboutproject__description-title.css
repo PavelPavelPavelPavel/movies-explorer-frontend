@@ -2,19 +2,16 @@
     margin: 0;
     padding: 0;
     max-width: 550px;
-    max-height: 24px;
+    max-height: 48px;
     font-family: Inter, Arial, Helvetica, sans-serif;
     font-weight: 400;
     font-size: 20px;
     line-height: 24px;
+    letter-spacing: -0.04em;
     color: #FFFFFF;
 }
 
-@media screen and (max-width: 970px) {
-    .aboutproject__description-title {
-        margin: 0 auto 52px auto;
-    }
-  }
+
 
 @media screen and (max-width: 770px) {
     .aboutproject__description-title {

@@ -1,0 +1,16 @@
+.portfolio__list_item {
+    margin: 10px 0 0 0;
+    padding: 0;
+    max-width: 1140px;
+    max-height: 89px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #424242;
+}
+
+.portfolio__list_item:last-child {
+    border: none;
+}
+
