@@ -26,19 +26,37 @@ function Header({login, loc, greetingText}) {
       }
     }, [resize.isScreenLg]);
 
-    
-
-
     function initModalNavbar() {
         modalState ? setModalState(false) : setModalState(true);
     };
 
     function navToMain() {
-      navigate("/");
+      navigate('/')
     }
 
+    function navToSigIn() {
+      navigate('/signin')
+    }
+
+    function navToSigUp() {
+      navigate('/signup')
+    }
+
+    function navToAcc() {
+      navigate('/profile')
+    }
+
+    function navToFilm() {
+      navigate('/movies')
+    }
+
+    function navToSavedFilm() {
+      navigate('/saved-movies')
+    }
 
     
+
+
     return (
     <header className={`${!loc ? 'header' : 'header__greeting'}`}>
       <button className={`logo__btn ${!loc ? 'logo__btn_place_header' : 'logo__btn_place_greeting'}`} 
@@ -48,16 +66,30 @@ function Header({login, loc, greetingText}) {
       { ( btnDropList && !modalState && login) && 
       <img src={dropListIcon} alt="три полоски" onClick={initModalNavbar} className="header__droplist"></img>
       } 
-       {!btnDropList &&  login && !loc && <Navbar/>}
-       {modalState && <NavigatePopup initModalNavbar={initModalNavbar}/>}
+       {!btnDropList &&  login && !loc && <Navbar 
+                                           navToFilm={navToFilm}
+                                           navToSavedFilm={navToSavedFilm}/>}
+       {modalState && <NavigatePopup 
+                        initModalNavbar={initModalNavbar} 
+                        navToAcc={navToAcc}
+                        navToFilm={navToFilm}
+                        navToSavedFilm={navToSavedFilm}/>}
       { !login && !loc &&
-        <button  className="header__btn header__btn-reg">Регистрация</button>
+        <button  
+        className="header__btn header__btn-reg"
+        onClick={navToSigUp}
+        >Регистрация
+        </button>
         } 
       { !login && !loc  &&
-        <button  className="header__btn header__btn-login">Войти</button> 
+        <button  
+        className="header__btn header__btn-login"
+        onClick={navToSigIn}
+        >Войти
+        </button> 
         }
      {!btnDropList && login && !loc && <button className="header__btn header__btn-acc header__btn-acc_place_header"> 
-        <img src ={profile} className="header__btn header__btn-auth" alt="Информация аккаунта"></img> 
+        <img src ={profile} onClick={navToAcc} className="header__btn header__btn-auth" alt="Информация аккаунта"></img> 
       </button> }
       { loc && !login && <p className="header__greeting-text">{greetingText}</p>} 
     </header>

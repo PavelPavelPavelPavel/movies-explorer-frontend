@@ -30,6 +30,7 @@
 @import url(./components/navigatepopup/__wrapper/navigatepopup__wrapper.css);
 @import url(./components/footer/footer.css);
 @import url(./components/footer/__text/footer__text.css);
+@import url(./components/footer/__signature-btn/footer__signature-btn.css);
 @import url(./components/footer/__signature/footer__signature-caption.css);
 @import url(./components/footer/__signature/__signature-label/footer__signature-label.css);
 @import url(./components/footer/__signature/__signature-label/_item/footer__signature-label_item.css);

@@ -132,7 +132,7 @@ const film = [
 
 const SCREEN_SM = 320;
 const SCREEN_MD = 400;
-const SCREEN_LG = 820;
+const SCREEN_LG = 800;
 const SCREEN_XL = 1000;
 const SCREEN_XXL = 1280;
 

@@ -25,8 +25,6 @@ function Movies({movies, saveMovies}) {
       // favoriteMovies.push()
   }
  
-
-
     return (
       <div className="movies">
         <Searchform/>

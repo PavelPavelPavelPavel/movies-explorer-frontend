@@ -1,9 +1,13 @@
 import closeBtn from '../../images/close-btn.svg';
 import profile from '../../images/profile.svg';
-function NavigatePopup({ initModalNavbar, placeAccBtn}) {
+function NavigatePopup({ initModalNavbar, placeAccBtn, navToAcc}) {
    
     function closeNavbar() {
         initModalNavbar();
+    }
+
+    function handleAccClick() {
+        navToAcc();
     }
     
     return (
@@ -22,7 +26,7 @@ function NavigatePopup({ initModalNavbar, placeAccBtn}) {
                     <button className="navbar__item-btn">Сохранённые фильмы</button>
                 </li>
             </ul>
-        <button className="header__btn header__btn-acc header__btn-acc_place_droplist"> 
+        <button onClick={handleAccClick} className="header__btn header__btn-acc header__btn-acc_place_droplist"> 
         <img src ={profile} className="header__btn header__btn-auth" alt="Информация аккаунта"></img> 
       </button> 
         </nav>

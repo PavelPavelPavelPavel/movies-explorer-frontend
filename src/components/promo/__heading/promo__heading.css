@@ -10,7 +10,6 @@
     line-height: 58px;
     letter-spacing: -0.04em;
     color: #FFFFFF;
-    white-space: nowrap;
 }
 
 @media screen and (max-width: 800px) {

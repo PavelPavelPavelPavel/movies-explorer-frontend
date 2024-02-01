@@ -11,6 +11,12 @@
     font-size: 12px;
     line-height: 16px;
     cursor: pointer;
+    transition: opacity 0.2s linear ;
+}
+
+.header__btn-login:hover {
+    opacity: 0.4;
+    transition: opacity 0.2s linear ;
 }
 
 @media screen and (max-width: 800px) {

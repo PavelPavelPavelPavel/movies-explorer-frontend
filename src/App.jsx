@@ -19,7 +19,7 @@ import Login from "./components/login/Login";
 function App() {
   const location = useLocation();
   const navigate = useNavigate();
-  const [loggedIn, setLoggedIn] = useState(false);
+  const [loggedIn, setLoggedIn] = useState(true);
   const [movies, setMovies] = useState([]);
   const [likedMovies, setLikedMovies] = useState([]);
   const [loc, setLoc] = useState(false);
@@ -53,10 +53,10 @@ function App() {
       {/* <CurrentUserContext> */}
           <div className="App">
            
-            <Header login={loggedIn}
+            {/* <Header login={loggedIn}
                     loc={loc}
                     greetingText={greetingText}
-            />
+            /> */}
              <div className="main">
                   <Routes>
                     <Route path='/' 

@@ -2,3 +2,7 @@
     text-decoration: none;
     font-family: Inter, Arial, Helvetica, sans-serif;
 }
+
+.portfolio__link:hover {
+    text-decoration: underline;
+}
