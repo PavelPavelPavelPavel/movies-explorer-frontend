@@ -15,7 +15,6 @@
 
 @media screen and (max-width: 770px) {
     .aboutproject__description-title {
-        margin: 0;
         max-width: 319px;
         max-height: 48px;
     }
@@ -27,14 +26,13 @@
     }
   }
 
-  @media screen and (max-width: 500px) {
+  @media screen and (max-width: 400px) {
     .aboutproject__description-title {
+        letter-spacing: -0.03em;
         margin: 0;
-        padding: 0;
         max-width: 284px;
-        max-height: 44px;
         font-size: 18px;
-        line-height: 22px;
+        line-height: 21.7px;
     }
   }
 

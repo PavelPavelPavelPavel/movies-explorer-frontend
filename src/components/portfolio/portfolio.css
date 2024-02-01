@@ -5,12 +5,12 @@
 
 @media screen and (max-width: 800px) {
     .portfolio {
-        margin: 91px auto 90px 50px
+        margin: 91px 50px 90px 50px
     }
   }
 
 @media screen and (max-width: 560px) {
     .portfolio {
-        margin: 70px 14px 70px 14px
+        margin: 70px 10px 70px 10px
     }
   }

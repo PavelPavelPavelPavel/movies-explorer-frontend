@@ -8,8 +8,6 @@
 
   @media screen and (max-width: 500px) {
     .aboutproject {
-        margin: 0 auto;
-        max-width: 320px;
-        max-height: 641px;
+        margin: 0 auto 93px auto;
     }
   }

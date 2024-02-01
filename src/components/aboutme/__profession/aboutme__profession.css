@@ -19,7 +19,7 @@
 
   @media screen and (max-width: 560px) {
     .aboutme__profession {
-        margin: 20px auto 0 14px;
+        margin: 20px 5px 0 5px;
         font-size: 11px;
         line-height: 16px;
         max-height: 16px;

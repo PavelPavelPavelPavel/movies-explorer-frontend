@@ -1,13 +1,21 @@
 .portfolio__btn {
-    display: flex;
-    margin: 20px 0 0 0;
+   margin: 0;
+   padding: 0;
+   display: flex;
     justify-content: center;
-    padding: 15px;
     width: 29px;
     height: 60px;
     background-color: inherit;
+    text-align: center;
     border: none;
+    color: #FFFFFF;
+    font-family: Inter, Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 60px;
+    letter-spacing: -0.04em;
 }
+
 
 
 @media screen and (max-width: 800px) {
@@ -16,10 +24,14 @@
     }
   }
 
-  @media screen and (max-width: 560px) {
+  @media screen and (max-width: 400px) {
     .portfolio__btn {
        margin: 0;
+       padding:0;
        width: 18px;
        height: 28px;
+       font-size: 16px;
+       line-height: 28px;
+       justify-content: right;
     }
   }  

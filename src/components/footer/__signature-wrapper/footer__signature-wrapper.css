@@ -8,11 +8,17 @@
     justify-content: space-between;
 }
 
+@media screen and (max-width: 800px) {
+    .footer__signature-wrapper {
+        margin: 20px 30px 20px 30px;
+    }
+  }
+
 @media screen and (max-width: 400px) {
     .footer__signature-wrapper {
-        margin: 30px auto 20px auto;
+        margin: 35px auto 20px auto;
         max-height: 160px;
         flex-direction: column-reverse;
-        gap: 30px;
+        gap: 35px;
     }
   }

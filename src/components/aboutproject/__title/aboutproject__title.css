@@ -2,7 +2,6 @@
     margin: 115px 70px 0 70px;
     padding: 0 0 23px 0;
     max-height: 27px;
-    max-width: 1140px;
     font-family: Inter, Arial, Helvetica, sans-serif;
     font-weight: 400;
     font-size: 22px;
@@ -18,12 +17,11 @@
     }
   }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 400px) {
     .aboutproject__title {
-        margin: 70px 1px8 0 18px;
-        max-width: 284px;
-        max-height: 22px;
+        margin: 82px 13px 0 10px;
+        padding: 0 0 28px 0;
         font-size: 18px;
-        line-height: 22px;
+        line-height: 21.8px;
     }
   }

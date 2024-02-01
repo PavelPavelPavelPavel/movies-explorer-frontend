@@ -18,7 +18,7 @@
     .techs__nav {
         margin: 50px auto 70px auto;
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(3, auto);
         align-items: center;
         justify-items: center;
     }
@@ -26,8 +26,10 @@
 
 @media screen and (max-width: 400px) {
     .techs__nav {
-        margin: 50px auto 70px auto;
+        margin: 57px 13px 70px 13px;
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, auto);
+        column-gap: 12px;
+        row-gap: 12px;
     }
   }

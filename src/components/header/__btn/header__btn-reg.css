@@ -1,5 +1,5 @@
 .header__btn-reg {
-    margin: auto 30px 29px auto;
+    margin: 40px 30px 29px auto;
     padding: 0;
     width: 77px;
     height: 16px;
@@ -14,9 +14,15 @@
 
 
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 800px) {
     .header__btn-reg {
-    margin: 29px 14px 29px auto;
+    margin: 29px 30px 29px auto;
+    }
+  }
+
+  @media screen and (max-width: 450px) {
+    .header__btn-reg {
+    margin: 35px 19px 29px auto;
     padding: 0;
     width: 64px;
     height: 16px;

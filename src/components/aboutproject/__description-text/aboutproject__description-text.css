@@ -22,11 +22,10 @@
     }
   }
 
-  @media screen and (max-width: 500px) {
+  @media screen and (max-width: 400px) {
     .aboutproject__description-text {
-        margin: 16px auto 0 auto;
+        margin: 18px auto 0 auto;
         max-width: 284px;
-        max-height: 48px;
         font-size: 11px;
         line-height: 16px;
     }

@@ -1,6 +1,6 @@
 .portfolio__link_place_portfolio {
-    margin: 0;
-    padding: 0;
+    margin: 15px 0 0 0;
+    padding: 0 0 10px 0;
     display: flex;
     max-height: 50px;
     flex-direction: column;
@@ -19,8 +19,9 @@
     }
   }
 
-  @media screen and (max-width: 560px) {
+  @media screen and (max-width: 400px) {
     .portfolio__link_place_portfolio {
+        padding: 0 0 19px 0;
         font-size: 18px;
         line-height: 28px;
         max-height: 28px;

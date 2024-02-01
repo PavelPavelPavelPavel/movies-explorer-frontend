@@ -21,9 +21,9 @@
     }
   }
 
-  @media screen and (max-width: 500px) {
+  @media screen and (max-width: 400px) {
     .techs__text {
-        margin: 24px auto 0 auto;
+        margin: 27px 13px 0 13px;
         max-width: 292px;
         max-height: 32px;
         font-size: 11px;

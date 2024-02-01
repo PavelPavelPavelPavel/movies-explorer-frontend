@@ -12,12 +12,12 @@
 
 @media screen and (max-width: 800px) {
     .portfolio__link_place_aboutme {
-        margin: 87px 0 0 0;
+        margin: 86px 0 0 0;
     }
   }
 
   @media screen and (max-width: 560px) {
     .portfolio__link_place_aboutme {
-        margin: 40px auto 0 14px;
+        margin: 52px auto 0 8px;
     }
   }

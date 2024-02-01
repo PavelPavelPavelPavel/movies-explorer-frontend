@@ -10,28 +10,17 @@
 
 @media screen and (max-width: 800px) {
     .aboutme__description {
-        margin: 20px 0 87px 0;
+        margin: 20px 0 0 0;
         font-size: 12px;
         line-height: 18px;
         max-height: 108px;
     }
   }
 
-  @media screen and (max-width: 560px) {
+  @media screen and (max-width: 400px) {
     .aboutme__description {
-        margin: 20px auto 0 14px;
+        margin: 22px 5px 0 5px;
         font-size: 11px;
         line-height: 16px;
-        max-height: 112px;
-    }
-  }
-
-  @media screen and (max-width: 360px) {
-    .aboutme__description {
-        margin: 20px 14px 0 14px;
-        max-width: 292px;
-        font-size: 11px;
-        line-height: 16px;
-        max-height: 112px;
     }
   }

@@ -1,5 +1,5 @@
 .aboutproject__graph-capcha {
-    margin: 14px auto 0 auto;
+    margin: 16px auto 0 auto;
     padding: 0;
     text-align: center;
     font-family: Inter, Arial, Helvetica, sans-serif;
@@ -11,7 +11,7 @@
 
 @media screen and (max-width: 500px) {
     .aboutproject__graph-capcha {
-        margin: 10px auto 0 auto;
+        margin: 15px auto 0 auto;
         font-size: 11px;
         line-height: 13.3px;
     }

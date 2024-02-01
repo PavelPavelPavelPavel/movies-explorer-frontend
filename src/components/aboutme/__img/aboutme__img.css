@@ -4,8 +4,6 @@
     width: 270px;
     height: 327px;
     border-radius: 10px;
-    object-fit: cover;
-    border: none;
 }
 
 @media screen and (max-width: 800px) {
@@ -24,8 +22,10 @@
     }
   }
 
-  @media screen and (max-width: 360px) {
+  @media screen and (max-width: 400px) {
     .aboutme__img {
-        margin: 0 auto 0 auto;
+        margin: 0 auto;
+        width: 292px;
+        height: 352px;
     }
   }
