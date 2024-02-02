@@ -21,7 +21,6 @@ function Searchform() {
             <label className="searchform__checkbox-capcha" htmlFor="filter"></label>
             <span className="searchform__checkbox-custom">Короткометражки</span>
         </div>
-        <div className="line line_place_searchform"></div>
       </form>
       </>
     );

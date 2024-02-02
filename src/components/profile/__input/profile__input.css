@@ -16,6 +16,14 @@
     white-space: nowrap;
 }
 
+.profile__input:hover {
+    background-color: #424242;
+    border-radius: 4px;
+}
+
+.profile__input:focus {
+    outline: none !important;
+}
 
 
 @media screen and (max-width: 450px) {

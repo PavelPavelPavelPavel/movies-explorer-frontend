@@ -16,11 +16,11 @@
 
 @media screen and (max-width: 715px) {
     .moviecard__name {
+        margin: 0;
         max-width: 230px;
         max-height: 15px;
         font-size: 12px;
         line-height: 14.5px;
-        margin: 0;
     }
   }
 

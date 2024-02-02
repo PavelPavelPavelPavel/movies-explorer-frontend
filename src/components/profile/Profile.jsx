@@ -20,9 +20,9 @@ function Profile({logOut}) {
 
     return (
       <article className="profile">
-        <h2 className="profile__title">Привет, Павел</h2>
+        <h2 className="profile__title">Привет, Виталий!</h2>
         <form className="profile__form">
-            <div className="profile__input-wraper">
+            <div className="profile__input-wrapper">
               <label for="profileName"  className="profile__label">Имя</label>
               <input 
               disabled={initialInput}
@@ -34,8 +34,7 @@ function Profile({logOut}) {
               value={''}
               />
             </div>
-            <div className="line line_place_profile"/>
-            <div className="profile__input-wraper">
+            <div className="profile__input-wrapper">
               <label for="profileEmail" className="profile__label">E-mail</label>
               <input
               disabled={initialInput}

@@ -7,6 +7,12 @@
     background-color: #2F2F2F;
     border: none;
     color: #FFFFFF;
+    transition: all 0.2s linear;
+}
+
+.searchform__input:hover {
+    opacity: 0.3;
+    transition: all 0.2s linear;
 }
 
 .searchform__input::placeholder {
@@ -18,13 +24,9 @@
     line-height: 18px;
 }
 
-@media screen and (max-width: 360px) {
-    .searchform__input {
-      height: 44px;
-    }
-  }
 
   @media screen and (max-width: 360px) {
+
     .searchform__input::placeholder {
       font-size: 14px;
       line-height: 18px;

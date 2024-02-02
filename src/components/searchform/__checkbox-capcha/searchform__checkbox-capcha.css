@@ -32,3 +32,26 @@
     left: 0;
     z-index: 2;
 }
+
+@media screen and (max-width: 800px) {
+    .searchform__checkbox-capcha:after {
+        margin: 15px 0 0 0;
+    }
+
+    .searchform__checkbox-capcha:before {
+        margin: 15px 0 0 0;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .searchform__checkbox-capcha:after {
+        margin: 10px 0 0 0;
+    }
+
+    .searchform__checkbox-capcha:before {
+        margin: 10px 0 0 0;
+    }
+}
+
+
+

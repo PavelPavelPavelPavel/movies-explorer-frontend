@@ -1,23 +1,10 @@
 .moviecard {
     margin: 0;
     padding: 0;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    max-width: 360px;
-    max-height: 231px;
-    gap: 14px;
 }
 
 
 
-@media screen and (max-width: 715px) {
-    .moviecard {
-        max-width: 290px;
-    }
-  }
 
 
 

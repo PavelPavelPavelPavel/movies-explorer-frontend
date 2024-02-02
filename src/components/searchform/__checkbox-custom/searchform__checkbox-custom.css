@@ -1,5 +1,5 @@
 .searchform__checkbox-custom {
-    margin: 0;
+    margin: 0 0 4px 0;
     padding: 0 0 0 49px;
     color: #FFFFFF;
     font-family: Inter, Arial, Helvetica, sans-serif;
@@ -8,8 +8,16 @@
     line-height: 18px;
 }
 
+@media screen and (max-width: 800px) {
+  .searchform__checkbox-custom {
+     margin: 13px 0 0 0;
+     padding: 0 0 0 46px;
+  }
+}
+
 @media screen and (max-width: 360px) {
     .searchform__checkbox-custom {
+      margin: 7px 0 0 0;
       font-size: 11px;
     }
   }

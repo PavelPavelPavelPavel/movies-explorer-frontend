@@ -27,7 +27,7 @@ function Movies({movies, saveMovies}) {
  
     return (
       <div className="movies">
-        <Searchform/>
+        {/* <Searchform/> */}
         {location.pathname === '/saved-movies' 
         ? <Savedmovies saveMovies={saveMovies} 
                        favoriteMovies={favoriteMovies}

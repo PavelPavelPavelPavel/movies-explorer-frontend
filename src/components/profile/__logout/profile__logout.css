@@ -12,6 +12,12 @@
    background-color: inherit;
    border: none;
    cursor: pointer;
+   transition: all 0.2s linear;
+}
+
+.profile__logout:hover {
+  opacity: 0.3;
+  transition: all 0.2s linear;
 }
 
 @media screen and (max-width: 770px) {

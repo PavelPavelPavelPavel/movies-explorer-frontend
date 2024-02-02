@@ -19,10 +19,10 @@
     }
   }
 
-  @media screen and (max-width: 740px) {
+  @media screen and (max-width: 760px) {
     .savedmovies {
         margin: 40px auto 0 auto;
-        grid-template-columns: repeat(1, 280px);
+        grid-template-columns: repeat(1, 320px);
         row-gap: 39px;
         column-gap: 0;
     }

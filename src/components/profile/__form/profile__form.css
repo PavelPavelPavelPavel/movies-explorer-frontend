@@ -1,12 +1,13 @@
 .profile__form {
-    margin: 123px 435px 0 435px;
+    margin: 123px auto 0 auto;
     padding: 0;
     display: flex;
     flex-direction: column;
-    width: 410px;
+    max-width: 410px;
+    gap: 20px;
 }
 
-@media screen and (max-width: 770px) {
+@media screen and (max-width: 800px) {
     .profile__form {
         margin: 96px auto 0 auto;
     }
@@ -14,7 +15,8 @@
 
   @media screen and (max-width: 450px) {
     .profile__form {
-        margin: 80px auto 0 auto;
-        width: 260px;
+        margin: 82px auto 0 auto;
+        max-width: 260px;
+        gap: 18px;
     }
   }
