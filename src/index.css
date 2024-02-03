@@ -3,7 +3,6 @@
 @import url(./app.css);
 @import url(./components/main/main.css);
 @import url(./components/main-landing/main-landing.css);
-@import url(./components/line/line.css);
 @import url(./components/icon/icon.css);
 @import url(./components/logo/logo.css);
 @import url(./components/logo/__btn/logo__btn.css);
@@ -35,7 +34,6 @@
 @import url(./components/footer/__signature/__signature-label/footer__signature-label.css);
 @import url(./components/footer/__signature/__signature-label/_item/footer__signature-label_item.css);
 @import url(./components/footer/__signature-wrapper/footer__signature-wrapper.css);
-@import url(./components/line/_place/line_place_footer.css);
 @import url(./components/notfounderr/notfounderr.css);
 @import url(./components/notfounderr/__btn/notfounderr__btn.css);
 @import url(./components/notfounderr/__code/notfounderr__code.css);
@@ -44,7 +42,6 @@
 @import url(./components/promo/__heading/promo__heading.css);
 @import url(./components/promo/__nav/promo__nav.css);
 @import url(./components/icon/_place/icon_place_promo.css);
-@import url(./components/line/_place/line_place_about-project.css);
 @import url(./components/aboutproject/aboutproject.css);
 @import url(./components/aboutproject/__title/aboutproject__title.css);
 @import url(./components/aboutproject/__description/aboutproject__description.css);
@@ -56,7 +53,6 @@
 @import url(./components/aboutproject/__graph/_frontend/aboutproject__graph_frontend_img.css);
 @import url(./components/aboutproject/__graph/__graph-capcha/aboutproject__graph-capcha.css);
 @import url(./components/icon/_place/icon_place_techs.css);
-@import url(./components/line/_place/line_place_techs.css);
 @import url(./components/techs/techs.css);
 @import url(./components/techs/__title/techs__title.css);
 @import url(./components/techs/__nav/techs__nav.css);
@@ -70,9 +66,7 @@
 @import url(./components/aboutme/__title/aboutme__title.css);
 @import url(./components/aboutme/__wrapper-text/aboutme__wrapper-text.css);
 @import url(./components/aboutme/__wrapper/aboutme__wrapper.css);
-@import url(./components/line/_place/line_place_aboutme.css);
 @import url(./components/portfolio/portfolio.css);
-@import url(./components/line/_place/line_place_portfolio.css);
 @import url(./components/portfolio/__link/portfolio__link.css);
 @import url(./components/portfolio/__link/_place/portfolio__link_place_aboutme.css);
 @import url(./components/portfolio/__link/_place/portfolio__link_place_portfolio.css);
@@ -82,7 +76,6 @@
 @import url(./components/portfolio/__list/_item/portfolio__list_item.css);
 @import url(./components/movies/movies.css);
 @import url(./components/searchform/searchform.css);
-@import url(./components/line/_place/line_place_searchform.css);
 @import url(./components/searchform/__btn-img/searchform__btn-img.css);
 @import url(./components/searchform/__btn-submit/searchform__btn-submit.css);
 @import url(./components/searchform/__checkbox-custom/searchform__checkbox-custom.css);
@@ -105,7 +98,6 @@
 @import url(./components/moviecard/__remove/moviecard__remove.css);
 @import url(./components/moviecard/__wrapper/moviecard__wrapper.css);
 @import url(./components/profile/profile.css);
-@import url(./components/line/_place/line_place_profile.css);
 @import url(./components/profile/__form-btn/profile__form-btn.css);
 @import url(./components/profile/__form/profile__form.css);
 @import url(./components/profile/__input/profile__input.css);

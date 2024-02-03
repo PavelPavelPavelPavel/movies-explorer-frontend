@@ -1,6 +1,6 @@
 .header__greeting-text {
     margin: 0 auto 0 auto;
-    padding: 0 0 0 10px;
+    padding: 0;
     width: 396px;
     max-height: 29px;
     font-family: Inter, Arial, Helvetica, sans-serif;

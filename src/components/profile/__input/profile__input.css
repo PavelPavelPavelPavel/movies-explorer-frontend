@@ -22,7 +22,8 @@
 }
 
 .profile__input:focus {
-    outline: none !important;
+        outline: 1px solid #FFFFFF;
+        border-radius: 4px;
 }
 
 

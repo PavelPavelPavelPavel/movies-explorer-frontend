@@ -11,9 +11,9 @@
     text-align: center;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 800px) {
     .notfounderr__code {
-        margin: 308px auto 0 auto;
+        margin: 408px auto 0 auto;
     }
   }
 

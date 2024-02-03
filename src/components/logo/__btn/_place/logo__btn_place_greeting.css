@@ -1,13 +1,19 @@
 .logo__btn_place_greeting {
     margin: 70px auto 0 auto;
-    padding: 0 388px 0 0;
+    padding: 0 400px 0 0;
     cursor: pointer;
     }
 
+
+@media screen and (max-width: 800px) {
+      .logo__btn_place_greeting {   
+          margin: 232px auto 0 auto;
+           }  
+    }
     
  @media screen and (max-width: 450px) {
      .logo__btn_place_greeting {   
-        margin: 232px auto 0 auto; 
+        margin: 55px auto 0 auto; 
         padding: 0; 
         }
  }

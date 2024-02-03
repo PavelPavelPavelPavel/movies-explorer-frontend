@@ -21,7 +21,6 @@
 }
 
 @media screen and (max-width: 800px) {
-    
     .portfolio__list_item:nth-child(2) {
         margin: 15px 0 0 0;
     }
@@ -34,12 +33,13 @@
 @media screen and (max-width: 400px) {
     .portfolio__list_item {
         padding: 0;
+        margin: 10px 5px 0 0;
     }
     .portfolio__list_item:nth-child(2) {
-        margin: 10px 0 0 0;
+        margin: 5px 5px 0 0;
         padding: 0;;
     }
     .portfolio__list_item:last-child {
-        margin: 5px 0 0 0;
+        margin: 5px 5px 0 0;
     }
 }

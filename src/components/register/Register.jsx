@@ -21,33 +21,28 @@ function Register() {
                 className="input" 
                 type="string"
                 id="name"
+                placeholder="Ваше имя"
+                minLength={2}
+                maxLength={20}  
                 />
-                <span 
-                className="input__error"
-                id="register-name-error"
-                ></span>
                 <label className="input__label">E-mail</label>
                 <input 
                 required
                 className="input" 
                 type="email"
                 id="email"
+                placeholder="Ваш Email"
                 />
-                <span 
-                className="input__error"
-                id="register-email-error"
-                ></span>
                 <label className="input__label">Пароль</label>
                 <input 
                 required
                 className="input" 
                 type="password"
                 id="password"
+                placeholder="Придумайте пароль"
+                minLength={4}
+                maxLength={20} 
                 />
-                <span 
-                className="input__error"
-                id="register-password-error"
-                ></span>
             </div>
         </Form>
     );

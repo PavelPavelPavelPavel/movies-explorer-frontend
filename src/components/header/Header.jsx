@@ -61,10 +61,10 @@ function Header({login, loc, greetingText}) {
     <header className={`${!loc ? 'header' : 'header__greeting'}`}>
       <button className={`logo__btn ${!loc ? 'logo__btn_place_header' : 'logo__btn_place_greeting'}`} 
               onClick={navToMain}>
-        <img src={logo} alt="Лого" className="logo"></img>
+        <img src={logo} alt="Логотип" className="logo"></img>
       </button> 
       { ( btnDropList && !modalState && login) && 
-      <img src={dropListIcon} alt="три полоски" onClick={initModalNavbar} className="header__droplist"></img>
+      <img src={dropListIcon} alt=" иконка с тремя полосками" onClick={initModalNavbar} className="header__droplist"></img>
       } 
        {!btnDropList &&  login && !loc && <Navbar 
                                            navToFilm={navToFilm}
@@ -91,7 +91,7 @@ function Header({login, loc, greetingText}) {
      {!btnDropList && login && !loc && <button className="header__btn header__btn-acc header__btn-acc_place_header"> 
         <img src ={profile} onClick={navToAcc} className="header__btn header__btn-auth" alt="Информация аккаунта"></img> 
       </button> }
-      { loc && !login && <p className="header__greeting-text">{greetingText}</p>} 
+      { loc && !login && <h1 className="header__greeting-text">{greetingText}</h1>} 
     </header>
     );
   }

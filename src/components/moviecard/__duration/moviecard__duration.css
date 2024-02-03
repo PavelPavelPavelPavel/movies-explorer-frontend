@@ -16,11 +16,17 @@
     background-color: #2F2F2F;
 }
 
-@media screen and (max-width: 715px) {
+@media screen and (max-width: 800px) {
     .moviecard__duration {
-        margin: 0 10px 0 0;
+        margin: 0;
         font-size: 11px;
         line-height: 10px;
         margin: 0;
+    }
+  }
+
+  @media screen and (max-width: 400px) {
+    .moviecard__duration {
+       margin: 0;
     }
   }

@@ -19,7 +19,7 @@ function Aboutme() {
             </p>
             <a href="https://github.com/PavelPavelPavelPavel" target="blanc" className="portfolio__link portfolio__link_place_aboutme">Github</a>
           </div>
-        <img src={avatar} className="aboutme__img" alt="Фото мужчины"></img>
+        <img src={avatar} className="aboutme__img" alt="Фото пользователя"></img>
        </div>
       </section>
        <Portfolio/>

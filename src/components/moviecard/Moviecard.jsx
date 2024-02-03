@@ -36,7 +36,7 @@ function Moviecard({link, title, favoriteMovies}) {
                 {/* {locMovie && initSaveBtn && <button className="moviecard__add">Сохранить</button>} */}
                 {!locMovie && initSaveBtn && <button className="moviecard__remove"/>}
                 <img src={link} 
-                className="moviecard__img" alt={title}
+                className="moviecard__img" alt="обложка фильма"
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
                 >

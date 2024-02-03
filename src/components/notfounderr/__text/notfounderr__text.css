@@ -1,8 +1,7 @@
 .notfounderr__text {
     margin: 5px auto 0 auto;
     padding: 0;
-    width: 400px;
-    height: 19px;
+    max-width: 400px;
     color:#FFFFFF;
     font-family: Inter, Arial, Helvetica, sans-serif;
     font-weight: 400;

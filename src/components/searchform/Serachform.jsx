@@ -10,7 +10,7 @@ function Searchform() {
         <>
       <form className="searchform" onSubmit={handleSubmit}>
         <div className="searchform__wrapper">
-            <input className="searchform__input" placeholder="Фильм"/>
+            <input className="searchform__input" placeholder="Фильм" required/>
             <span className="searchform__input-error"></span>
             <button type="submit" className="searchform__btn-submit">
               <img src={btnSubmitImg} className="searchform__btn-img" alt='синий фон и стрелка'></img>

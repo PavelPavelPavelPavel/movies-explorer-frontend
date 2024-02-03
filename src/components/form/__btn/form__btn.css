@@ -10,6 +10,12 @@
     text-align: center;
     border: none;
     cursor: pointer;
+    transition: all 0.2s linear;
+}
+
+.form__btn:hover {
+    opacity: 0.3;
+    transition: all 0.3s linear;
 }
 
 @media screen and (max-width: 450px) {

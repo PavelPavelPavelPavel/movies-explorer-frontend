@@ -12,10 +12,16 @@
     background-color: #2F2F2F;
     border: none;
     border-radius: 8px;
+    transition: all 0.2s linear;
 }
 
 .input:focus {
-    outline: none;
+    outline: 1px solid #4285F4;
+}   
+
+.input:hover {
+    opacity: 0.3;
+    transition: all 0.3s linear;
 }
 
 @media screen and (max-width: 450px) {

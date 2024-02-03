@@ -16,9 +16,9 @@
 
 @media screen and (max-width: 400px) {
     .footer__signature-wrapper {
-        margin: 35px auto 20px auto;
+        margin: 30px auto 20px auto;
         max-height: 160px;
         flex-direction: column-reverse;
-        gap: 35px;
+        gap: 30px;
     }
   }

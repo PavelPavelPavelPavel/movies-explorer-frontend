@@ -23,7 +23,7 @@
 
   @media screen and (max-width: 400px) {
     .techs__text {
-        margin: 27px 13px 0 13px;
+        margin: 20px 13px 0 13px;
         max-width: 292px;
         max-height: 32px;
         font-size: 11px;

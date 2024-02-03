@@ -20,7 +20,6 @@ function Form({children, onSubmit, textSubmitBtn, btnCapcha, btn, placeBtnSubmit
     <article className="form">
       <form 
       id="form"
-      noValidate
       className="form__input-wrapper"
       onSubmit={handleSubmit}
       >

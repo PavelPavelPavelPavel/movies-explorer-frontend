@@ -9,6 +9,10 @@
     text-align: center;
 }
 
+.form__btn-capcha:hover {
+    cursor: default;
+}
+
 @media screen and (max-width: 450px) {
     .form__btn-capcha {
        font-size: 12px;

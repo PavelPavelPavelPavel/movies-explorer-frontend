@@ -16,7 +16,7 @@
 
 @media screen and (max-width: 400px) {
     .aboutproject__graph {
-        margin: 70px 13px 0 10px;
+        margin: 60px 11px 0 10px;
         grid-template-columns: 2fr 3.8fr;
     }
   }

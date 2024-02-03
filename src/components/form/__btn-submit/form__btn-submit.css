@@ -12,6 +12,12 @@
     line-height: 17px;
     text-align: center;
     cursor: pointer;
+    transition: all 0.2s linear;
+}
+
+.form__btn-submit:hover {
+    opacity: 0.3;
+    transition: all 0.3s linear;
 }
 
 @media screen and (max-width: 450px) {

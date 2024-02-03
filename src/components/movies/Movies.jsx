@@ -1,7 +1,6 @@
 import { useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 import Searchform from "../searchform/Serachform";
-import Morebtn from "../morebtn/Morebtn";
 import Moviecardlist from "../moviecardlist/Moviecardlist";
 import Savedmovies from "../savedmovies/Savedmovies";
 
@@ -9,16 +8,16 @@ function Movies({movies, saveMovies}) {
   const location = useLocation();
    const favoriteMovies = [];
 
-  useEffect(() => {
-    movies.forEach(item => {
-      for(let i = 0; i < saveMovies.length; i++ ) {
-        let elem = saveMovies[i];
-        if (item.id === elem.id) {
-          favoriteMovies.push(elem);
-        }
-      }
-    })
- }, [movies])
+//   useEffect(() => {
+//     movies.forEach(item => {
+//       for(let i = 0; i < saveMovies.length; i++ ) {
+//         let elem = saveMovies[i];
+//         if (item.id === elem.id) {
+//           favoriteMovies.push(elem);
+//         }
+//       }
+//     })
+//  }, [movies])
     
     
   function addToFavorite () {
@@ -27,7 +26,7 @@ function Movies({movies, saveMovies}) {
  
     return (
       <div className="movies">
-        {/* <Searchform/> */}
+        <Searchform/>
         {location.pathname === '/saved-movies' 
         ? <Savedmovies saveMovies={saveMovies} 
                        favoriteMovies={favoriteMovies}
@@ -36,7 +35,6 @@ function Movies({movies, saveMovies}) {
               movies={movies}
               favoriteMovies={favoriteMovies}
                       />}
-       {/* <Morebtn/>  */}
       </div>
     );
   }

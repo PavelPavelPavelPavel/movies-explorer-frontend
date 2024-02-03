@@ -20,7 +20,7 @@ function Profile({logOut}) {
 
     return (
       <article className="profile">
-        <h2 className="profile__title">Привет, Виталий!</h2>
+        <h1 className="profile__title">Привет, Виталий!</h1>
         <form className="profile__form">
             <div className="profile__input-wrapper">
               <label for="profileName"  className="profile__label">Имя</label>

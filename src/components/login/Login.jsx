@@ -29,21 +29,21 @@ function Login() {
                 className="input" 
                 type="email"
                 id="email"
-                placeholder='Email'
+                placeholder='Ваш Email'
                 />
-                <span className="input__error" id="register-email-error"></span>
                 <label className="input__label">Пароль</label>
                 <input 
                 required
                 onChange={e => password.onChange(e)}
                 onBlur={e => password.onBlur(e)}
-                value={password.value}    
+                value={password.value} 
+                minLength={4}
+                maxLength={20}   
                 className="input" 
                 type="password"
                 id="password"
                 placeholder='Имя'
                 />
-                <span className="input__error" id="register-password-error"></span>
              </div>
         </Form>
     );

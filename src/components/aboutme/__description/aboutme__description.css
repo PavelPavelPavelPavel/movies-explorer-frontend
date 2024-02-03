@@ -19,7 +19,7 @@
 
   @media screen and (max-width: 400px) {
     .aboutme__description {
-        margin: 22px 5px 0 5px;
+        margin: 22px 5px 0 15px;
         font-size: 11px;
         line-height: 16px;
     }
