@@ -3,6 +3,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { Routes, Route, Link, useNavigate, useLocation } from "react-router-dom";
 // import { CurrentUserContext } from "../../contexts/CurrentUserContext";
+import  useResize  from "../src/utils/ResizeWidth";
 import "./index.css";
 import Header from './components/header/Header'
 import Main from './components/main-landing/Main';
@@ -17,18 +18,31 @@ import Login from "./components/login/Login";
 
 
 function App() {
+  const resize = useResize();
   const location = useLocation();
   const navigate = useNavigate();
-  const [loggedIn, setLoggedIn] = useState(false);
+  const [loggedIn, setLoggedIn] = useState(true);
   const [movies, setMovies] = useState([]);
   const [likedMovies, setLikedMovies] = useState([]);
   const [loc, setLoc] = useState(false);
   const [greetingText, setGreetingText] = useState('');
-
+  const [modalState, setModalState] = useState(false);
+  const [btnDropList, setBtnDropList] = useState(false);
+  const [cardQuantity, setCardQuantity] = useState();
   useEffect(() => {
     setMovies(films);
     setLikedMovies(film);
   }, []);
+
+  useEffect(() => {
+    if (resize.isScreenLg) {
+      setBtnDropList(false)
+      setModalState(false)
+    } else {
+      setBtnDropList(true)
+    }
+    setCardQuantity(resize.width)
+  }, [resize]);
 
   useEffect(() => {
     if(location.pathname === "/signin")  {
@@ -41,6 +55,12 @@ function App() {
       setLoc(false)
     }
   }, [location]);
+
+  function initModalNavbar() {
+    modalState ? setModalState(false) : setModalState(true);
+};
+
+console.log(modalState)
 
   function logOut() {
       navigate('/');
@@ -56,6 +76,9 @@ function App() {
             <Header login={loggedIn}
                     loc={loc}
                     greetingText={greetingText}
+                    modalState={modalState}
+                    btnDropList={btnDropList}
+                    initModalNavbar={initModalNavbar}
             />
              <div className="main">
                   <Routes>
@@ -75,7 +98,9 @@ function App() {
                       <>
                      <Movies  
                      movies={movies} 
-                     saveMovies={likedMovies}/>                
+                     saveMovies={likedMovies}
+                     cardQuantity={cardQuantity}
+                     />                
                      </>
                     } />
                     <Route path="saved-movies" element={

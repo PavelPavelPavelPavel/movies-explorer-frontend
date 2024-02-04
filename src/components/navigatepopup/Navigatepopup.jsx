@@ -1,6 +1,8 @@
 import closeBtn from '../../images/close-btn.svg';
 import profile from '../../images/profile.svg';
-function NavigatePopup({ initModalNavbar, placeAccBtn, navToAcc}) {
+import Navbar from '../navbar/Navbar';
+
+function NavigatePopup({ initModalNavbar, placeAccBtn, navToAcc, modalState}) {
    
     function closeNavbar() {
         initModalNavbar();
@@ -8,29 +10,19 @@ function NavigatePopup({ initModalNavbar, placeAccBtn, navToAcc}) {
 
     function handleAccClick() {
         navToAcc();
+        initModalNavbar();
     }
     
     return (
-        <section className='navigatepopup__wrapper'>
-        <div className="navigatepopup__veil" />
-        <nav className='navigatepopup'>
-            <img src={closeBtn} alt='Крест' className='navigate__btn-close' onClick={closeNavbar}/>
-            <ul className="navigatepopup__navbar">
-                <li className="navbar__item">
-                    <button className="navbar__item-btn" >Главная</button>
-                </li>
-                    <li className="navbar__item">
-                    <button className="navbar__item-btn">Фильмы</button>
-                </li>
-                <li className="navbar__item">
-                    <button className="navbar__item-btn">Сохранённые фильмы</button>
-                </li>
-            </ul>
-        <button onClick={handleAccClick} className="header__btn header__btn-acc header__btn-acc_place_droplist"> 
-        <img src ={profile} className="header__btn header__btn-auth" alt="Информация аккаунта"></img> 
-      </button> 
-        </nav>
-      </section>
+        <div className='navigatepopup'>
+            <div className='navigatepopup__wrapper'>
+                <img src={closeBtn} alt='Крест' className='navigatepopup__btn-close' onClick={closeNavbar}/>
+                <Navbar modalState={modalState}/>
+                <button onClick={handleAccClick} className="header__btn header__btn-acc_place_droplist"> 
+                    <img src ={profile} className="header__btn header__btn-auth" alt="Информация аккаунта"></img> 
+                </button> 
+            </div>
+        </div>
     );
   }
   

@@ -1,5 +1,5 @@
 .morebtn__btn {
-    margin: 50px auto 80px auto;
+    margin: 70px auto 95px auto;
     padding: 0;
     width: 320px;
     height: 36px;
@@ -13,4 +13,23 @@
     line-height: 14.5px;
     color: #FFFFFF;
     cursor: pointer;
+    transition: all 0.2s linear;
 }
+
+.morebtn__btn:hover {
+    opacity: 0.3;
+    transition: all 0.3s linear;
+}
+
+@media screen and (max-width: 800px) {
+    .morebtn__btn {
+       margin: 45px 0 100px 0;
+    }
+  }
+
+  @media screen and (max-width: 400px) {
+    .morebtn__btn {
+       width: 240px;
+       margin: 65px 0 100px 0;
+    }
+  }

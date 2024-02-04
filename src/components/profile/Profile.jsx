@@ -23,7 +23,7 @@ function Profile({logOut}) {
         <h1 className="profile__title">Привет, Виталий!</h1>
         <form className="profile__form">
             <div className="profile__input-wrapper">
-              <label for="profileName"  className="profile__label">Имя</label>
+              <label htmlFor="profileName"  className="profile__label">Имя</label>
               <input 
               disabled={initialInput}
               type="text" 
@@ -35,7 +35,7 @@ function Profile({logOut}) {
               />
             </div>
             <div className="profile__input-wrapper">
-              <label for="profileEmail" className="profile__label">E-mail</label>
+              <label htmlFor="profileEmail" className="profile__label">E-mail</label>
               <input
               disabled={initialInput}
               type="email" 

@@ -1,14 +1,29 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Moviecard from "../moviecard/Moviecard";
 import Morebtn from "../morebtn/Morebtn";
 
-function Moviecardlist({movies, favoriteMovies}) {
+function Moviecardlist({movies, favoriteMovies, cardQuantity}) {
 const [elementOnPage, setElementOnPage] = useState(12);
-    
+const [moreBtnVision, setMoreBtnVision] = useState(false);
+
+useEffect(() => {
+    if(cardQuantity >= 1210) {
+        setElementOnPage(12);
+        movies.length > 12 ? setMoreBtnVision(true) : setMoreBtnVision(false);
+    } else if(cardQuantity >= 737 && cardQuantity < 1210) {
+        setElementOnPage(8)
+        movies.length > 8 ? setMoreBtnVision(true) : setMoreBtnVision(false);
+    } else if (cardQuantity < 737 && cardQuantity < 737) {
+        setElementOnPage(5)
+        movies.length > 5 ? setMoreBtnVision(true) : setMoreBtnVision(false);
+    }
+},[cardQuantity]);
+
 
 function getMoreFilms() {
-    setElementOnPage(elementOnPage + 6)
+    setElementOnPage(movies.length)
 }
+
     return (
     <>
         <section className="moviecardlist">
@@ -23,7 +38,7 @@ function getMoreFilms() {
         );
         })}
         </section>
-        { movies.length > 12 && <Morebtn getMoreFilms={getMoreFilms}/>}
+        {moreBtnVision && <Morebtn getMoreFilms={getMoreFilms}/>}
     </>
     )
     }

@@ -4,7 +4,7 @@ import Searchform from "../searchform/Serachform";
 import Moviecardlist from "../moviecardlist/Moviecardlist";
 import Savedmovies from "../savedmovies/Savedmovies";
 
-function Movies({movies, saveMovies}) {
+function Movies({movies, saveMovies, cardQuantity}) {
   const location = useLocation();
    const favoriteMovies = [];
 
@@ -34,6 +34,7 @@ function Movies({movies, saveMovies}) {
         :  <Moviecardlist
               movies={movies}
               favoriteMovies={favoriteMovies}
+              cardQuantity={cardQuantity}
                       />}
       </div>
     );

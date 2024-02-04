@@ -1,0 +1,14 @@
+.header__btn-acc_place_droplist {
+    margin: 620px 0 auto 0;
+    background-color: inherit;
+    width: 110px;
+    height: 32px;
+    border-radius: 30px;
+    border: none;
+}
+
+@media screen and (max-width: 400px) {
+    .header__btn-acc_place_droplist {
+        margin: 443px 0 auto 0;
+    }
+}

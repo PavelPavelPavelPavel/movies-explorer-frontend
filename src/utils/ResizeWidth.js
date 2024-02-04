@@ -3,6 +3,7 @@ import {
     SCREEN_SM,
     SCREEN_MD,
     SCREEN_LG,
+    SCREEN_XS,
     SCREEN_XL,
     SCREEN_XXL,
 } from '../constants'
@@ -24,6 +25,7 @@ function useResize() {
         width,
         isScreenSm: width >= SCREEN_SM,
         isScreenMd: width >= SCREEN_MD,
+        isScreenXs: width >= SCREEN_XS,
         isScreenLg: width >= SCREEN_LG,
         isScreenXl: width >= SCREEN_XL,
         isScreenXxl: width >= SCREEN_XXL,
