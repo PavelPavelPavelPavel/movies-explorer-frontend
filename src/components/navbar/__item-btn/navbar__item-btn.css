@@ -1,0 +1,16 @@
+.navbar__item-btn {
+    margin: 0;
+    padding: 0;
+    background-color: inherit;
+    border: none;
+    font-family: Inter, Arial, Helvetica, sans-serif;
+    list-style-type: none; 
+    color: #FFFFFF;
+    cursor: pointer;
+}
+
+.navbar__item-btn:hover {
+    opacity: 0.7;
+}
+
+

@@ -1,0 +1,14 @@
+.input__error {
+    margin: 10px 0 auto 0;
+    padding: 0;
+    background-color: inherit;
+    color:#EE3465;
+    height: 12px;
+    min-width: 200px;
+    font-family: Inter, Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 12px;
+    text-align: left;
+}
+

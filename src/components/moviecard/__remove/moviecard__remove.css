@@ -1,0 +1,25 @@
+.moviecard__remove {
+    padding: 0;
+    position: absolute;
+    top: 14px;
+    right: 24px;
+    width: 21px;
+    height: 21px;
+    background-image: url("../../../images/remove-card-btn.svg");
+    object-fit: contain;
+    object-position: center;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+}
+
+.moviecard__remove:hover {
+    opacity: 0.8;
+}
+
+@media screen and (max-width: 340px) {
+    .moviecard__remove {
+        right: 14px;
+    }
+  }
+

@@ -1,0 +1,28 @@
+.moviecard__img {
+    margin: 0;
+    padding: 0;
+    height: 201px;
+    width: 360px;
+    object-position: center;
+    border-radius: 5px;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+
+@media screen and (max-width: 1210px) {
+    .moviecard__img {
+        width: 339px;
+        height: 190px;
+    }
+  }
+
+  @media screen and (max-width: 400px) {
+    .moviecard__img {
+        width: 100%;
+        max-width: 300px;
+        height: 168px;
+    }
+  }
+
+ 

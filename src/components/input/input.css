@@ -1,0 +1,34 @@
+.input {
+    margin: 10px 0 auto 0;
+    padding: 0 0 0 15px;
+    width: 381px;
+    height: 46px;
+    color:#FFFFFF;
+    font-family: Inter, Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 15.7px;
+    text-align: left;
+    background-color: #2F2F2F;
+    border: none;
+    border-radius: 8px;
+    transition: all 0.2s linear;
+}
+
+.input:focus {
+    outline: 1px solid #4285F4;
+}   
+
+.input:hover {
+    opacity: 0.3;
+    transition: all 0.3s linear;
+}
+
+@media screen and (max-width: 450px) {
+    .input {
+       width: 245px;
+    }
+  }
+
+
+

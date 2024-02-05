@@ -1,0 +1,14 @@
+.footer__signature-label {
+    margin: 0 0 0 auto;
+    padding: 0;
+    gap: 20px;
+    display: flex;
+    flex-direction: row;
+}
+
+@media screen and (max-width: 400px) {
+    .footer__signature-label {
+        flex-direction: column;
+        gap: 15px;
+    }
+  }

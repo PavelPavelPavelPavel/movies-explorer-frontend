@@ -1,0 +1,16 @@
+.portfolio {
+    margin: 100px 70px 125px 70px;
+    padding: 0;
+}
+
+@media screen and (max-width: 800px) {
+    .portfolio {
+        margin: 91px 50px 90px 50px
+    }
+  }
+
+@media screen and (max-width: 560px) {
+    .portfolio {
+        margin: 50px 10px 70px 15px
+    }
+  }

@@ -1,0 +1,35 @@
+.header__btn-reg {
+    margin: 27px 30px 29px auto;
+    padding: 0;
+    width: 77px;
+    height: 16px;
+    background-color: inherit;
+    color: #FFFFFF;
+    font-family: Inter, Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    cursor: pointer;
+}
+
+.header__btn-reg:hover {
+    opacity: 0.7;
+}
+
+
+
+@media screen and (max-width: 800px) {
+    .header__btn-reg {
+    margin: 35px 30px 29px auto;
+    }
+  }
+
+  @media screen and (max-width: 450px) {
+    .header__btn-reg {
+    margin: 35px 15px 33px auto;
+    padding: 0;
+    width: 64px;
+    height: 16px;
+    font-size: 10px;
+    }
+  }

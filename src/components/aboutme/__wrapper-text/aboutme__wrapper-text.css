@@ -1,0 +1,8 @@
+.aboutme__wrapper-text {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+}
+

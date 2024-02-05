@@ -1,0 +1,55 @@
+.searchform__checkbox-capcha {
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+}
+
+.searchform__checkbox-capcha:before {
+    content: '';
+    display: block;
+    width: 34px;
+    height: 14px;
+    margin: 2px 0 0 0;
+    background-image: url("../../../images/searchform-checkbox-disble.svg");
+    background-position: center;
+    border-radius: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.searchform__checkbox-capcha:after {
+    content: '';
+    display: block;
+    width: 34px;
+    height: 14px;
+    margin: 2px 0 0 0;
+    opacity: 0;
+    border-radius: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+@media screen and (max-width: 800px) {
+    .searchform__checkbox-capcha:after {
+        margin: 15px 0 0 0;
+    }
+
+    .searchform__checkbox-capcha:before {
+        margin: 15px 0 0 0;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .searchform__checkbox-capcha:after {
+        margin: 10px 0 0 0;
+    }
+
+    .searchform__checkbox-capcha:before {
+        margin: 10px 0 0 0;
+    }
+}
+
+
+

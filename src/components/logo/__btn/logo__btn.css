@@ -1,0 +1,12 @@
+.logo__btn {
+    padding: 0;
+    width: 38px;
+    height: 38px; 
+    border-radius: 50%;
+    border: none;
+    background-color: inherit;
+}
+
+/* .logo__btn:hover {
+    opacity: 0.8;
+} */

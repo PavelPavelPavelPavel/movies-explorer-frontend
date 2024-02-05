@@ -1,0 +1,40 @@
+.aboutproject__description-title {
+    margin: 0;
+    padding: 0;
+    max-width: 550px;
+    max-height: 48px;
+    font-family: Inter, Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: -0.04em;
+    color: #FFFFFF;
+}
+
+
+
+@media screen and (max-width: 770px) {
+    .aboutproject__description-title {
+        max-width: 319px;
+        max-height: 48px;
+    }
+  }
+
+  @media screen and (max-width: 655px) {
+    .aboutproject__description-title {
+        margin: 0 auto 52px auto;
+    }
+  }
+
+  @media screen and (max-width: 400px) {
+    .aboutproject__description-title {
+        letter-spacing: -0.03em;
+        margin: 0;
+        max-width: 284px;
+        font-size: 18px;
+        line-height: 21.7px;
+    }
+  }
+
+
+ 

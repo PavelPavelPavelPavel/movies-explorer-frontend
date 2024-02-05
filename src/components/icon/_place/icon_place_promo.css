@@ -1,0 +1,23 @@
+.icon_place_promo {
+    display: flex;
+    width: 96px;
+    height: 36px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.icon_place_promo:hover {
+    opacity: 0.8;
+}
+
+@media screen and (max-width: 400px) {
+    .icon_place_promo {
+        width: 82px;
+        height: 26px;
+        font-size: 10px;
+    }
+  }

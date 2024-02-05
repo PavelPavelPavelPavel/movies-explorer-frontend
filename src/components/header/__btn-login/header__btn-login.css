@@ -1,0 +1,33 @@
+.header__btn-login {
+    margin: 17px 70px 17px 0;
+    padding: 0;
+    width: 76px;
+    height: 32px;
+    border-radius: 3px;
+    background-color: #3DDC84;
+    color: #000000;
+    font-family: Inter, Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    cursor: pointer;
+}
+
+
+
+@media screen and (max-width: 800px) {
+    .header__btn-login {
+    margin: 27px 30px 24px 0;
+    }
+  }
+
+
+@media screen and (max-width: 450px) {
+    .header__btn-login {
+    margin: 28px 15px 30px 0;
+    padding: 0;
+    width: 54px;
+    height: 26px;
+    font-size: 10px;
+    }
+  }

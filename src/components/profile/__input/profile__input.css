@@ -1,0 +1,35 @@
+.profile__input {
+    margin: 0;
+    padding: 0;
+    width: 122px;
+    height: 14px;
+    background-color: inherit;
+    border: none;
+    font-family: Inter, Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 13.3px;
+    color: #FFFFFF;
+    overflow: hidden;
+	text-overflow: ellipsis;
+    text-align: right;
+    white-space: nowrap;
+}
+
+.profile__input:hover {
+    background-color: #424242;
+    border-radius: 4px;
+}
+
+.profile__input:focus {
+        outline: 1px solid #FFFFFF;
+        border-radius: 4px;
+}
+
+
+@media screen and (max-width: 450px) {
+    .profile__input {
+        margin: 0;
+        width: 120px;
+    }
+  }
