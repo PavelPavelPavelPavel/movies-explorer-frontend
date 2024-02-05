@@ -25,6 +25,7 @@
 @import url(./components/navbar/__item-btn/navbar__item-btn.css);
 @import url(./components/navbar/__item-btn/_place/navbar__item-btn_place_droplist.css);
 @import url(./components/navbar/__item-btn/_place/navbar__item-btn_place_header.css);
+@import url(./components/navbar/__item-btn/_checked/navbar__item-btn_checked.css);
 @import url(./components/navbar/_place/navbar_place_droplist.css);
 @import url(./components/navbar/_place/navbar_place_header.css);
 @import url(./components/navigatepopup/navigatepopup.css);
@@ -42,6 +43,7 @@
 @import url(./components/notfounderr/__code/notfounderr__code.css);
 @import url(./components/notfounderr/__text/notfounderr__text.css);
 @import url(./components/promo/promo.css);
+@import url(./components/promo/__nav-wrapper/promo__nav-wrapper.css);
 @import url(./components/promo/__heading/promo__heading.css);
 @import url(./components/promo/__nav/promo__nav.css);
 @import url(./components/icon/_place/icon_place_promo.css);

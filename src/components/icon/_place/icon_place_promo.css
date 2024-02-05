@@ -8,12 +8,10 @@
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    transition: opacity 0.2s linear ;
 }
 
 .icon_place_promo:hover {
-    opacity: 0.4;
-    transition: opacity 0.2s linear ;
+    opacity: 0.8;
 }
 
 @media screen and (max-width: 400px) {

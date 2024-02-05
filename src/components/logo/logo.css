@@ -3,4 +3,9 @@
     padding: 0;
     width: 38px;
     height: 38px;
+    cursor: pointer;
+}
+
+.logo:hover {
+    opacity: 0.8;
 }

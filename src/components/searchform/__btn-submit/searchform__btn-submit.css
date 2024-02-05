@@ -9,10 +9,8 @@
     width: 44px;
     height: 44px;
     cursor: pointer;
-    transition: all 0.2s linear;
 }
 
 .searchform__btn-submit:hover {
-    opacity: 0.4;
-    transition: all 0.2s linear;
+    opacity: 0.8;
 }

@@ -4,19 +4,12 @@
     display: flex;
     flex-direction: column;
     max-width: 1280px;
-    max-height: 172px;
+    
     background-color: #202020; 
 }
 
 @media screen and (max-width: 800px) {
     .footer {
-        max-height: 172px;
         max-width: 768px;
-    }
-  }
-
-@media screen and (max-width: 400px) {
-    .footer {
-        max-height: 253px;
     }
   }

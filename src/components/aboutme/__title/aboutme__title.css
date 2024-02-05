@@ -1,5 +1,5 @@
 .aboutme__title {
-    margin: 133px 70px 0 70px;
+    margin: 110px 70px 0 70px;
     padding: 0 0 23px 0;
     max-width: 1140px;
     max-height: 27px;
@@ -20,7 +20,7 @@
 
   @media screen and (max-width: 560px) {
     .aboutme__title {
-        margin: 70px auto 0 14px;
+        margin: 70px 50px 0 50px;
         font-size: 18px;
         line-height: 22px;
     }
@@ -28,7 +28,7 @@
 
   @media screen and (max-width: 400px) {
     .aboutme__title {
-        margin: 20px 10px 0 15px;
+        margin: 0 10px 0 15px;
         padding: 0 0 25px 0;
         font-size: 18px;
         line-height: 22px;

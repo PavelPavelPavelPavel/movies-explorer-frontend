@@ -19,7 +19,7 @@ function Login() {
             placeBtnSubmit="login"
             onSubmit={handleSubmit}
             >
-            <div className="login">
+            <section className="login">
                 <label className="input__label">E-mail</label>
                 <input 
                 required
@@ -44,7 +44,7 @@ function Login() {
                 id="password"
                 placeholder='Имя'
                 />
-             </div>
+             </section>
         </Form>
     );
   }

@@ -19,7 +19,7 @@ function Profile({logOut}) {
     
 
     return (
-      <article className="profile">
+      <section className="profile">
         <h1 className="profile__title">Привет, Виталий!</h1>
         <form className="profile__form">
             <div className="profile__input-wrapper">
@@ -49,7 +49,7 @@ function Profile({logOut}) {
             <button className="profile__form-btn" onClick={inputEnable}>Редактировать</button>
         </form>
             <button className="profile__logout" onClick={handleLogout}>Выйти из аккаунта</button>
-      </article>
+      </section>
     );
   }
   

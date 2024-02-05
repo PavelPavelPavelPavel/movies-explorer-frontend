@@ -1,5 +1,5 @@
 .promo__heading {
-    margin: 170px auto 0 auto;
+    margin: 165px auto 0 auto;
     padding: 0;
     max-width: 730px;
     max-height: 116px;
@@ -14,7 +14,7 @@
 
 @media screen and (max-width: 800px) {
     .promo__heading {
-    margin: 350px auto 0 auto;
+    margin: 355px auto 0 auto;
     max-width: 680px;
     max-height: 104px;
     font-size: 40px;

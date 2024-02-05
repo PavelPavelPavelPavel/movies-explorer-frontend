@@ -17,11 +17,18 @@
     }
   }
 
-  @media screen and (max-width: 560px) {
+  @media screen and (max-width: 635px) {
     .aboutme__profession {
-        margin: 20px 5px 0 15px;
+        margin: 20px 5px 0 0;
         font-size: 11px;
         line-height: 16px;
         max-height: 16px;
+    }
+  }
+
+  
+  @media screen and (max-width: 400px) {
+    .aboutme__profession {
+        margin: 20px 5px 0 15px;
     }
   }

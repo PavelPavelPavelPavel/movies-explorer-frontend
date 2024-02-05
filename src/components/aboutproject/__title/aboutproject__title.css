@@ -1,5 +1,5 @@
 .aboutproject__title {
-    margin: 115px 70px 0 70px;
+    margin: 110px 70px 0 70px;
     padding: 0 0 23px 0;
     max-height: 27px;
     font-family: Inter, Arial, Helvetica, sans-serif;
@@ -19,7 +19,7 @@
 
 @media screen and (max-width: 400px) {
     .aboutproject__title {
-        margin: 75px 13px 0 15px;
+        margin: 75px 15px 0 15px;
         padding: 0 0 28px 0;
         font-size: 18px;
         line-height: 21.8px;

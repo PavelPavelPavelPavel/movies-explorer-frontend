@@ -2,8 +2,7 @@
     margin: 0;
     padding: 0;
     max-width: 1280px;
-    max-height: 608px;
-    background-color: #202020;
+    background-color: #272727;
 
 
 }
@@ -14,8 +13,9 @@
     }
   }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 450px) {
     .techs {
         margin: 0 0 70px 0;
+        background-color: #202020;
     }
   }

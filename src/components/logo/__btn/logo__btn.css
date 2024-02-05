@@ -5,11 +5,8 @@
     border-radius: 50%;
     border: none;
     background-color: inherit;
-    cursor: pointer; 
-    transition: opacity 0.2s linear ;
 }
 
-.logo__btn:hover {
-    opacity: 0.4;
-    transition: opacity 0.2s linear ;
-}
+/* .logo__btn:hover {
+    opacity: 0.8;
+} */

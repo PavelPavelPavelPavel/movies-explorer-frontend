@@ -13,6 +13,10 @@
     cursor: pointer;
 }
 
+.moviecard__remove:hover {
+    opacity: 0.8;
+}
+
 @media screen and (max-width: 340px) {
     .moviecard__remove {
         right: 14px;

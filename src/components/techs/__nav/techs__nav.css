@@ -26,8 +26,7 @@
 
 @media screen and (max-width: 400px) {
     .techs__nav {
-        margin: 50px 13px 70px 13px;
-        display: grid;
+        margin: 50px 13px 65px 13px;
         grid-template-columns: repeat(2, auto);
         column-gap: 12px;
         row-gap: 12px;

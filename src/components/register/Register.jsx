@@ -14,7 +14,7 @@ function Register() {
             placeBtnSubmit="register"
             onSubmit={handleSubmit}
             >
-            <div className="register">
+            <section className="register">
                 <label className="input__label">Имя</label>
                 <input 
                 required
@@ -43,7 +43,7 @@ function Register() {
                 minLength={4}
                 maxLength={20} 
                 />
-            </div>
+            </section>
         </Form>
     );
   }

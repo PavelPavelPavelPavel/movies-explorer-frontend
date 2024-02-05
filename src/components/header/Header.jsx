@@ -32,11 +32,11 @@ function Header({login, loc, greetingText, btnDropList, modalState, initModalNav
       navigate('/profile')
     }
 
-    function navToFilm() {
+    function navToFilms() {
       navigate('/movies')
     }
 
-    function navToSavedFilm() {
+    function navToSavedFilms() {
       navigate('/saved-movies')
     }
 
@@ -50,13 +50,14 @@ function Header({login, loc, greetingText, btnDropList, modalState, initModalNav
               onClick={navToMain}>
         <img src={logo} alt="Логотип" className="logo"></img>
       </button> 
-      { ( btnDropList && !modalState && login) && 
+      { btnDropList && !modalState && login && !loc &&
       <img src={dropListIcon} alt="иконка с тремя полосками" onClick={handleNavbar} className="header__droplist"></img>
       } 
        {!btnDropList &&  login && !loc && <Navbar 
-                                           navToFilm={navToFilm}
-                                           navToSavedFilm={navToSavedFilm}
-                                           modalState={modalState}/>}
+                                           navToFilms={navToFilms}
+                                           navToSavedFilms={navToSavedFilms}
+                                           modalState={modalState}
+                                             />}
       { !login && !loc &&
         <button  
         className="header__btn header__btn-reg"
@@ -79,9 +80,10 @@ function Header({login, loc, greetingText, btnDropList, modalState, initModalNav
     {modalState && <NavigatePopup 
       initModalNavbar={handleNavbar} 
       navToAcc={navToAcc}
-      navToFilm={navToFilm}
-      navToSavedFilm={navToSavedFilm}
+      navToFilms={navToFilms}
+      navToSavedFilms={navToSavedFilms}
       modalState={modalState}
+      navToMain={navToMain}
       />}
       </>
     );

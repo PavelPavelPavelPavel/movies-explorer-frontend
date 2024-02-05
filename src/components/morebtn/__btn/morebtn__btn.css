@@ -13,12 +13,11 @@
     line-height: 14.5px;
     color: #FFFFFF;
     cursor: pointer;
-    transition: all 0.2s linear;
 }
 
 .morebtn__btn:hover {
-    opacity: 0.3;
-    transition: all 0.3s linear;
+    opacity: 0.8;
+    
 }
 
 @media screen and (max-width: 800px) {

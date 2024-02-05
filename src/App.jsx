@@ -29,6 +29,8 @@ function App() {
   const [modalState, setModalState] = useState(false);
   const [btnDropList, setBtnDropList] = useState(false);
   const [cardQuantity, setCardQuantity] = useState();
+  
+
   useEffect(() => {
     setMovies(films);
     setLikedMovies(film);
@@ -60,7 +62,6 @@ function App() {
     modalState ? setModalState(false) : setModalState(true);
 };
 
-console.log(modalState)
 
   function logOut() {
       navigate('/');
@@ -107,7 +108,8 @@ console.log(modalState)
                         <>                      
                         <Movies  
                         saveMovies={likedMovies} 
-                        movies={movies}/>                        
+                        movies={movies}
+                        />                        
                         </>
                     } />
                     <Route path="/profile" element={
@@ -116,7 +118,7 @@ console.log(modalState)
                     <Route path='*' element={<Notfounderr />} />
                   </ Routes>
                   </div>
-                  {location.pathname !== "/profile" && !loc && <Footer />}
+                  {location.pathname !== "/profile" && !loc && !modalState && <Footer />}
           </div >
       {/* </CurrentUserContext> */}
     </>

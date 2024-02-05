@@ -1,8 +1,9 @@
 .portfolio__link {
     text-decoration: none;
     font-family: Inter, Arial, Helvetica, sans-serif;
+    transition: all 0.2s linear;
 }
 
 .portfolio__link:hover {
-    text-decoration: underline;
+    opacity: 0.7;
 }

@@ -16,7 +16,7 @@
 }
 
 .form__btn-submit:hover {
-    opacity: 0.3;
+    opacity: 0.8;
     transition: all 0.3s linear;
 }
 

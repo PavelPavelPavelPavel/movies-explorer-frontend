@@ -12,8 +12,7 @@
 }
 
 .searchform__input:hover {
-    opacity: 0.3;
-    transition: all 0.2s linear;
+    opacity: 0.8;
 }
 
 .searchform__input:focus {

@@ -9,6 +9,10 @@
     align-items: center;
 }
 
+.icon_place_techs:hover {
+    opacity: 0.8;
+}
+
 @media screen and (max-width: 800px) {
     .icon_place_techs {
         width: 84px;
