@@ -65,7 +65,8 @@ function App() {
     } else {
       setLoc(false)
     }
-  }, [location]);
+  }, [location.pathname]);
+
 
   function initModalNavbar() {
     modalState ? setModalState(false) : setModalState(true);
@@ -100,10 +101,10 @@ function App() {
                       </>}
                       />
                     <Route path="/signup" element={
-                         <Register />
+                        <Register />
                     }/>
                     <Route path="/signin" element={
-                          <Login />
+                        <Login />
                     }/>
                     <Route path='/movies' element={
                     <ProtectedRoute loggedIn={loggedIn}>

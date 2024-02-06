@@ -6,27 +6,20 @@ import Savedmovies from "../savedmovies/Savedmovies";
 
 function Movies({movies, saveMovies, cardQuantity}) {
   const location = useLocation();
-   const favoriteMovies = [];
-  
-//   useEffect(() => {
-//     movies.forEach(item => {
-//       for(let i = 0; i < saveMovies.length; i++ ) {
-//         let elem = saveMovies[i];
-//         if (item.id === elem.id) {
-//           favoriteMovies.push(elem);
-//         }
-//       }
-//     })
-//  }, [movies])
-    
-    
+  const favoriteMovies = [];
+  const [checkBox, setCheckBox] = useState(false);
+
   function addToFavorite () {
-      // favoriteMovies.push()
+     
   }
- 
+
+  function getShortFilms(checked) {
+    setCheckBox(checked)
+  }
+
     return (
       <div className="movies">
-        <Searchform/>
+        <Searchform getShortFilms={getShortFilms}/>
         {location.pathname === '/saved-movies' 
         ? <Savedmovies saveMovies={saveMovies} 
                        favoriteMovies={favoriteMovies}
@@ -35,6 +28,7 @@ function Movies({movies, saveMovies, cardQuantity}) {
               movies={movies}
               favoriteMovies={favoriteMovies}
               cardQuantity={cardQuantity}
+              checkBox={checkBox}
                       />}
       </div>
     );

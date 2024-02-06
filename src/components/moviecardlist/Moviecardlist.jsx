@@ -2,11 +2,11 @@ import { useState, useEffect, useRef } from "react";
 import Moviecard from "../moviecard/Moviecard";
 import Morebtn from "../morebtn/Morebtn";
 
-function Moviecardlist({movies, favoriteMovies, cardQuantity}) {
+function Moviecardlist({movies, favoriteMovies, cardQuantity, checkBox}) {
 const [elementOnPage, setElementOnPage] = useState(12);
 const [moreBtnVision, setMoreBtnVision] = useState();
 const [moreElement, setMoreElement] = useState(12);
-
+console.log(checkBox);
 useEffect(() => {
     movies.length > moreElement ? setMoreBtnVision(true) : setMoreBtnVision(false);
     movies.length === elementOnPage ? setMoreBtnVision(false) : setMoreBtnVision(true);

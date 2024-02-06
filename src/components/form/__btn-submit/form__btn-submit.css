@@ -15,9 +15,19 @@
     transition: all 0.2s linear;
 }
 
+.form__btn-submit:disabled{
+    background-color: #F8F8F8;
+    color: #C2C2C2;
+}
+
 .form__btn-submit:hover {
     opacity: 0.8;
     transition: all 0.3s linear;
+}
+
+.form__btn-submit:hover:disabled {
+    opacity: 1;
+    cursor: auto;
 }
 
 @media screen and (max-width: 450px) {

@@ -1,6 +1,17 @@
 import btnSubmitImg from "../../images/searchform-btn-submit.svg";
+import { useState, useEffect } from "react";
 
-function Searchform() {
+function Searchform({getShortFilms}) {
+const [checkBox, setCheckBox] = useState(false);
+
+useEffect(() => {
+  getShortFilms(checkBox);
+}, [checkBox])
+
+function handleGetShortFilms({target: { checked }}) {
+  setCheckBox(checked);
+};
+ 
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -17,7 +28,7 @@ function Searchform() {
             </button>
         </div>
         <div className="searchform__checkbox-wrapper">
-            <input className="searchform__checkbox" id="filter" type="checkbox" aria-checked="false"/>
+            <input className="searchform__checkbox" checked={checkBox} onChange={handleGetShortFilms} id="filter" type="checkbox" aria-checked="false"/>
             <label className="searchform__checkbox-capcha" htmlFor="filter"></label>
             <span className="searchform__checkbox-custom">Короткометражки</span>
         </div>
