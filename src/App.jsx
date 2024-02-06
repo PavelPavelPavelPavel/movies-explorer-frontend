@@ -1,8 +1,9 @@
 
 import React from "react";
 import { useState, useEffect } from "react";
-import { Routes, Route, Link, useNavigate, useLocation } from "react-router-dom";
-// import { CurrentUserContext } from "../../contexts/CurrentUserContext";
+import { Routes, Route, useNavigate, useLocation } from "react-router-dom";
+import { ProtectedRoute } from "./components/protectedroute/ProtectedRoute";
+import { CurrentUserContext } from "./contexts/CurrentUserContext";
 import  useResize  from "../src/utils/ResizeWidth";
 import "./index.css";
 import Header from './components/header/Header'
@@ -10,11 +11,10 @@ import Main from './components/main-landing/Main';
 import Footer from './components/footer/Footer';
 import Notfounderr from './components/notfounderr/Notfounderr';
 import Movies from './components/movies/Movies';
-import  { films, film }  from './constants';
 import Profile from "./components/profile/Profile";
 import Register from "./components/register/Register";
 import Login from "./components/login/Login";
-
+import movieApi from "./utils/MovieApi";
 
 
 function App() {
@@ -22,7 +22,9 @@ function App() {
   const location = useLocation();
   const navigate = useNavigate();
   const [loggedIn, setLoggedIn] = useState(true);
+  const [currnetUser, setCurrentUser] = useState({name: '', email: ''})
   const [movies, setMovies] = useState([]);
+  const [savedMovies, setSavedMovies] = useState([]);
   const [likedMovies, setLikedMovies] = useState([]);
   const [loc, setLoc] = useState(false);
   const [greetingText, setGreetingText] = useState('');
@@ -30,11 +32,18 @@ function App() {
   const [btnDropList, setBtnDropList] = useState(false);
   const [cardQuantity, setCardQuantity] = useState();
   
-
   useEffect(() => {
-    setMovies(films);
-    setLikedMovies(film);
-  }, []);
+    if(loggedIn) {
+      movieApi.getFilms()
+      .then(films => {
+        setMovies(films);
+      })
+      .catch(err => {
+        console.log(err)
+      })
+    }
+  }, [loggedIn])
+  
 
   useEffect(() => {
     if (resize.isScreenLg) {
@@ -71,9 +80,10 @@ function App() {
 
   return (
     <>
-      {/* <CurrentUserContext> */}
+      <CurrentUserContext.Provider value={{
+        currnetUser,
+      }}>
           <div className="App">
-           
             <Header login={loggedIn}
                     loc={loc}
                     greetingText={greetingText}
@@ -96,31 +106,33 @@ function App() {
                           <Login />
                     }/>
                     <Route path='/movies' element={
-                      <>
+                    <ProtectedRoute loggedIn={loggedIn}>
                      <Movies  
                      movies={movies} 
                      saveMovies={likedMovies}
                      cardQuantity={cardQuantity}
                      />                
-                     </>
+                     </ProtectedRoute>
                     } />
                     <Route path="saved-movies" element={
-                        <>                      
+                         <ProtectedRoute loggedIn={loggedIn}>                     
                         <Movies  
                         saveMovies={likedMovies} 
                         movies={movies}
                         />                        
-                        </>
+                         </ProtectedRoute>
                     } />
                     <Route path="/profile" element={
+                      <ProtectedRoute loggedIn={loggedIn}>
                       <Profile logOut={logOut}/>
+                      </ProtectedRoute>
                     } />
                     <Route path='*' element={<Notfounderr />} />
                   </ Routes>
                   </div>
                   {location.pathname !== "/profile" && !loc && !modalState && <Footer />}
           </div >
-      {/* </CurrentUserContext> */}
+      </CurrentUserContext.Provider>
     </>
   );
 }

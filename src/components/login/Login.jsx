@@ -1,10 +1,7 @@
-import useInput from "../../utils/chekInput";
 import Form from "../form/Form";
 
 
 function Login() {
-    const email = useInput('');
-    const password = useInput('');
 
 
    function handleSubmit() {
@@ -22,10 +19,7 @@ function Login() {
             <section className="login">
                 <label className="input__label">E-mail</label>
                 <input 
-                required
-                onChange={e => email.onChange(e)}
-                onBlur={e => email.onBlur(e)}
-                value={email.value}   
+                required   
                 className="input" 
                 type="email"
                 id="email"
@@ -34,9 +28,6 @@ function Login() {
                 <label className="input__label">Пароль</label>
                 <input 
                 required
-                onChange={e => password.onChange(e)}
-                onBlur={e => password.onBlur(e)}
-                value={password.value} 
                 minLength={4}
                 maxLength={20}   
                 className="input" 

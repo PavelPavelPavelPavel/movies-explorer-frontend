@@ -7,7 +7,7 @@ import Savedmovies from "../savedmovies/Savedmovies";
 function Movies({movies, saveMovies, cardQuantity}) {
   const location = useLocation();
    const favoriteMovies = [];
-
+  
 //   useEffect(() => {
 //     movies.forEach(item => {
 //       for(let i = 0; i < saveMovies.length; i++ ) {

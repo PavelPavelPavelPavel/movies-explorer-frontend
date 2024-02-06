@@ -7,4 +7,4 @@ function ProtectedRoute({children, ...props}) {
     )
 }
 
-export default ProtectedRoute;
+export  { ProtectedRoute };

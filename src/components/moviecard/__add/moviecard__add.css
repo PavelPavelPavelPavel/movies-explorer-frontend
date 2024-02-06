@@ -20,6 +20,10 @@
         cursor: pointer;
     }
 
+.moviecard__add:hover {
+  opacity: 0.8;
+}
+
 
     @media screen and (max-width: 1210px) {
         .moviecard__add {

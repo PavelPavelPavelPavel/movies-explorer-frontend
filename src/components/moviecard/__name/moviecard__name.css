@@ -1,7 +1,7 @@
 .moviecard__name {
     margin: 0 0 0 10px;
     padding: 0;
-    max-width: 250px;
+    width: 250px;
     max-height: 17px;
     color: #FFFFFF;
     font-family: Inter, Arial, Helvetica, sans-serif;
