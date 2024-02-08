@@ -42,7 +42,7 @@ function App() {
         console.log(err)
       })
     }
-  }, [loggedIn])
+  }, [loggedIn]);
   
 
   useEffect(() => {
@@ -56,16 +56,23 @@ function App() {
   }, [resize]);
 
   useEffect(() => {
-    if(location.pathname === "/signin")  {
+    const loc = location.pathname;
+    if(loggedIn && loc === "/signin") {
+      navigate('/');
+    } else if (loggedIn && loc === "/signup") {
+      navigate('/');
+    }
+
+    if(loc === "/signin")  {
       setLoc(true);
       setGreetingText('Рады видеть!');
-    } else if (location.pathname === "/signup") {
+    } else if (loc === "/signup") {
       setLoc(true)
       setGreetingText('Добро пожаловать!');
     } else {
       setLoc(false)
     }
-  }, [location.pathname]);
+  }, [location.pathname, loggedIn]);
 
 
   function initModalNavbar() {

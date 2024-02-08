@@ -1,17 +1,7 @@
 import { useState } from "react";
 
 function Profile({logOut}) {
-    
-    const [ initialInput, setInitialInput ] = useState(true);
-
-    function inputEnable (e) {
-        e.preventDefault();
-        setInitialInput(false);
-        if (!initialInput) {
-          setInitialInput(true)
-        }
-    }
-
+  
     
     function handleLogout() {
       return logOut();
@@ -25,7 +15,6 @@ function Profile({logOut}) {
             <div className="profile__input-wrapper">
               <label htmlFor="profileName"  className="profile__label">Имя</label>
               <input 
-              disabled={initialInput}
               type="text" 
               className="profile__input" 
               name="profileName" 
@@ -37,7 +26,6 @@ function Profile({logOut}) {
             <div className="profile__input-wrapper">
               <label htmlFor="profileEmail" className="profile__label">E-mail</label>
               <input
-              disabled={initialInput}
               type="email" 
               className="profile__input" 
               name="profileEmail" 
@@ -46,7 +34,7 @@ function Profile({logOut}) {
               value={''}
               />
             </div>
-            <button className="profile__form-btn" onClick={inputEnable}>Редактировать</button>
+            <button className="profile__form-btn" disabled={false}>Редактировать</button>
         </form>
             <button className="profile__logout" onClick={handleLogout}>Выйти из аккаунта</button>
       </section>

@@ -6,7 +6,7 @@ const [checkBox, setCheckBox] = useState(false);
 
 useEffect(() => {
   getShortFilms(checkBox);
-}, [checkBox])
+}, [checkBox, getShortFilms])
 
 function handleGetShortFilms({target: { checked }}) {
   setCheckBox(checked);

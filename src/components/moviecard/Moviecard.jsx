@@ -10,6 +10,7 @@ function Moviecard({filmImage, title, duration, trailerLink, favoriteMovies}) {
     const hours = Math.floor(duration/60);
     const minutes = Math.floor(duration % 60);
     const urlApi = 'https://api.nomoreparties.co/.';
+    const renderHours = hours > 0 ? `${hours}ч` : '';
 
     useEffect(() => {
         if(location.pathname === '/movies') {
@@ -18,6 +19,8 @@ function Moviecard({filmImage, title, duration, trailerLink, favoriteMovies}) {
             setLocMovie(false)
         }
     }, [location.pathname]);
+
+
 
     
     function handleMouseEnter () {
@@ -47,7 +50,7 @@ function Moviecard({filmImage, title, duration, trailerLink, favoriteMovies}) {
                 </a>
                 <figcaption className="moviecard__description">
                     <p className="moviecard__name">{title}</p>
-                    <p className="moviecard__duration">{`${hours}ч ${minutes}м`}</p>
+                    <p className="moviecard__duration">{`${ renderHours} ${minutes}м`}</p>
                 </figcaption>
             </figure>
         </article>
