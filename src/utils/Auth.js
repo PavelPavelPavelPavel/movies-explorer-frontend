@@ -1,8 +1,10 @@
+// require('dotenv').config();
 
 class Auth {
 	constructor(mainUrl) {
 		this._mainUrl = mainUrl;
 	}
+
 
 	_sendRequest(url, options) {
 		return fetch(url, options).then((response) => {
@@ -13,8 +15,18 @@ class Auth {
 		});
 	}
 
-	authentication(email, password) {
+	authentication(name, email, password) {
 		return this._sendRequest(`${this._mainUrl}signup`, {
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify({ name, email, password }),
+		});
+	}
+
+	authorization(email, password) {
+		return this._sendRequest(`${this._mainUrl}signin`, {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json",
@@ -23,28 +35,9 @@ class Auth {
 		});
 	}
 
-	authorization({ password, email }) {
-		return this._sendRequest(`${this._mainUrl}signin`, {
-			method: "POST",
-			headers: {
-				"Content-Type": "application/json",
-			},
-			body: JSON.stringify({ password, email }),
-		});
-	}
-
-	getInfo() {
-		return this._sendRequest(`${this._mainUrl}users/me`, {
-			headers: {
-				"Content-Type": "application/json",
-				authorization: localStorage.getItem("token"),
-			},
-		});
-	}
-
 }
 
 
-const auth = new Auth(process.env.REACT_APP_API_URL);
+const auth = new Auth('http://localhost:3000/');
 
 export default auth;

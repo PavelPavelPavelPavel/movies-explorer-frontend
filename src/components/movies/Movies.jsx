@@ -1,5 +1,5 @@
 import { useLocation } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Searchform from "../searchform/Serachform";
 import Moviecardlist from "../moviecardlist/Moviecardlist";
 import Savedmovies from "../savedmovies/Savedmovies";
@@ -9,9 +9,6 @@ function Movies({movies, saveMovies, cardQuantity}) {
   const favoriteMovies = [];
   const [checkBox, setCheckBox] = useState(false);
 
-  function addToFavorite () {
-     
-  }
 
   function getShortFilms(checked) {
     setCheckBox(checked)

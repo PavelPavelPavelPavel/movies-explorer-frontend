@@ -111,6 +111,7 @@
 @import url(./components/profile/__logout/profile__logout.css);
 @import url(./components/profile/__title/profile__title.css);
 @import url(./components/profile/__input-wrapper/profile__input-wrapper.css);
+@import url(./components/profile/__error/profile__error.css);
 @import url(./components/form/form.css);
 @import url(./components/form/__btn-capcha/form__btn-capcha.css);
 @import url(./components/form/__btn-submit/form__btn-submit.css);
@@ -125,3 +126,7 @@
 @import url(./components/form/__btn-submit/_place/form__btn-submit_place_login.css);
 @import url(./components/form/__btn-submit/_place/form__btn-submit_place_register.css);
 @import url(./components/savedmovies/savedmovies.css);
+@import url(./components/infopopup/infopopup.css);
+@import url(./components/infopopup/__close-btn/infopopup__close-btn.css);
+@import url(./components/infopopup/__text/infopopup__text.css);
+@import url(./components/infopopup/__wrapper/infopopup__wrapper.css);

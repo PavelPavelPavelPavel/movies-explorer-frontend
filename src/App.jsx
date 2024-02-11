@@ -15,14 +15,19 @@ import Profile from "./components/profile/Profile";
 import Register from "./components/register/Register";
 import Login from "./components/login/Login";
 import movieApi from "./utils/MovieApi";
+import auth from "./utils/Auth";
+import mainApi from "./utils/MainApi";
+import InfoPopup from "./components/infopopup/Infopopup";
+import { dataChangedText } from "./constants/messageText/successfullyDataChangedText";
+import { userAlredyExist, profileUpdateError } from "./constants/errorText/profileErrorText";
 
 
 function App() {
   const resize = useResize();
   const location = useLocation();
   const navigate = useNavigate();
-  const [loggedIn, setLoggedIn] = useState(true);
-  const [currnetUser, setCurrentUser] = useState({name: '', email: ''})
+  const [loggedIn, setLoggedIn] = useState(false);
+  const [currentUser, setCurrentUser] = useState({name: '', email: ''})
   const [movies, setMovies] = useState([]);
   const [savedMovies, setSavedMovies] = useState([]);
   const [likedMovies, setLikedMovies] = useState([]);
@@ -31,18 +36,34 @@ function App() {
   const [modalState, setModalState] = useState(false);
   const [btnDropList, setBtnDropList] = useState(false);
   const [cardQuantity, setCardQuantity] = useState();
+  const [popupStatus, setPopupStatus] = useState(false);
+  const [errorText, setErrorText] = useState('');
   
+
   useEffect(() => {
-    if(loggedIn) {
-      movieApi.getFilms()
-      .then(films => {
-        setMovies(films);
-      })
-      .catch(err => {
-        console.log(err)
-      })
+    const jwt = localStorage.getItem('jwt');
+    if(jwt && !null) {
+      setLoggedIn(true);
+      navigate('/movies');
+    } else {
+      setLoggedIn(false);
+      navigate('/');
     }
-  }, [loggedIn]);
+  }, []);
+
+
+  useEffect(() => {
+		if (loggedIn) {
+			 Promise.all([movieApi.getFilms(), mainApi.getInfo()])
+				.then(([films, user]) => {
+					setMovies(films);
+          setCurrentUser(user)
+				})
+				.catch(err => {
+					console.log(err);
+				});
+    }
+	}, [loggedIn]);
   
 
   useEffect(() => {
@@ -61,18 +82,60 @@ function App() {
       navigate('/');
     } else if (loggedIn && loc === "/signup") {
       navigate('/');
-    }
+    };
 
     if(loc === "/signin")  {
-      setLoc(true);
-      setGreetingText('Рады видеть!');
+      setLoc(true)
+      setGreetingText('Рады видеть!')
     } else if (loc === "/signup") {
       setLoc(true)
-      setGreetingText('Добро пожаловать!');
+      setGreetingText('Добро пожаловать!')
     } else {
       setLoc(false)
     }
-  }, [location.pathname, loggedIn]);
+  }, [loggedIn, location.pathname, navigate]);
+
+  function onClosePopup() {
+    setPopupStatus(false);
+  }
+
+
+  function onUserRegister({name, email, password}) {
+    auth.authentication(name, email, password)
+    .then((res) => {
+      setCurrentUser({
+        name: res.name,
+        email: res.email,
+      })
+      setLoggedIn(true);
+      navigate('/movies');
+    })
+    .catch(err => console.log(err))
+  };
+
+  function onLogin({email, password}) {
+    auth.authorization(email, password)
+    .then(res => {
+      localStorage.setItem('jwt', res.token);
+      setLoggedIn(true);
+      navigate('/movies');
+    })
+    .catch(err => console.log(err))
+  };
+
+  function updateUserInfo({name, email}) {
+    mainApi.updateInfo(name, email)
+    .then(res => {
+      setCurrentUser({
+        name: res.name,
+        email: res.email,
+      })
+      setPopupStatus(true);
+    })
+    .catch(err => {
+      console.error(err)
+    })
+  }
 
 
   function initModalNavbar() {
@@ -81,6 +144,11 @@ function App() {
 
 
   function logOut() {
+      localStorage.clear();
+      setCurrentUser({
+        name: '',
+        email: '',
+      })
       navigate('/');
       setLoggedIn(false);
   };
@@ -89,7 +157,7 @@ function App() {
   return (
     <>
       <CurrentUserContext.Provider value={{
-        currnetUser,
+        currentUser,
       }}>
           <div className="App">
             <Header login={loggedIn}
@@ -108,10 +176,10 @@ function App() {
                       </>}
                       />
                     <Route path="/signup" element={
-                        <Register />
+                        <Register onUserRegister={onUserRegister}/>
                     }/>
                     <Route path="/signin" element={
-                        <Login />
+                        <Login  onLogin={onLogin}/>
                     }/>
                     <Route path='/movies' element={
                     <ProtectedRoute loggedIn={loggedIn}>
@@ -132,11 +200,18 @@ function App() {
                     } />
                     <Route path="/profile" element={
                       <ProtectedRoute loggedIn={loggedIn}>
-                      <Profile logOut={logOut}/>
+                      <Profile 
+                      logOut={logOut}
+                      updateUserInfo={updateUserInfo}
+                      errorText={errorText}
+                      />
                       </ProtectedRoute>
                     } />
                     <Route path='*' element={<Notfounderr />} />
                   </ Routes>
+                  {popupStatus && <InfoPopup 
+                  onClosePopup={onClosePopup}
+                  />}
                   </div>
                   {location.pathname !== "/profile" && !loc && !modalState && <Footer />}
           </div >

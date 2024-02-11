@@ -1,9 +1,9 @@
 .form__btn-submit_place_login {
-    margin: 179px 0 auto 0;
+    margin: 157px 0 auto 0;
 }
 
 @media screen and (max-width: 450px) {
     .form__btn-submit_place_login {
-       margin: 267px auto 0 auto;
+       margin: 245px auto 0 auto;
     }
   }

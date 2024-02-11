@@ -1,5 +1,5 @@
 .profile__form-btn {
-   margin: 201px auto 0 auto;;
+   margin: 10px auto 0 auto;;
    padding: 0;
    max-width: 410px;
    max-height: 16px;
@@ -27,15 +27,8 @@
   opacity: 0.7;
 }
 
-@media screen and (max-width: 800px) {
-    .profile__form-btn {
-        margin: 190px auto 0 auto;
-}
-  }
-
   @media screen and (max-width: 450px) {
     .profile__form-btn {
-        margin: 360px auto 0 auto;
         font-size: 12px;
         line-height: 14.5px;
 }

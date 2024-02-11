@@ -20,9 +20,6 @@ function Moviecard({filmImage, title, duration, trailerLink, favoriteMovies}) {
         }
     }, [location.pathname]);
 
-
-
-    
     function handleMouseEnter () {
         setInitSaveBtn(true)
     }

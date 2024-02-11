@@ -1,9 +1,9 @@
 .form__btn-submit_place_register {
-    margin: 92px 0 auto 0;
+    margin: 70px 0 auto 0;
 }
 
 @media screen and (max-width: 450px) {
     .form__btn-submit_place_register {
-       margin: 180px auto 0 auto;
+       margin: 157px auto 0 auto;
     }
   }
