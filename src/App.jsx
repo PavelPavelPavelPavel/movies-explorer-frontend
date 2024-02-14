@@ -13,6 +13,7 @@ import Notfounderr from './components/notfounderr/Notfounderr';
 import Movies from './components/movies/Movies';
 import Profile from "./components/profile/Profile";
 import Register from "./components/register/Register";
+import Preloader from "./components/preloader/Preloader";
 import Login from "./components/login/Login";
 import movieApi from "./utils/MovieApi";
 import auth from "./utils/Auth";
@@ -20,6 +21,7 @@ import mainApi from "./utils/MainApi";
 import InfoPopup from "./components/infopopup/Infopopup";
 import { dataChangedText } from "./constants/messageText/successfullyDataChangedText";
 import { userAlredyExist, profileUpdateError } from "./constants/errorText/profileErrorText";
+
 
 
 function App() {
@@ -37,6 +39,7 @@ function App() {
   const [btnDropList, setBtnDropList] = useState(false);
   const [cardQuantity, setCardQuantity] = useState();
   const [popupStatus, setPopupStatus] = useState(false);
+  const [preloaderStatus, setPreloaderStatus] = useState(false);
   const [errorText, setErrorText] = useState('');
   
 
@@ -52,18 +55,18 @@ function App() {
   }, []);
 
 
+
   useEffect(() => {
 		if (loggedIn) {
-			 Promise.all([movieApi.getFilms(), mainApi.getInfo()])
-				.then(([films, user]) => {
-					setMovies(films);
-          setCurrentUser(user)
+			Promise.all([mainApi.getInfo(), mainApi.getSavedFilms()])
+				.then(([user, films]) => {
+					setCurrentUser(user);
+					setSavedMovies(films)
 				})
-				.catch(err => {
-					console.log(err);
-				});
-    }
+				.catch((err) => console.log(err));
+		}
 	}, [loggedIn]);
+
   
 
   useEffect(() => {
@@ -95,46 +98,74 @@ function App() {
     }
   }, [loggedIn, location.pathname, navigate]);
 
+  function getFilms() {
+    setPreloaderStatus(true);
+    movieApi.getFilms()
+    .then(movies => {
+        setMovies(movies);
+    })
+    .catch(err => console.log(err))
+    .finally(() => setPreloaderStatus(false))
+  }
+
+  function onAddToFavorite() {
+
+  }
+
+
   function onClosePopup() {
     setPopupStatus(false);
   }
 
 
   function onUserRegister({name, email, password}) {
+    setPreloaderStatus(true);
     auth.authentication(name, email, password)
     .then((res) => {
       setCurrentUser({
         name: res.name,
         email: res.email,
       })
-      setLoggedIn(true);
-      navigate('/movies');
+      auth.authorization(email, password)
+      .then(res => {
+        setPreloaderStatus(false);
+        localStorage.setItem('jwt', res.token);
+        setLoggedIn(true);
+        navigate('/movies');
+      })
     })
     .catch(err => console.log(err))
+    .finally(() => setPreloaderStatus(false))
   };
 
   function onLogin({email, password}) {
+    setPreloaderStatus(true);
     auth.authorization(email, password)
     .then(res => {
       localStorage.setItem('jwt', res.token);
+      setPreloaderStatus(false);
       setLoggedIn(true);
       navigate('/movies');
     })
     .catch(err => console.log(err))
+    .finally(() => setPreloaderStatus(false))
   };
 
   function updateUserInfo({name, email}) {
+    setPreloaderStatus(true);
     mainApi.updateInfo(name, email)
     .then(res => {
       setCurrentUser({
         name: res.name,
         email: res.email,
       })
+      setPreloaderStatus(false);
       setPopupStatus(true);
     })
     .catch(err => {
       console.error(err)
     })
+    .finally(() => setPreloaderStatus(false))
   }
 
 
@@ -144,7 +175,7 @@ function App() {
 
 
   function logOut() {
-      localStorage.clear();
+      localStorage.removeItem('jwt');
       setCurrentUser({
         name: '',
         email: '',
@@ -187,6 +218,7 @@ function App() {
                      movies={movies} 
                      saveMovies={likedMovies}
                      cardQuantity={cardQuantity}
+                     getFilms={getFilms}
                      />                
                      </ProtectedRoute>
                     } />
@@ -212,6 +244,7 @@ function App() {
                   {popupStatus && <InfoPopup 
                   onClosePopup={onClosePopup}
                   />}
+                  {preloaderStatus && <Preloader />}
                   </div>
                   {location.pathname !== "/profile" && !loc && !modalState && <Footer />}
           </div >

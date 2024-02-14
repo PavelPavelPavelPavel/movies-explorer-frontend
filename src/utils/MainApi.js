@@ -39,39 +39,50 @@ class Api {
   }
 
 
+  getSavedFilms() {
+    return this._sendRequest(`${this._mainUrl}movies`, {
+      headers: {
+        authorization: localStorage.getItem('jwt'),
+        "Content-Type": "application/json",
+      }
+    })
+  }
 
-  // getInfoCards() {
-  //   return this._sendRequest(`${this._mainUrl}cards`, {
-  //     headers: {
-  //       authorization: localStorage.getItem('token'),
-  //       "Content-Type": "application/json",
-  //     }
-  //   })
-  // }
+  deleteFilm(id) {
+    return this._sendRequest(`${this._mainUrl}movies/${id}`, {
+      method: "DELETE",
+      headers: {
+        authorization: localStorage.getItem('jwt'),
+      }
+    })
+  }
 
-  // setNewCard(link, name) {
-  //   return this._sendRequest(`${this._mainUrl}cards`, {
-  //     method: "POST",
-  //     headers: {
-  //       authorization: localStorage.getItem('token'),
-  //       "Content-Type": "application/json",
-  //     },
-  //     body: JSON.stringify({
-  //       name: `${name}`,
-  //       link: `${link}`,
-  //     })
-  //   })
-  // }
+  addToFavorite(country, director, duration, year, description,
+    image, trailerLink, nameEN, nameRU, thumbnail, owner, movieId) {
+    return this._sendRequest(`${this._mainUrl}movies`, {
+      method: "POST",
+      headers: {
+        authorization: localStorage.getItem('token'),
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        country,
+        director,
+        duration,
+        year,
+        description,
+        image,
+        trailerLink,
+        nameRU,
+        nameEN,
+        thumbnail,
+        owner,
+        movieId,
+      })
+    })
+  }
 
 
-  // deleteResponse(id) {
-  //   return this._sendRequest(`${this._mainUrl}cards/${id}`, {
-  //     method: "DELETE",
-  //     headers: {
-  //       authorization: localStorage.getItem('token'),
-  //     }
-  //   })
-  // }
 
   // deleteResponseLike(id) {
   //   return this._sendRequest(`${this._mainUrl}cards/${id}/likes`, {

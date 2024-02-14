@@ -43,7 +43,7 @@ function getMoreFilms() {
 
 
     return (
-    <>
+    <>  
         <section className="moviecardlist">
         {renderMovies.slice(0, elementOnPage).map((movie) => {
             return (

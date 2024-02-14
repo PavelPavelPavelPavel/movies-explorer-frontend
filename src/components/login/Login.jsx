@@ -1,20 +1,37 @@
 import { useState, useEffect } from "react";
 import Form from "../form/Form";
+import { useInput } from "../../utils/UseInput";
+import { emailRegex } from "../../constants/regexp";
+import { emailError, lengthError } from "../../constants/errorText/formError";
 
 function Login({onLogin}) {
-    const [userEmail, setUserEmail] = useState('');
-    const [userPassword, setUserPassword] = useState('');
+    const userEmail = useInput('', {email: emailRegex, isEmpty: true});
+    const userPassword = useInput('', {minLength: 2, maxLength: 30, isEmpty: true});
     const [btnFormSumitState, setBtnFormSumitState] = useState(false);
 
     useEffect(() => {
-        userEmail && userPassword ? setBtnFormSumitState(true) : setBtnFormSumitState(false);
+        if(userEmail.emailError || 
+            userPassword.minLengthError ||
+            userPassword.maxLengthError
+            ) {
+                setBtnFormSumitState(false)
+            } else {
+                setBtnFormSumitState(true)
+            }
     }, [userEmail, userPassword])
 
    function handleSubmit() {
         onLogin({
-            email: userEmail, 
-            password: userPassword,
+            email: userEmail.value, 
+            password: userPassword.value,
         })
+    }
+
+    function setErrorText(input, option, text) {
+        return (!input.isEmpty || input.isDirty) &&
+        option ?
+        text :
+        ''
     }
 
     return (
@@ -35,10 +52,14 @@ function Login({onLogin}) {
                 type="email"
                 id="email"
                 placeholder='Ваш Email'
-                value={userEmail}
-                onChange={(e) => setUserEmail(e.target.value)}
+                defaultValue={userEmail.value}
+                onChange={(e) => userEmail.onChange(e)}
+                onBlur={(e) => userEmail.onBlur(e)}
                 />
-                <span className="input__error" htmlFor='email'></span>
+                <span className="input__error" htmlFor='email'>{
+                     setErrorText(userEmail, (userEmail.emailError), emailError)
+                     }
+                    </span>
                 <label className="input__label">Пароль</label>
                 <input 
                 required
@@ -48,10 +69,14 @@ function Login({onLogin}) {
                 type="password"
                 id="password"
                 placeholder='Пароль'
-                value={userPassword}
-                onChange={(e) => setUserPassword(e.target.value)} 
+                defaultValue={userPassword.value}
+                onChange={(e) => userPassword.onChange(e)}
+                onBlur={(e) => userPassword.onBlur(e)}
                 />
-                <span className="input__error" htmlFor='password'></span>
+                <span className="input__error" htmlFor='password'>{
+                     setErrorText(userPassword, (userPassword.minLengthError || userPassword.maxLengthError), lengthError)
+                     }
+                     </span>
              </section>
         </Form>
     );

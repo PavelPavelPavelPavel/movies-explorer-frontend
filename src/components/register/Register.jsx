@@ -2,15 +2,13 @@ import Form from "../form/Form";
 import { useState, useEffect } from "react";
 import { useInput } from "../../utils/UseInput";
 import { emailRegex } from "../../constants/regexp";
-import { emailError, nameError } from "../../constants/errorText/formError";
+import { emailError, lengthError } from "../../constants/errorText/formError";
 
 function Register({onUserRegister}) {
     const userName = useInput('', {minLength: 2, maxLength: 30, isEmpty: true});
-    const userEmail = useInput('', {email: emailRegex});
-    const userPassword = useInput('', {minLength: 2, maxLength: 30});
+    const userEmail = useInput('', {email: emailRegex, isEmpty: true});
+    const userPassword = useInput('', {minLength: 2, maxLength: 30, isEmpty: true});
     const [btnFormSumitState, setBtnFormSumitState] = useState(false);
-   console.log(userName.isEmpty)
-
 
     useEffect(() => {
         if(userEmail.emailError || 
@@ -25,18 +23,20 @@ function Register({onUserRegister}) {
             }
     }, [userEmail, userName, userPassword])
 
-    function setErrorText(text, option) {
-       return  option ?
-                text :
-                ''
-    }
 
     function handleSubmit() {
         onUserRegister({
-            name: userName,
-            email: userEmail,
-            password: userPassword,
+            name: userName.value,
+            email: userEmail.value,
+            password: userPassword.value,
         })
+    }
+
+    function setErrorText(input, option, text) {
+        return (!input.isEmpty || input.isDirty) &&
+        option ?
+        text :
+        ''
     }
 
     return (
@@ -63,12 +63,9 @@ function Register({onUserRegister}) {
                 onBlur={(e) => userName.onBlur(e)}
                 />
                 <span className="input__error" htmlFor='name'>{
-                    (!userName.isEmpty || userName.isDirty) &&
-                    (userName.minLengthError ||
-                    userName.maxLengthError) ?
-                    nameError :
-                    ''
-                }</span>
+                    setErrorText(userName, (userName.minLengthError || userName.maxLengthError), lengthError)
+                    }
+                </span>
                 <label className="input__label">E-mail</label>
                 <input 
                 required
@@ -80,7 +77,10 @@ function Register({onUserRegister}) {
                 onChange={(e) => userEmail.onChange(e)}  
                 onBlur={(e) => userEmail.onBlur(e)}
                 />
-                <span className="input__error" htmlFor='email'>{}</span>
+                <span className="input__error" htmlFor='email'>{
+                    setErrorText(userEmail, (userEmail.emailError), emailError)
+                    }
+                </span>
                 <label className="input__label">Пароль</label>
                 <input 
                 required
@@ -94,7 +94,10 @@ function Register({onUserRegister}) {
                 onChange={(e) => userPassword.onChange(e)} 
                 onBlur={(e) => userPassword.onBlur(e)} 
                 />
-                <span className="input__error" htmlFor='password'>{}</span>
+                <span className="input__error" htmlFor='password'>{
+                   setErrorText(userPassword, (userPassword.minLengthError || userPassword.maxLengthError), lengthError)
+                }
+                </span>
             </section>
         </Form>
     );

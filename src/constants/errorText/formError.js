@@ -1,7 +1,7 @@
 const emailError = 'Email должен быть заполнен правильно';
-const nameError = 'Минимум 2 символа';
+const lengthError = 'Минимум 2 символа, максимум 30 символов';
 
 export {
     emailError,
-    nameError,
+    lengthError,
 }

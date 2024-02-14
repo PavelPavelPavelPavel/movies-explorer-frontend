@@ -2,7 +2,7 @@ import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 import { useContext, useState, useEffect} from "react";
 import { useInput } from "../../utils/UseInput";
 import { emailRegex } from "../../constants/regexp";
-import { emailError, nameError } from "../../constants/errorText/formError";
+import { emailError, lengthError } from "../../constants/errorText/formError";
 
 function Profile({logOut, updateUserInfo, errorText}) {
  const { currentUser } = useContext(CurrentUserContext);
@@ -23,7 +23,7 @@ useEffect(() => {
   if(userEmail.emailError) {
     setValidErrorText(emailError)
   } else if(userName.minLengthError) {
-    setValidErrorText(nameError)
+    setValidErrorText(lengthError)
   } else {
     setValidErrorText('')
   }

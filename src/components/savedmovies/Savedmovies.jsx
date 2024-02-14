@@ -1,6 +1,6 @@
 import Moviecard from "../moviecard/Moviecard";
 
-function Savedmovies({favoriteMovies, saveMovies}) {
+function Savedmovies({favoriteMovies, saveMovies, checkBox}) {
     
  return (
         <section className="savedmovies">
