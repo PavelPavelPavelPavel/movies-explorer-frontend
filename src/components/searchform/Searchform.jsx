@@ -1,5 +1,5 @@
 import btnSubmitImg from "../../images/searchform-btn-submit.svg";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useInput } from "../../utils/UseInput";
 import { useLocation } from "react-router-dom";
 import { serverError } from "../../constants/errorText/otherErrorText";
@@ -7,21 +7,19 @@ import { serverError } from "../../constants/errorText/otherErrorText";
 
 function Searchform({getShortFilms, getFilms , movies}) {
   const location = useLocation();
+  const searchRef = useRef(null);
   const [checkBox, setCheckBox] = useState(false);
   const searchInput = useInput('', {isEmpty: true});
-
-  useEffect(() => {
-    if (location.pathname === '/movies') {
-      JSON.parse(localStorage.getItem('checkBox')) === true ? setCheckBox(true) : setCheckBox(false);
-    } 
-  }, [])
+  
 
 useEffect(() => {
   if(location.pathname === '/saved-movies') {
       setCheckBox(false);
+      onClear();   
   }
   if (location.pathname === '/movies') {
-    JSON.parse(localStorage.getItem('checkBox')) === true ? setCheckBox(true) : setCheckBox(false);
+    setCheckBox(JSON.parse(localStorage.getItem('checkBox')));
+    searchRef.current.value = JSON.parse(localStorage.getItem('savedSearch'));
   } 
 }, [location.pathname])
 
@@ -38,9 +36,15 @@ function handleGetShortFilms({target: { checked }}) {
       }
   }
 
+  const onClear = () => {
+    searchRef.current.value = '';
+  };
+
+
 function handleSubmit(e) {
     e.preventDefault();
     getFilms(searchInput.value);
+    localStorage.setItem('savedSearch', JSON.stringify(searchInput.value))
   }
 
     return (
@@ -50,11 +54,12 @@ function handleSubmit(e) {
             <input className="searchform__input" 
                    placeholder="Фильм" 
                    required
+                   ref={searchRef}
                    defaultValue={searchInput.value}
                    onChange={(e) => searchInput.onChange(e)}
                    onBlur={(e) => searchInput.onBlur(e)}
                    />
-            <span className="searchform__input-error"></span>
+                   <span className="searchform__input-error"></span>
             <button type="submit" 
                     className="searchform__btn-submit"
                     >

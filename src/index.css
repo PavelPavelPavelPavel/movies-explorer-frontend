@@ -130,3 +130,5 @@
 @import url(./components/infopopup/__close-btn/infopopup__close-btn.css);
 @import url(./components/infopopup/__text/infopopup__text.css);
 @import url(./components/infopopup/__wrapper/infopopup__wrapper.css);
+@import url(./components/filmerror/filmerror.css);
+@import url(./components/filmerror/__text/filmerror__text.css);

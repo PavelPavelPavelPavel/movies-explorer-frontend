@@ -1,0 +1,10 @@
+.filmerror__text {
+    margin: 100px 0 auto 0;
+    padding: 0;
+    text-align: center;
+    font-family: Inter, Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color:#8B8B8B;
+}
