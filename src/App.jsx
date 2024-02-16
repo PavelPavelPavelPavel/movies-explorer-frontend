@@ -24,6 +24,7 @@ import { userAlredyExist, profileUpdateError } from "./constants/errorText/profi
 
 
 
+
 function App() {
   const resize = useResize();
   const location = useLocation();
@@ -32,7 +33,6 @@ function App() {
   const [currentUser, setCurrentUser] = useState({name: '', email: ''})
   const [movies, setMovies] = useState([]);
   const [savedMovies, setSavedMovies] = useState([]);
-  const [likedMovies, setLikedMovies] = useState([]);
   const [loc, setLoc] = useState(false);
   const [greetingText, setGreetingText] = useState('');
   const [modalState, setModalState] = useState(false);
@@ -55,19 +55,27 @@ function App() {
   }, []);
 
 
-
   useEffect(() => {
 		if (loggedIn) {
-			Promise.all([mainApi.getInfo(), mainApi.getSavedFilms()])
-				.then(([user, films]) => {
+			Promise.all([mainApi.getInfo()])
+				.then(([user]) => {
 					setCurrentUser(user);
-					setSavedMovies(films)
+          
 				})
 				.catch((err) => console.log(err));
 		}
 	}, [loggedIn]);
 
-  
+  useEffect(() => {
+      if(location.pathname === '/saved-movies') {
+        mainApi.getSavedFilms()
+        .then(films => {
+          setSavedMovies(films)})
+        .catch(err => console.log(err))
+      }
+  }, [location.pathname]);
+
+
 
   useEffect(() => {
     if (resize.isScreenLg) {
@@ -98,18 +106,77 @@ function App() {
     }
   }, [loggedIn, location.pathname, navigate]);
 
-  function getFilms() {
+  function findFilm(arr, setArr, value, movies) {
+    arr.filter((film) => {
+      if(film.nameRU.trim().toLowerCase() === value.toLowerCase()){
+        movies.push(film);
+      } else if(film.nameEN.trim() === value.toLowerCase()){
+        movies.push(film);
+      } else if(film.year === value){
+        movies.push(film)
+       } else {
+        setArr([]);
+       }
+    })
+  }
+
+  function getFilms(inputValue) {
     setPreloaderStatus(true);
+    const res = [];
     movieApi.getFilms()
     .then(movies => {
-        setMovies(movies);
+      const res = [];
+      findFilm(movies, setMovies, inputValue, res);
+      setMovies(res);
     })
-    .catch(err => console.log(err))
+    .catch(err => {
+      console.log(err);
+    })
     .finally(() => setPreloaderStatus(false))
   }
 
-  function onAddToFavorite() {
+  function onSavedSearch(inputValue) {
+    const res = [];
+    findFilm(savedMovies, setSavedMovies, inputValue, res)
+    setSavedMovies(res);
+  }
 
+
+  function onAddToFavorite(filmId, urlApi) {
+    movies.filter(film => {
+      if(film.id === filmId) {
+        const { country, director, duration, year, description, image, trailerLink,
+                nameRU, nameEN, owner, id} = film;  
+        // console.log(image.url)         
+       mainApi.addToFavorite({
+        country, director, duration, year, description, image: `${urlApi}${image.url}`, trailerLink,
+        nameRU, nameEN,  thumbnail: `${urlApi}${image.url}`, owner, movieId: id
+      })
+        .then(res => {
+           const addedCard = [];
+           addedCard.push(res);
+           setSavedMovies(addedCard);
+        })
+        .catch(err => {
+          console.log(image.url)
+          console.log(err)
+        })  
+          }
+        })
+  }
+
+  function onDeleteFilm(filmId) {
+    savedMovies.filter(film => {
+      if(film._id === filmId) {
+        mainApi.deleteFilm(filmId)
+        .then(() => {
+          mainApi.getSavedFilms()
+          .then(films => setSavedMovies(films))
+          .catch(err => console.log(err))
+        })
+        .catch(err => console.log(err))
+      } 
+    })
   }
 
 
@@ -216,17 +283,20 @@ function App() {
                     <ProtectedRoute loggedIn={loggedIn}>
                      <Movies  
                      movies={movies} 
-                     saveMovies={likedMovies}
+                     savedMovies={savedMovies}
                      cardQuantity={cardQuantity}
                      getFilms={getFilms}
+                     onAddToFavorite={onAddToFavorite}
                      />                
                      </ProtectedRoute>
                     } />
                     <Route path="saved-movies" element={
                          <ProtectedRoute loggedIn={loggedIn}>                     
                         <Movies  
-                        saveMovies={likedMovies} 
                         movies={movies}
+                        savedMovies={savedMovies}
+                        onDeleteFilm={onDeleteFilm} 
+                        onSavedSearch={onSavedSearch}
                         />                        
                          </ProtectedRoute>
                     } />

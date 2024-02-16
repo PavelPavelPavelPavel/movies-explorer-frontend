@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import Moviecard from "../moviecard/Moviecard";
 import Morebtn from "../morebtn/Morebtn";
 
-function Moviecardlist({movies, favoriteMovies, cardQuantity, checkBox}) {
+function Moviecardlist({movies, cardQuantity, checkBox, onAddToFavorite,  getDifference}) {
 const [elementOnPage, setElementOnPage] = useState(12);
 const [moreBtnVision, setMoreBtnVision] = useState();
 const [moreElement, setMoreElement] = useState(12);
@@ -41,19 +41,20 @@ function getMoreFilms() {
 };
 
 
-
     return (
     <>  
         <section className="moviecardlist">
         {renderMovies.slice(0, elementOnPage).map((movie) => {
             return (
         <Moviecard
-                favoriteMovies={favoriteMovies}
                 key={movie.id}
+                id={movie.id}
                 filmImage={movie.image.url}
                 title={movie.nameRU}
                 duration={movie.duration}
                 trailerLink={movie.trailerLink}
+                onAddToFavorite={onAddToFavorite}
+                getDifference={getDifference}
         />
         );
         })}

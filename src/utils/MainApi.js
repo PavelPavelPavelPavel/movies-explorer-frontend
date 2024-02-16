@@ -57,12 +57,12 @@ class Api {
     })
   }
 
-  addToFavorite(country, director, duration, year, description,
-    image, trailerLink, nameEN, nameRU, thumbnail, owner, movieId) {
+  addToFavorite({ country, director, duration, year, description,
+    image, trailerLink, nameEN, nameRU, thumbnail, owner, movieId }) {
     return this._sendRequest(`${this._mainUrl}movies`, {
       method: "POST",
       headers: {
-        authorization: localStorage.getItem('token'),
+        authorization: localStorage.getItem('jwt'),
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
@@ -82,17 +82,6 @@ class Api {
     })
   }
 
-
-
-  // deleteResponseLike(id) {
-  //   return this._sendRequest(`${this._mainUrl}cards/${id}/likes`, {
-  //     method: "DELETE",
-  //     headers: {
-  //       authorization: localStorage.getItem('token'),
-  //       "Content-Type": "application/json",
-  //     },
-  //   })
-  // }
 
   // addLikeToCard(id) {
   //   return this._sendRequest(`${this._mainUrl}cards/${id}/likes`, {

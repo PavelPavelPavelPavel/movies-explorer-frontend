@@ -3,17 +3,24 @@ import { useState, useEffect, useRef } from "react";
 import { useInput } from "../../utils/UseInput";
 import { useLocation } from "react-router-dom";
 import { serverError } from "../../constants/errorText/otherErrorText";
+import { get } from "react-hook-form";
 
 
-function Searchform({getShortFilms, getFilms , movies}) {
+function Searchform({getShortFilms, getFilms, onSavedSearch}) {
   const location = useLocation();
   const searchRef = useRef(null);
   const [checkBox, setCheckBox] = useState(false);
   const searchInput = useInput('', {isEmpty: true});
   
+  useEffect(() => {
+    if (location.pathname === '/movies') {
+      setCheckBox(JSON.parse(localStorage.getItem('checkBox')));
+      searchRef.current.value = JSON.parse(localStorage.getItem('savedSearch'));
+    } 
+  }, []);
 
-useEffect(() => {
-  if(location.pathname === '/saved-movies') {
+  useEffect(() => {
+    if(location.pathname === '/saved-movies') {
       setCheckBox(false);
       onClear();   
   }
@@ -43,8 +50,8 @@ function handleGetShortFilms({target: { checked }}) {
 
 function handleSubmit(e) {
     e.preventDefault();
-    getFilms(searchInput.value);
-    localStorage.setItem('savedSearch', JSON.stringify(searchInput.value))
+    location.pathname === '/movies' ? getFilms(searchRef.current.value) :  onSavedSearch(searchInput.value);  
+    localStorage.setItem('savedSearch', JSON.stringify(searchRef.current.value))
   }
 
     return (

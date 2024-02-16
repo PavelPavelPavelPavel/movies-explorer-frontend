@@ -4,6 +4,7 @@ import { searchError, searchResultError } from "../../constants/errorText/search
 function FilmError({moviesPresence}) {
  const [text, setText] = useState('');
 
+
  useEffect(() => {
       if(!moviesPresence) {
         setText(searchResultError);
