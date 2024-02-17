@@ -116,6 +116,9 @@
 @import url(./components/form/__btn-capcha/form__btn-capcha.css);
 @import url(./components/form/__btn-submit/form__btn-submit.css);
 @import url(./components/form/__btn/form__btn.css);
+@import url(./components/form/__submit-error/form__submit-error.css);
+@import url(./components/form/__submit-error/_place/form__submit-error_place_login.css);
+@import url(./components/form/__submit-error/_place/form__submit-error_place_register.css);
 @import url(./components/form/__input-wrapper/form__input-wrapper.css);
 @import url(./components/form/__btn-wrapper/form__btn-wrapper.css);
 @import url(./components/register/register.css);
@@ -123,8 +126,6 @@
 @import url(./components/input/__label/input__label.css);
 @import url(./components/input/input.css);
 @import url(./components/login/login.css);
-@import url(./components/form/__btn-submit/_place/form__btn-submit_place_login.css);
-@import url(./components/form/__btn-submit/_place/form__btn-submit_place_register.css);
 @import url(./components/savedmovies/savedmovies.css);
 @import url(./components/infopopup/infopopup.css);
 @import url(./components/infopopup/__close-btn/infopopup__close-btn.css);

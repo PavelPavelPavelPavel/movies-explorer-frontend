@@ -19,8 +19,9 @@ import movieApi from "./utils/MovieApi";
 import auth from "./utils/Auth";
 import mainApi from "./utils/MainApi";
 import InfoPopup from "./components/infopopup/Infopopup";
-import { dataChangedText } from "./constants/messageText/successfullyDataChangedText";
-import { userAlredyExist, profileUpdateError } from "./constants/errorText/profileErrorText";
+import { wrongLogOrPass } from "./constants/errorText/loginErrorText";
+import { registerError } from "./constants/errorText/registerErrorText";
+import { profileUpdateError } from "./constants/errorText/profileErrorText";
 
 
 
@@ -48,19 +49,23 @@ function App() {
     if(jwt && !null) {
       setLoggedIn(true);
       navigate('/movies');
+      setErrorText('');
     } else {
       setLoggedIn(false);
       navigate('/');
+      setErrorText('');
     }
   }, []);
 
 
+
   useEffect(() => {
 		if (loggedIn) {
-			Promise.all([mainApi.getInfo()])
-				.then(([user]) => {
+      setErrorText('');
+			Promise.all([mainApi.getInfo(), mainApi.getSavedFilms()])
+				.then(([user, films]) => {
 					setCurrentUser(user);
-          
+          setSavedMovies(films)
 				})
 				.catch((err) => console.log(err));
 		}
@@ -73,7 +78,24 @@ function App() {
           setSavedMovies(films)})
         .catch(err => console.log(err))
       }
-  }, [location.pathname]);
+      if(location.pathname === '/movies') {
+        const updatedMovies = movies;
+        if (savedMovies.length === 0) {
+            return updatedMovies.forEach(item => item.isLiked = false)
+         }
+        updatedMovies.filter((mov) => {
+          return savedMovies.some((likedMov) => {
+            if (likedMov.movieId === mov.id) {
+              return mov.isLiked = true;
+            } else {
+              return mov.isLiked = false;
+            }
+          })
+        })
+        setMovies(updatedMovies)
+      }
+  }, [location.pathname, movies, savedMovies]);
+
 
 
 
@@ -93,20 +115,26 @@ function App() {
       navigate('/');
     } else if (loggedIn && loc === "/signup") {
       navigate('/');
+
     };
 
     if(loc === "/signin")  {
       setLoc(true)
       setGreetingText('Рады видеть!')
+      setErrorText('');
     } else if (loc === "/signup") {
       setLoc(true)
       setGreetingText('Добро пожаловать!')
-    } else {
+      setErrorText('');
+    } else if (loc === "/profile") {
+      setErrorText('');
+    }  else {
       setLoc(false)
     }
   }, [loggedIn, location.pathname, navigate]);
 
-  function findFilm(arr, setArr, value, movies) {
+  function findFilm(arr, setArr, value) {
+    const movies = [];
     arr.filter((film) => {
       if(film.nameRU.trim().toLowerCase() === value.toLowerCase()){
         movies.push(film);
@@ -118,15 +146,25 @@ function App() {
         setArr([]);
        }
     })
+    return movies;
   }
 
   function getFilms(inputValue) {
     setPreloaderStatus(true);
-    const res = [];
     movieApi.getFilms()
     .then(movies => {
-      const res = [];
-      findFilm(movies, setMovies, inputValue, res);
+      const addLikeFieldToMovies = movies.map(movie => {
+        movie.isLiked = false;
+        return movie
+    })
+     addLikeFieldToMovies.filter((mov) => {
+      return savedMovies.some((likedMov) => {
+        if (likedMov.movieId === mov.id) {
+          return mov.isLiked = true;
+        } 
+      })
+    })
+      const res = findFilm(addLikeFieldToMovies, setMovies, inputValue);
       setMovies(res);
     })
     .catch(err => {
@@ -134,48 +172,60 @@ function App() {
     })
     .finally(() => setPreloaderStatus(false))
   }
-
   function onSavedSearch(inputValue) {
-    const res = [];
-    findFilm(savedMovies, setSavedMovies, inputValue, res)
+    const res = findFilm(savedMovies, setSavedMovies, inputValue)
     setSavedMovies(res);
   }
 
 
   function onAddToFavorite(filmId, urlApi) {
+    setPreloaderStatus(true);
     movies.filter(film => {
       if(film.id === filmId) {
         const { country, director, duration, year, description, image, trailerLink,
-                nameRU, nameEN, owner, id} = film;  
-        // console.log(image.url)         
+                nameRU, nameEN, owner, id} = film; 
        mainApi.addToFavorite({
         country, director, duration, year, description, image: `${urlApi}${image.url}`, trailerLink,
-        nameRU, nameEN,  thumbnail: `${urlApi}${image.url}`, owner, movieId: id
+        nameRU, nameEN,  thumbnail: `${urlApi}${image.url}`, owner, movieId: id, isLiked: true
       })
         .then(res => {
            const addedCard = [];
            addedCard.push(res);
            setSavedMovies(addedCard);
+           const likedMovies = movies;
+            likedMovies.filter((mov) => {
+            return addedCard.some((likedMov) => {
+              if (likedMov.movieId === mov.id) {
+                return mov.isLiked = true;
+              } 
+            })
+          })
+           setMovies(likedMovies);
+           setPreloaderStatus(false);
         })
         .catch(err => {
-          console.log(image.url)
           console.log(err)
-        })  
+        })
+        .finally(setPreloaderStatus(false))  
           }
         })
   }
 
   function onDeleteFilm(filmId) {
-    savedMovies.filter(film => {
+    const updatedMovies = savedMovies;
+    updatedMovies.filter(film => {
       if(film._id === filmId) {
         mainApi.deleteFilm(filmId)
         .then(() => {
           mainApi.getSavedFilms()
-          .then(films => setSavedMovies(films))
-          .catch(err => console.log(err))
+          .then(res => {
+            res.forEach(item => {
+              return item.isLiked = false;
+            })
+            setSavedMovies(res);
+          })
         })
-        .catch(err => console.log(err))
-      } 
+      }
     })
   }
 
@@ -201,7 +251,10 @@ function App() {
         navigate('/movies');
       })
     })
-    .catch(err => console.log(err))
+    .catch(err => {
+      setErrorText(registerError)
+      console.log(err)
+    })
     .finally(() => setPreloaderStatus(false))
   };
 
@@ -214,7 +267,10 @@ function App() {
       setLoggedIn(true);
       navigate('/movies');
     })
-    .catch(err => console.log(err))
+    .catch(err => {
+      setErrorText(wrongLogOrPass);
+      console.log(err)
+    })
     .finally(() => setPreloaderStatus(false))
   };
 
@@ -231,6 +287,7 @@ function App() {
     })
     .catch(err => {
       console.error(err)
+      setErrorText(profileUpdateError)
     })
     .finally(() => setPreloaderStatus(false))
   }
@@ -242,7 +299,7 @@ function App() {
 
 
   function logOut() {
-      localStorage.removeItem('jwt');
+      localStorage.clear();
       setCurrentUser({
         name: '',
         email: '',
@@ -274,10 +331,14 @@ function App() {
                       </>}
                       />
                     <Route path="/signup" element={
-                        <Register onUserRegister={onUserRegister}/>
+                        <Register onUserRegister={onUserRegister}
+                                  errorText={errorText}
+                        />
                     }/>
                     <Route path="/signin" element={
-                        <Login  onLogin={onLogin}/>
+                        <Login  onLogin={onLogin}
+                                errorText={errorText}
+                        />
                     }/>
                     <Route path='/movies' element={
                     <ProtectedRoute loggedIn={loggedIn}>

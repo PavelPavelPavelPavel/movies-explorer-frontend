@@ -7,7 +7,6 @@ const [elementOnPage, setElementOnPage] = useState(12);
 const [moreBtnVision, setMoreBtnVision] = useState();
 const [moreElement, setMoreElement] = useState(12);
 const [renderMovies, setRenderMovies] = useState([]);
-
 useEffect(() => {
     const shortMovies = movies.filter((film) => film.duration < 40);
     checkBox ? setRenderMovies(shortMovies) : setRenderMovies(movies);
@@ -51,6 +50,7 @@ function getMoreFilms() {
                 id={movie.id}
                 filmImage={movie.image.url}
                 title={movie.nameRU}
+                isLiked={movie.isLiked}
                 duration={movie.duration}
                 trailerLink={movie.trailerLink}
                 onAddToFavorite={onAddToFavorite}

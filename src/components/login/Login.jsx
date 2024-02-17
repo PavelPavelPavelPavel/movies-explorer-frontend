@@ -4,7 +4,8 @@ import { useInput } from "../../utils/UseInput";
 import { emailRegex } from "../../constants/regexp";
 import { emailError, lengthError } from "../../constants/errorText/formError";
 
-function Login({onLogin}) {
+
+function Login({onLogin, errorText}) {
     const userEmail = useInput('', {email: emailRegex, isEmpty: true});
     const userPassword = useInput('', {minLength: 2, maxLength: 30, isEmpty: true});
     const [btnFormSumitState, setBtnFormSumitState] = useState(false);
@@ -42,6 +43,7 @@ function Login({onLogin}) {
             placeBtnSubmit="login"
             onSubmit={handleSubmit}
             btnFormSumitState={btnFormSumitState}
+            errorText={errorText}
             >
             <section className="login">
 

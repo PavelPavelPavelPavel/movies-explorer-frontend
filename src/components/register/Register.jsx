@@ -4,7 +4,7 @@ import { useInput } from "../../utils/UseInput";
 import { emailRegex } from "../../constants/regexp";
 import { emailError, lengthError } from "../../constants/errorText/formError";
 
-function Register({onUserRegister}) {
+function Register({onUserRegister, errorText}) {
     const userName = useInput('', {minLength: 2, maxLength: 30, isEmpty: true});
     const userEmail = useInput('', {email: emailRegex, isEmpty: true});
     const userPassword = useInput('', {minLength: 2, maxLength: 30, isEmpty: true});
@@ -47,6 +47,7 @@ function Register({onUserRegister}) {
             placeBtnSubmit="register"
             onSubmit={handleSubmit}
             btnFormSumitState={btnFormSumitState}
+            errorText={errorText}
             >
             <section className="register">
                 <label className="input__label">Имя</label>

@@ -3,7 +3,7 @@ import { useLocation } from "react-router-dom";
 import saveIcon from "../../images/saved-icon.svg";
 import removeBtn from "../../images/remove-card-btn.svg";
 
-function Moviecard({filmImage, title, duration, trailerLink, onAddToFavorite, id, filmId, onDeleteFilm}) {
+function Moviecard({filmImage, title, duration, trailerLink, isLiked, onAddToFavorite, id, filmId, onDeleteFilm}) {
     const location = useLocation();
     const [initSaveBtn, setInitSaveBtn] = useState(false);
     const [locMovie, setLocMovie] = useState(true);
@@ -23,13 +23,12 @@ function Moviecard({filmImage, title, duration, trailerLink, onAddToFavorite, id
         }
     }, [location.pathname]);
 
-    // useEffect(() => {    
-    //     const difference = getDifference();
-    //     if (difference.includes(id)) {
-    //          setInitSaveBtn(false);
-    //          setSavedIcon(true);
-    //     }
-    // }, [ getDifference, id]);
+    useEffect(() => {    
+        if (location.pathname === '/movies' && isLiked) {
+             setInitSaveBtn(false);
+             setSavedIcon(true);
+        }
+    }, [isLiked, location.pathname]);
 
 
     

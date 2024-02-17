@@ -1,9 +1,0 @@
-.form__btn-submit_place_login {
-    margin: 157px 0 auto 0;
-}
-
-@media screen and (max-width: 450px) {
-    .form__btn-submit_place_login {
-       margin: 245px auto 0 auto;
-    }
-  }

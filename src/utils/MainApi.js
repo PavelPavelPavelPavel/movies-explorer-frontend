@@ -58,7 +58,7 @@ class Api {
   }
 
   addToFavorite({ country, director, duration, year, description,
-    image, trailerLink, nameEN, nameRU, thumbnail, owner, movieId }) {
+    image, trailerLink, nameEN, nameRU, isLiked, thumbnail, owner, movieId }) {
     return this._sendRequest(`${this._mainUrl}movies`, {
       method: "POST",
       headers: {
@@ -75,6 +75,7 @@ class Api {
         trailerLink,
         nameRU,
         nameEN,
+        isLiked,
         thumbnail,
         owner,
         movieId,

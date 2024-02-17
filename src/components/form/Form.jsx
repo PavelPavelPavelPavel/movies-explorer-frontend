@@ -1,10 +1,11 @@
 import { useNavigate, useLocation } from "react-router-dom";
-import { useEffect } from "react";
 
-function Form({children, onSubmit, textSubmitBtn, btnCapcha, btn, placeBtnSubmit, btnFormSumitState}) {
+
+
+function Form({children, onSubmit, textSubmitBtn, btnCapcha, btn, placeBtnSubmit, btnFormSumitState, errorText}) {
   const navigate = useNavigate();
   const location = useLocation();
-  
+  console.log(errorText)
 
     function redirect() {
       if(location.pathname === '/signin') {
@@ -29,9 +30,10 @@ function Form({children, onSubmit, textSubmitBtn, btnCapcha, btn, placeBtnSubmit
       type="submit"
       >
         {children}
+        <span className={`form__submit-error form__submit-error_place_${placeBtnSubmit}`}>{errorText}</span>
         <button 
         type="submit" 
-        className={`form__btn-submit form__btn-submit_place_${placeBtnSubmit}`}
+        className="form__btn-submit"
         disabled={!btnFormSumitState}
         >
         {textSubmitBtn}
