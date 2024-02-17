@@ -3,7 +3,7 @@ import Form from "../form/Form";
 import { useInput } from "../../utils/UseInput";
 import { emailRegex } from "../../constants/regexp";
 import { emailError, lengthError } from "../../constants/errorText/formError";
-
+import { enter, notRegistered, register, email, password } from "../../constants/words";
 
 function Login({onLogin, errorText}) {
     const userEmail = useInput('', {email: emailRegex, isEmpty: true});
@@ -37,9 +37,9 @@ function Login({onLogin, errorText}) {
 
     return (
         <Form 
-            textSubmitBtn = "Войти"
-            btnCapcha = "Ещё не зарегистрированы?"
-            btn = "Регистрация"
+            textSubmitBtn = {enter}
+            btnCapcha = {notRegistered}
+            btn = {register}
             placeBtnSubmit="login"
             onSubmit={handleSubmit}
             btnFormSumitState={btnFormSumitState}
@@ -47,7 +47,7 @@ function Login({onLogin, errorText}) {
             >
             <section className="login">
 
-                <label className="input__label">E-mail</label>
+                <label className="input__label">{email}</label>
                 <input 
                 required   
                 className="input" 
@@ -62,7 +62,7 @@ function Login({onLogin, errorText}) {
                      setErrorText(userEmail, (userEmail.emailError), emailError)
                      }
                     </span>
-                <label className="input__label">Пароль</label>
+                <label className="input__label">{password}</label>
                 <input 
                 required
                 minLength={4}

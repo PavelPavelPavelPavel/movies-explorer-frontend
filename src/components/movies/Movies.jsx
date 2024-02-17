@@ -28,16 +28,6 @@ function Movies({movies, savedMovies, cardQuantity, getFilms, onSavedSearch, onA
     setCheckBox(checked)
   }
 
-  // function getDifference() {
-  //   const mov = movies.map((mov) => {
-  //     return mov.id
-  //   })
-  //   const savedMov = savedMovies.map((mov) => {
-  //     return mov.movieId
-  //   })
-  //     return mov.filter(item => savedMov.includes(item)); 
-  // }
-
     return (
       <div className="movies">
         <Searchform getShortFilms={getShortFilms} getFilms={getFilms} 

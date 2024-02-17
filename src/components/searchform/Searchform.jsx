@@ -2,8 +2,8 @@ import btnSubmitImg from "../../images/searchform-btn-submit.svg";
 import { useState, useEffect, useRef } from "react";
 import { useInput } from "../../utils/UseInput";
 import { useLocation } from "react-router-dom";
-import { serverError } from "../../constants/errorText/otherErrorText";
-import { get } from "react-hook-form";
+import { shortMovies } from "../../constants/words";
+
 
 
 function Searchform({getShortFilms, getFilms, onSavedSearch}) {
@@ -82,7 +82,7 @@ function handleSubmit(e) {
                    aria-checked="false"
                    />
             <label className="searchform__checkbox-capcha" htmlFor="filter"></label>
-            <span className="searchform__checkbox-custom">Короткометражки</span>
+            <span className="searchform__checkbox-custom">{shortMovies}</span>
         </div>
       </form>
       </>

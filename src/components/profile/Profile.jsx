@@ -3,7 +3,7 @@ import { useContext, useState, useEffect} from "react";
 import { useInput } from "../../utils/UseInput";
 import { emailRegex } from "../../constants/regexp";
 import { emailError, lengthError } from "../../constants/errorText/formError";
-
+import { name, email, logout, edit } from "../../constants/words";
 function Profile({logOut, updateUserInfo, errorText}) {
  const { currentUser } = useContext(CurrentUserContext);
  const [btnSubmitState, setBtnSubmitState] = useState(true);
@@ -52,7 +52,7 @@ useEffect(() => {
         onSubmit={handleSubmit}
         >
             <div className="profile__input-wrapper">
-              <label htmlFor="profileName"  className="profile__label">Имя</label>
+              <label htmlFor="profileName"  className="profile__label">{name}</label>
               <input 
               type="text" 
               defaultValue={userName.value}
@@ -65,7 +65,7 @@ useEffect(() => {
               />
             </div>
             <div className="profile__input-wrapper">
-              <label htmlFor="profileEmail" className="profile__label">E-mail</label>
+              <label htmlFor="profileEmail" className="profile__label">{email}</label>
               <input
               type="email" 
               defaultValue={userEmail.value}
@@ -78,9 +78,9 @@ useEffect(() => {
               />
             </div>
             <span className="profile__error">{validErrorText || errorText}</span>
-            <button className="profile__form-btn" disabled={btnSubmitState}>Редактировать</button>
+            <button className="profile__form-btn" disabled={btnSubmitState}>{edit}</button>
         </form>
-            <button className="profile__logout" onClick={handleLogout}>Выйти из аккаунта</button>
+            <button className="profile__logout" onClick={handleLogout}>{logout}</button>
       </section>
     );
   }

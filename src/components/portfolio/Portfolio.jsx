@@ -1,12 +1,13 @@
+import { singlePage, portfolio, adaptivePage, staticPage } from "../../constants/words";
 function Portfolio() {
   
   const gitHub = "https://github.com/PavelPavelPavelPavel/";
     return (
       <section className="portfolio">
-        <h2 className="portfolio__title">Портфолио</h2>
+        <h2 className="portfolio__title">{portfolio}</h2>
         <ul className="portfolio__list">
         <li className="portfolio__list_item">    
-            <a  href={`${gitHub}how-to-learn.git`} target="blanc" className="portfolio__link portfolio__link_place_portfolio">Статичный сайт</a>
+            <a  href={`${gitHub}how-to-learn.git`} target="blanc" className="portfolio__link portfolio__link_place_portfolio">{staticPage}</a>
             <a 
             className="portfolio__btn"
             target="blanc"
@@ -16,7 +17,7 @@ function Portfolio() {
             </a> 
         </li>    
         <li className="portfolio__list_item">    
-             <a  href={`${gitHub}russian-travel.git`} target="blanc" className="portfolio__link portfolio__link_place_portfolio">Адаптивный сайт</a>
+             <a  href={`${gitHub}russian-travel.git`} target="blanc" className="portfolio__link portfolio__link_place_portfolio">{adaptivePage}</a>
             <a
             className="portfolio__btn"
             target="blanc"
@@ -24,7 +25,7 @@ function Portfolio() {
             >↗</a> 
         </li>     
         <li className="portfolio__list_item">    
-            <a  href={`${gitHub}express-mesto-gha.git`} target="blanc" className="portfolio__link portfolio__link_place_portfolio">Одностраничное приложение</a>
+            <a  href={`${gitHub}express-mesto-gha.git`} target="blanc" className="portfolio__link portfolio__link_place_portfolio">{singlePage}</a>
             <a 
             className="portfolio__btn"
             target="blanc"

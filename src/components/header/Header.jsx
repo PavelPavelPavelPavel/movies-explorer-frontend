@@ -1,10 +1,10 @@
-import { useState, useEffect } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import {  useNavigate } from "react-router-dom";
 import Navbar from "../navbar/Navbar";
 import NavigatePopup from "../navigatepopup/Navigatepopup";
 import logo from "../../images/logo.svg";
 import profile from "../../images/profile.svg";
 import dropListIcon from "../../images/droplist-icon.svg";
+import { register, enter } from "../../constants/words";
 
 
 
@@ -53,23 +53,24 @@ function Header({login, loc, greetingText, btnDropList, modalState, initModalNav
       { btnDropList && !modalState && login && !loc &&
       <img src={dropListIcon} alt="иконка с тремя полосками" onClick={handleNavbar} className="header__droplist"></img>
       } 
-       {!btnDropList &&  login && !loc && <Navbar 
-                                           navToFilms={navToFilms}
-                                           navToSavedFilms={navToSavedFilms}
-                                           modalState={modalState}
-                                             />}
-      { !login && !loc &&
+       {!btnDropList &&  login && !loc && 
+       <Navbar 
+        navToFilms={navToFilms}    
+        navToSavedFilms={navToSavedFilms}                                   
+        modalState={modalState}                                   
+         />}                                    
+      { !login && !loc &&                               
         <button  
         className="header__btn header__btn-reg"
         onClick={navToSigUp}
-        >Регистрация
+        >{register}
         </button>
         } 
       { !login && !loc  &&
         <button  
         className="header__btn header__btn-login"
         onClick={navToSigIn}
-        >Войти
+        >{enter}
         </button> 
         }
      {!btnDropList && login && !loc && <button className={`header__btn header__btn-acc ${btnAccStyle}`}> 

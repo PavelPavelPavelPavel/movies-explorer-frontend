@@ -1,6 +1,6 @@
 import { useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
-
+import { main, films, savedFilms } from "../../constants/words";
 function Navbar({navToFilms, navToSavedFilms, modalState, navToMain}) {
 
 const location = useLocation();
@@ -34,13 +34,13 @@ function handleClickMain() {
       <nav className="navbar__wrapper">
           <ul className={`navbar ${listStyle}`}>
           {modalState && <li className="navbar__item">
-                        <button onClick={handleClickMain} className={`navbar__item-btn ${btnStyle} ${btnCheckedMain}`} >Главная</button>
+                        <button onClick={handleClickMain} className={`navbar__item-btn ${btnStyle} ${btnCheckedMain}`} >{main}</button>
                     </li>}
             <li className="navbar__item">
-                <button onClick={handleClickFilms} className={`navbar__item-btn ${btnStyle} ${btnCheckedMovies}`}>Фильмы</button>
+                <button onClick={handleClickFilms} className={`navbar__item-btn ${btnStyle} ${btnCheckedMovies}`}>{films}</button>
             </li>
             <li className="navbar__item">
-                <button onClick={handleClickSavedFilms} className={`navbar__item-btn ${btnStyle}  ${btnCheckedSavedMovies}`}>Сохранённые&nbsp;фильмы</button>
+                <button onClick={handleClickSavedFilms} className={`navbar__item-btn ${btnStyle}  ${btnCheckedSavedMovies}`}>{savedFilms}</button>
             </li>
           </ul>
       </nav>

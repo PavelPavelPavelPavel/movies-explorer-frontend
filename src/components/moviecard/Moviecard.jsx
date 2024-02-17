@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import saveIcon from "../../images/saved-icon.svg";
-import removeBtn from "../../images/remove-card-btn.svg";
+import { save } from "../../constants/words";
 
 function Moviecard({filmImage, title, duration, trailerLink, isLiked, onAddToFavorite, id, filmId, onDeleteFilm}) {
     const location = useLocation();
@@ -60,7 +60,9 @@ function Moviecard({filmImage, title, duration, trailerLink, isLiked, onAddToFav
                  onMouseEnter={handleMouseEnter}
                  onMouseLeave={handleMouseLeave}
                  onClick={handleAddToFavorite}
-                >Сохранить</button>}
+                >
+                {save}
+                </button>}
                 {!locMovie && initSaveBtn && deleteBtn && <button 
                 className="moviecard__remove"
                 onMouseEnter={handleMouseEnter}

@@ -1,3 +1,5 @@
+import { more } from "../../constants/words";
+
 function Morebtn({getMoreFilms}) {
 
     function handleClickMoreFilms() {
@@ -8,7 +10,9 @@ function Morebtn({getMoreFilms}) {
         <button 
         className="morebtn__btn"
         onClick={handleClickMoreFilms}
-        >Ещё</button>
+        >
+        {more}
+        </button>
         </section>
     );
   }

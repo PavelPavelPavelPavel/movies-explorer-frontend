@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { useInput } from "../../utils/UseInput";
 import { emailRegex } from "../../constants/regexp";
 import { emailError, lengthError } from "../../constants/errorText/formError";
+import { alredyRegistered, onRegister, password, name, email } from "../../constants/words";
 
 function Register({onUserRegister, errorText}) {
     const userName = useInput('', {minLength: 2, maxLength: 30, isEmpty: true});
@@ -41,8 +42,8 @@ function Register({onUserRegister, errorText}) {
 
     return (
         <Form 
-            textSubmitBtn = "Зарегистрироваться"
-            btnCapcha = "Уже зарегистрированы?"
+            textSubmitBtn = {onRegister}
+            btnCapcha = {alredyRegistered}
             btn = "Войти"
             placeBtnSubmit="register"
             onSubmit={handleSubmit}
@@ -50,7 +51,7 @@ function Register({onUserRegister, errorText}) {
             errorText={errorText}
             >
             <section className="register">
-                <label className="input__label">Имя</label>
+                <label className="input__label">{name}</label>
                 <input 
                 required
                 className="input" 
@@ -67,7 +68,7 @@ function Register({onUserRegister, errorText}) {
                     setErrorText(userName, (userName.minLengthError || userName.maxLengthError), lengthError)
                     }
                 </span>
-                <label className="input__label">E-mail</label>
+                <label className="input__label">{email}</label>
                 <input 
                 required
                 className="input" 
@@ -82,7 +83,7 @@ function Register({onUserRegister, errorText}) {
                     setErrorText(userEmail, (userEmail.emailError), emailError)
                     }
                 </span>
-                <label className="input__label">Пароль</label>
+                <label className="input__label">{password}</label>
                 <input 
                 required
                 className="input" 
