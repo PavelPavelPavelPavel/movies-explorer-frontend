@@ -38,6 +38,6 @@ class Auth {
 }
 
 
-const auth = new Auth('http://localhost:3000/');
+const auth = new Auth(process.env.REACT_APP_API_URL);
 
 export default auth;

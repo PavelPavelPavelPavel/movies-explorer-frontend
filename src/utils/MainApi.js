@@ -1,5 +1,3 @@
-// require('dotenv').config();
-
 class Api {
   constructor(mainUrl) {
     this._mainUrl = mainUrl;
@@ -83,19 +81,9 @@ class Api {
     })
   }
 
-
-  // addLikeToCard(id) {
-  //   return this._sendRequest(`${this._mainUrl}cards/${id}/likes`, {
-  //     method: "PUT",
-  //     headers: {
-  //       authorization: localStorage.getItem('token'),
-  //       "Content-Type": "application/json",
-  //     },
-  //   })
-  // }
 }
 
-const mainApi = new Api('http://localhost:3000/');
+const mainApi = new Api(process.env.REACT_APP_API_URL);
 
 
 export default mainApi;
