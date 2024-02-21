@@ -5,7 +5,6 @@ import { useNavigate, useLocation } from "react-router-dom";
 function Form({children, onSubmit, textSubmitBtn, btnCapcha, btn, placeBtnSubmit, btnFormSumitState, errorText}) {
   const navigate = useNavigate();
   const location = useLocation();
-  console.log(errorText)
 
     function redirect() {
       if(location.pathname === '/signin') {

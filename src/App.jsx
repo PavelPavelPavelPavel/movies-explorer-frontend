@@ -22,6 +22,7 @@ import InfoPopup from "./components/infopopup/Infopopup";
 import { wrongLogOrPass } from "./constants/errorText/loginErrorText";
 import { registerError } from "./constants/errorText/registerErrorText";
 import { profileUpdateError } from "./constants/errorText/profileErrorText";
+import { save } from "./constants/words";
 
 
 
@@ -72,12 +73,6 @@ function App() {
 	}, [loggedIn]);
 
   useEffect(() => {
-      if(location.pathname === '/saved-movies') {
-        mainApi.getSavedFilms()
-        .then(films => {
-          setSavedMovies(films)})
-        .catch(err => console.log(err))
-      }
       if(location.pathname === '/movies') {
         const updatedMovies = movies;
         if (savedMovies.length === 0) {
@@ -92,12 +87,18 @@ function App() {
             }
           })
         })
-        setMovies(updatedMovies)
+        setMovies(updatedMovies, savedMovies)
       }
-  }, [location.pathname, movies, savedMovies]);
+  }, [location.pathname, savedMovies, movies]);
 
-
-
+  useEffect(() => {
+    if(location.pathname === '/saved-movies') {  
+      mainApi.getSavedFilms()
+      .then(films => {
+        setSavedMovies(films)})
+      .catch(err => console.log(err))
+     }
+  }, [location.pathname])
 
   useEffect(() => {
     if (resize.isScreenLg) {
