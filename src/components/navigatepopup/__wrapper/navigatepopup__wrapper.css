@@ -1,18 +1,17 @@
 .navigatepopup__wrapper {
-    margin: 0 0 0 auto;
-    padding: 0;
-    max-width: 520px;
-    height: 100%;
-    background-color: #202020;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+	margin: 0 0 0 auto;
+	padding: 0;
+	max-width: 520px;
+	height: 100%;
+	background-color: #202020;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 
 @media screen and (max-width: 540px) {
-    .navigatepopup__wrapper {
-        width: 100%;
-        height: 100%;
-    }
+	.navigatepopup__wrapper {
+		width: 100%;
+		height: 100%;
+	}
 }
-

@@ -1,19 +1,19 @@
 .header__droplist {
-    margin: auto 30px auto auto;
-    padding: 0;
-    cursor: pointer;
-    width: 44px;
-    height: 44px;
+	margin: auto 30px auto auto;
+	padding: 0;
+	cursor: pointer;
+	width: 44px;
+	height: 44px;
 }
 
 .header__droplist:hover {
-    opacity: 0.8;
+	opacity: 0.8;
 }
 
 @media screen and (max-width: 360px) {
-    .header__droplist {
-    margin: 15px 14px 15px auto;
-    width: 40px;
-    height: 43px;
-    }
-  }
+	.header__droplist {
+		margin: 15px 14px 15px auto;
+		width: 40px;
+		height: 43px;
+	}
+}

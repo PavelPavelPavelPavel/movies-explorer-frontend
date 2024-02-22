@@ -1,17 +1,16 @@
 .logo__btn_place_header {
-        margin: 0 0 0 70px;
-        padding: 0;
-      
-    }
-    
-    @media screen and (max-width: 800px) {
-        .logo__btn_place_header {
-         margin: 4px 0 0 30px;
-        }
-      }
-    
-      @media screen and (max-width: 360px) {
-        .logo__btn_place_header {
-       margin: 3px 0 0 15px;
-        }
-      }
+	margin: 0 0 0 70px;
+	padding: 0;
+}
+
+@media screen and (max-width: 800px) {
+	.logo__btn_place_header {
+		margin: 4px 0 0 30px;
+	}
+}
+
+@media screen and (max-width: 360px) {
+	.logo__btn_place_header {
+		margin: 3px 0 0 15px;
+	}
+}

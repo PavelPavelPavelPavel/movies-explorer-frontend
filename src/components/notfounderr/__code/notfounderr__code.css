@@ -1,28 +1,28 @@
 .notfounderr__code {
-    margin: 246px auto 0 auto;
-    padding: 0;
-    width: 400px;
-    height: 169px;
-    color:#FFFFFF;
-    font-family: Inter, Arial, Helvetica, sans-serif;
-    font-weight: 400;
-    font-size: 140px;
-    line-height: 169.4px;
-    text-align: center;
+	margin: 246px auto 0 auto;
+	padding: 0;
+	width: 400px;
+	height: 169px;
+	color: #ffffff;
+	font-family: Inter, Arial, Helvetica, sans-serif;
+	font-weight: 400;
+	font-size: 140px;
+	line-height: 169.4px;
+	text-align: center;
 }
 
 @media screen and (max-width: 800px) {
-    .notfounderr__code {
-        margin: 408px auto 0 auto;
-    }
-  }
+	.notfounderr__code {
+		margin: 408px auto 0 auto;
+	}
+}
 
-  @media screen and (max-width: 400px) {
-    .notfounderr__code {
-        margin: 329px auto 0 auto;
-        width: 300px;
-        height: 97px;
-        font-size: 80px;
-        line-height: 97px;
-    }
-  }
+@media screen and (max-width: 400px) {
+	.notfounderr__code {
+		margin: 329px auto 0 auto;
+		width: 300px;
+		height: 97px;
+		font-size: 80px;
+		line-height: 97px;
+	}
+}

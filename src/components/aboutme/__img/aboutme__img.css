@@ -1,30 +1,30 @@
 .aboutme__img {
-    margin: 0;
-    padding: 0;
-    width: 270px;
-    height: 327px;
-    border-radius: 10px;
+	margin: 0;
+	padding: 0;
+	width: 270px;
+	height: 327px;
+	border-radius: 10px;
 }
 
 @media screen and (max-width: 800px) {
-    .aboutme__img {
-        margin: 0;
-        width: 255px;
-        height: 307px;
-    }
+	.aboutme__img {
+		margin: 0;
+		width: 255px;
+		height: 307px;
+	}
 }
 
 @media screen and (max-width: 560px) {
-    .aboutme__img {
-        margin: 0 auto;
-        width: 284px;
-        height: 344px;
-    }
-  }
+	.aboutme__img {
+		margin: 0 auto;
+		width: 284px;
+		height: 344px;
+	}
+}
 
-  @media screen and (max-width: 400px) {
-    .aboutme__img {
-        width: 292px;
-        height: 352px;
-    }
-  }
+@media screen and (max-width: 400px) {
+	.aboutme__img {
+		width: 292px;
+		height: 352px;
+	}
+}

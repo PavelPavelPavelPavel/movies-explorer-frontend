@@ -1,34 +1,33 @@
 .morebtn__btn {
-    margin: 70px auto 95px auto;
-    padding: 0;
-    width: 320px;
-    height: 36px;
-    background-color: inherit;
-    border: 1px solid #424242;
-    border-radius: 6px;
-    font-family: Inter, Arial, Helvetica, sans-serif;
-    align-self: center;
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 14.5px;
-    color: #FFFFFF;
-    cursor: pointer;
+	margin: 70px auto 95px auto;
+	padding: 0;
+	width: 320px;
+	height: 36px;
+	background-color: inherit;
+	border: 1px solid #424242;
+	border-radius: 6px;
+	font-family: Inter, Arial, Helvetica, sans-serif;
+	align-self: center;
+	font-weight: 500;
+	font-size: 12px;
+	line-height: 14.5px;
+	color: #ffffff;
+	cursor: pointer;
 }
 
 .morebtn__btn:hover {
-    opacity: 0.8;
-    
+	opacity: 0.8;
 }
 
 @media screen and (max-width: 800px) {
-    .morebtn__btn {
-       margin: 45px 0 100px 0;
-    }
-  }
+	.morebtn__btn {
+		margin: 45px 0 100px 0;
+	}
+}
 
-  @media screen and (max-width: 400px) {
-    .morebtn__btn {
-       width: 240px;
-       margin: 65px 0 100px 0;
-    }
-  }
+@media screen and (max-width: 400px) {
+	.morebtn__btn {
+		width: 240px;
+		margin: 65px 0 100px 0;
+	}
+}

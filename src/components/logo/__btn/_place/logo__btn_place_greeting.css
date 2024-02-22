@@ -1,20 +1,18 @@
 .logo__btn_place_greeting {
-    margin: 70px auto 0 auto;
-    padding: 0 400px 0 0;
-    justify-self:right;
-    }
-
+	margin: 70px auto 0 auto;
+	padding: 0 400px 0 0;
+	justify-self: right;
+}
 
 @media screen and (max-width: 800px) {
-      .logo__btn_place_greeting {   
-          margin: 232px auto 0 auto;
-           }  
-    }
-    
- @media screen and (max-width: 450px) {
-     .logo__btn_place_greeting {   
-        margin: 55px auto 0 auto; 
-        padding: 0; 
-        }
- }
-     
+	.logo__btn_place_greeting {
+		margin: 232px auto 0 auto;
+	}
+}
+
+@media screen and (max-width: 450px) {
+	.logo__btn_place_greeting {
+		margin: 55px auto 0 auto;
+		padding: 0;
+	}
+}

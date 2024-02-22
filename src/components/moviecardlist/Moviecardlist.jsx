@@ -2,66 +2,79 @@ import { useState, useEffect } from "react";
 import Moviecard from "../moviecard/Moviecard";
 import Morebtn from "../morebtn/Morebtn";
 
-function Moviecardlist({movies, cardQuantity, checkBox, onAddToFavorite,  getDifference}) {
-const [elementOnPage, setElementOnPage] = useState(12);
-const [moreBtnVision, setMoreBtnVision] = useState();
-const [moreElement, setMoreElement] = useState(12);
-const [renderMovies, setRenderMovies] = useState([]);
-useEffect(() => {
-    const shortMovies = movies.filter((film) => film.duration < 40);
-    checkBox ? setRenderMovies(shortMovies) : setRenderMovies(movies);
- }, [movies, checkBox]);
+function Moviecardlist({
+	movies,
+	cardQuantity,
+	checkBox,
+	onAddToFavorite,
+	getDifference,
+}) {
+	const [elementOnPage, setElementOnPage] = useState(12);
+	const [moreBtnVision, setMoreBtnVision] = useState();
+	const [moreElement, setMoreElement] = useState(12);
+	const [renderMovies, setRenderMovies] = useState([]);
+	useEffect(() => {
+		const shortMovies = movies.filter((film) => film.duration < 40);
+		checkBox ? setRenderMovies(shortMovies) : setRenderMovies(movies);
+	}, [movies, checkBox]);
 
+	useEffect(() => {
+		if (cardQuantity >= 1210) {
+			setElementOnPage(12);
+			setMoreElement(3);
+			renderMovies.length > 12
+				? setMoreBtnVision(true)
+				: setMoreBtnVision(false);
+		} else if (cardQuantity >= 737 && cardQuantity < 1210) {
+			setElementOnPage(8);
+			setMoreElement(2);
+			renderMovies.length > 8
+				? setMoreBtnVision(true)
+				: setMoreBtnVision(false);
+		} else if (cardQuantity < 737) {
+			setElementOnPage(5);
+			setMoreElement(2);
+			renderMovies.length > 5
+				? setMoreBtnVision(true)
+				: setMoreBtnVision(false);
+		}
+	}, [cardQuantity, renderMovies.length]);
 
-useEffect(() => {
-    if(cardQuantity >= 1210) {
-        setElementOnPage(12);
-        setMoreElement(3)
-        renderMovies.length > 12 ? setMoreBtnVision(true) : setMoreBtnVision(false);
-    } else if(cardQuantity >= 737 && cardQuantity < 1210) {
-        setElementOnPage(8);
-        setMoreElement(2)
-        renderMovies.length > 8 ? setMoreBtnVision(true) : setMoreBtnVision(false);
-    } else if (cardQuantity < 737) {
-        setElementOnPage(5);
-        setMoreElement(2)
-        renderMovies.length > 5 ? setMoreBtnVision(true) : setMoreBtnVision(false);
-    }
-},[cardQuantity, renderMovies.length]);
+	useEffect(() => {
+		renderMovies.length === elementOnPage
+			? setMoreBtnVision(false)
+			: setMoreBtnVision(true);
+		elementOnPage > renderMovies.length
+			? setMoreBtnVision(false)
+			: setMoreBtnVision(true);
+	}, [renderMovies.length, elementOnPage]);
 
-useEffect(() => {
-    renderMovies.length === elementOnPage ? setMoreBtnVision(false) : setMoreBtnVision(true);
-    elementOnPage > renderMovies.length ? setMoreBtnVision(false) : setMoreBtnVision(true);
-}, [renderMovies.length, elementOnPage]);
+	function getMoreFilms() {
+		setElementOnPage(elementOnPage + moreElement);
+	}
 
-
-function getMoreFilms() {
-    setElementOnPage(elementOnPage + moreElement);
-};
-
-
-    return (
-    <>  
-        <section className="moviecardlist">
-        {renderMovies.slice(0, elementOnPage).map((movie) => {
-            return (
-        <Moviecard
-                key={movie.id}
-                id={movie.id}
-                filmImage={movie.image.url}
-                title={movie.nameRU}
-                isLiked={movie.isLiked}
-                duration={movie.duration}
-                trailerLink={movie.trailerLink}
-                onAddToFavorite={onAddToFavorite}
-                getDifference={getDifference}
-        />
-        );
-        })}
-        </section>
-        {moreBtnVision && <Morebtn getMoreFilms={getMoreFilms}/>}
-    </>
-    )
-    }
+	return (
+		<>
+			<section className='moviecardlist'>
+				{renderMovies.slice(0, elementOnPage).map((movie) => {
+					return (
+						<Moviecard
+							key={movie.id}
+							id={movie.id}
+							filmImage={movie.image.url}
+							title={movie.nameRU}
+							isLiked={movie.isLiked}
+							duration={movie.duration}
+							trailerLink={movie.trailerLink}
+							onAddToFavorite={onAddToFavorite}
+							getDifference={getDifference}
+						/>
+					);
+				})}
+			</section>
+			{moreBtnVision && <Morebtn getMoreFilms={getMoreFilms} />}
+		</>
+	);
+}
 
 export default Moviecardlist;

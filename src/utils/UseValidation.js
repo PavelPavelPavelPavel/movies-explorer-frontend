@@ -5,6 +5,7 @@ export const useValidation = (value, validations) => {
     const [maxLengthError, setMaxLengthError] = useState(false);
     const [emailError, setEmailError] = useState(false);
     const [isEmpty, setIsEmpty] = useState(true);
+
     useEffect(() => {
         for (const validation in validations) {
             switch (validation) {

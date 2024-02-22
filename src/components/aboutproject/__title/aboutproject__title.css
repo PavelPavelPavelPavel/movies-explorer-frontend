@@ -1,27 +1,27 @@
 .aboutproject__title {
-    margin: 110px 70px 0 70px;
-    padding: 0 0 23px 0;
-    max-height: 27px;
-    font-family: Inter, Arial, Helvetica, sans-serif;
-    font-weight: 400;
-    font-size: 22px;
-    line-height: 26.5px;
-    letter-spacing: -0.04em;
-    color: #FFFFFF;
-    border-bottom: 1px solid #DADADA;
+	margin: 110px 70px 0 70px;
+	padding: 0 0 23px 0;
+	max-height: 27px;
+	font-family: Inter, Arial, Helvetica, sans-serif;
+	font-weight: 400;
+	font-size: 22px;
+	line-height: 26.5px;
+	letter-spacing: -0.04em;
+	color: #ffffff;
+	border-bottom: 1px solid #dadada;
 }
 
 @media screen and (max-width: 800px) {
-    .aboutproject__title {
-        margin: 90px 50px 0 50px;
-    }
-  }
+	.aboutproject__title {
+		margin: 90px 50px 0 50px;
+	}
+}
 
 @media screen and (max-width: 400px) {
-    .aboutproject__title {
-        margin: 75px 15px 0 15px;
-        padding: 0 0 28px 0;
-        font-size: 18px;
-        line-height: 21.8px;
-    }
-  }
+	.aboutproject__title {
+		margin: 75px 15px 0 15px;
+		padding: 0 0 28px 0;
+		font-size: 18px;
+		line-height: 21.8px;
+	}
+}

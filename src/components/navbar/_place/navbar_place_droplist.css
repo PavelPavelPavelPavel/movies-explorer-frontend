@@ -1,22 +1,22 @@
 .navbar_place_droplist {
-    margin: 162px 180px auto 180px;
-    padding: 0;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 28px;
+	margin: 162px 180px auto 180px;
+	padding: 0;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 28px;
 }
 
 @media screen and (max-width: 540px) {
-    .navbar_place_droplist {
-        margin: 162px 90px auto 90px;
-    }
+	.navbar_place_droplist {
+		margin: 162px 90px auto 90px;
+	}
 }
 
 @media screen and (max-width: 400px) {
-    .navbar_place_droplist {
-        margin: 144px auto 0 auto;
-        gap: 25px;
-    }
+	.navbar_place_droplist {
+		margin: 144px auto 0 auto;
+		gap: 25px;
+	}
 }

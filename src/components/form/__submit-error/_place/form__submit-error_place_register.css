@@ -1,9 +1,9 @@
 .form__submit-error_place_register {
-    margin: 35px 0 auto 0;
+	margin: 35px 0 auto 0;
 }
 
 @media screen and (max-width: 450px) {
-    .form__submit-error_place_register {
-       margin: 123px auto 0 auto;
-    }
-  }
+	.form__submit-error_place_register {
+		margin: 123px auto 0 auto;
+	}
+}

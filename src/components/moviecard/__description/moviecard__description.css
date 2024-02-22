@@ -1,22 +1,22 @@
 .moviecard__description {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    gap: 30px;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	gap: 30px;
 }
 
 @media screen and (max-width: 800px) {
-    .moviecard__description {
-       margin: 15px 0 0 0;
-       gap: 37px;
-    }
-  }
+	.moviecard__description {
+		margin: 15px 0 0 0;
+		gap: 37px;
+	}
+}
 
-  @media screen and (max-width: 400px) {
-    .moviecard__description {
-       margin: 0;
-       gap: 20px;
-    }
-  }
+@media screen and (max-width: 400px) {
+	.moviecard__description {
+		margin: 0;
+		gap: 20px;
+	}
+}

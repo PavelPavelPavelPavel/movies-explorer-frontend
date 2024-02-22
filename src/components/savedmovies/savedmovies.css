@@ -1,32 +1,27 @@
 .savedmovies {
-    margin: 80px auto 235px auto;
-    padding: 0;
-    min-height: 250px;
-    background-color: #202020;
-    display: grid;
-    justify-items: center;
-    grid-template-columns: repeat(3, 360px);
-    row-gap: 60px;
-    column-gap: 30px;
+	margin: 80px auto 235px auto;
+	padding: 0;
+	min-height: 250px;
+	background-color: #202020;
+	display: grid;
+	justify-items: center;
+	grid-template-columns: repeat(3, 360px);
+	row-gap: 60px;
+	column-gap: 30px;
 }
 
 @media screen and (max-width: 1210px) {
-    .savedmovies {
-        grid-template-columns: repeat(2, 339px);
-        row-gap: 47px;
-        column-gap: 30px;
-    }
-  }
+	.savedmovies {
+		grid-template-columns: repeat(2, 339px);
+		row-gap: 47px;
+		column-gap: 30px;
+	}
+}
 
-  @media screen and (max-width: 760px) {
-    .savedmovies {
-        margin: 50px auto 169px auto;
-        grid-template-columns: repeat(1, 300px);
-        row-gap: 37px;
-    }
-  }
-
-
-
-  
-  
+@media screen and (max-width: 760px) {
+	.savedmovies {
+		margin: 50px auto 169px auto;
+		grid-template-columns: repeat(1, 300px);
+		row-gap: 37px;
+	}
+}
