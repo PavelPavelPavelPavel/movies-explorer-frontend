@@ -1,34 +1,33 @@
 import btnSubmitImg from "../../images/searchform-btn-submit.svg";
 import { useState, useEffect, useRef } from "react";
-import { useInput } from "../../utils/UseInput";
 import { useLocation } from "react-router-dom";
 import { shortMovies } from "../../constants/words";
 
-function Searchform({ getShortFilms, getFilms, onSavedSearch }) {
+function Searchform({ getShortFilms, getFilms, onSavedSearch, getInputValue }) {
 	const location = useLocation();
-	const searchRef = useRef(null);
+	const searchRef = useRef("");
 	const [checkBox, setCheckBox] = useState(false);
-	const searchInput = useInput("", { isEmpty: true });
 
-	useEffect(() => {
-		if (location.pathname === "/movies") {
-			setCheckBox(JSON.parse(localStorage.getItem("checkBox")));
-			searchRef.current.value = JSON.parse(
-				localStorage.getItem("savedSearch")
-			);
-		}
-	}, []);
+	// useEffect(() => {
+	// 	if (location.pathname === "/movies") {
+	// 		setCheckBox(JSON.parse(localStorage.getItem("checkBox")));
+	// 		searchRef.current.value = JSON.parse(
+	// 			localStorage.getItem("savedSearch")
+	// 		);
+	// 	}
+	// }, []);
 
 	useEffect(() => {
 		if (location.pathname === "/saved-movies") {
 			setCheckBox(false);
-			onClear();
+			searchRef.current.value = "";
 		}
 		if (location.pathname === "/movies") {
 			setCheckBox(JSON.parse(localStorage.getItem("checkBox")));
 			searchRef.current.value = JSON.parse(
 				localStorage.getItem("savedSearch")
 			);
+			getInputValue(searchRef.current.value);
 		}
 	}, [location.pathname]);
 
@@ -43,19 +42,19 @@ function Searchform({ getShortFilms, getFilms, onSavedSearch }) {
 		}
 	}
 
-	const onClear = () => {
-		searchRef.current.value = "";
-	};
-
 	function handleSubmit(e) {
 		e.preventDefault();
-		location.pathname === "/movies"
-			? getFilms(searchRef.current.value)
-			: onSavedSearch(searchInput.value);
-		localStorage.setItem(
-			"savedSearch",
-			JSON.stringify(searchRef.current.value)
-		);
+		if (location.pathname === "/movies") {
+			getFilms(searchRef.current.value);
+			localStorage.setItem(
+				"savedSearch",
+				JSON.stringify(searchRef.current.value)
+			);
+			getInputValue(searchRef.current.value);
+		} else if (location.pathname === "/saved-movies") {
+			getInputValue(searchRef.current.value);
+			onSavedSearch(searchRef.current.value);
+		}
 	}
 
 	return (
@@ -67,9 +66,7 @@ function Searchform({ getShortFilms, getFilms, onSavedSearch }) {
 						placeholder='Фильм'
 						required
 						ref={searchRef}
-						defaultValue={searchInput.value}
-						onChange={(e) => searchInput.onChange(e)}
-						onBlur={(e) => searchInput.onBlur(e)}
+						defaultValue={searchRef.current.value}
 					/>
 					<span className='searchform__input-error'></span>
 					<button type='submit' className='searchform__btn-submit'>

@@ -131,11 +131,17 @@ function App() {
 		const movies = [];
 		arr.filter((film) => {
 			if (
-				film.nameRU.trim().toLowerCase().includes(value.toLowerCase().trim())
+				film.nameRU
+					.trim()
+					.toLowerCase()
+					.includes(value.toLowerCase().trim())
 			) {
 				movies.push(film);
 			} else if (
-				film.nameEN.trim().toLowerCase().includes(value.toLowerCase().trim())
+				film.nameEN
+					.trim()
+					.toLowerCase()
+					.includes(value.toLowerCase().trim())
 			) {
 				movies.push(film);
 			} else if (film.year === value) {
@@ -163,7 +169,11 @@ function App() {
 						}
 					});
 				});
-				const res = findFilm(addLikeFieldToMovies, setMovies, inputValue);
+				const res = findFilm(
+					addLikeFieldToMovies,
+					setMovies,
+					inputValue
+				);
 				setMovies(res);
 			})
 			.catch((err) => {
@@ -171,6 +181,7 @@ function App() {
 			})
 			.finally(() => setPreloaderStatus(false));
 	}
+
 	function onSavedSearch(inputValue) {
 		const res = findFilm(savedMovies, setSavedMovies, inputValue);
 		setSavedMovies(res);
@@ -254,8 +265,7 @@ function App() {
 
 	function onUserRegister({ name, email, password }) {
 		setPreloaderStatus(true);
-		auth
-			.authentication(name, email, password)
+		auth.authentication(name, email, password)
 			.then((res) => {
 				setCurrentUser({
 					name: res.name,
@@ -277,8 +287,7 @@ function App() {
 
 	function onLogin({ email, password }) {
 		setPreloaderStatus(true);
-		auth
-			.authorization(email, password)
+		auth.authorization(email, password)
 			.then((res) => {
 				localStorage.setItem("jwt", res.token);
 				setPreloaderStatus(false);
@@ -321,6 +330,8 @@ function App() {
 			name: "",
 			email: "",
 		});
+		setMovies([]);
+		setSavedMovies([]);
 		navigate("/");
 		setLoggedIn(false);
 	}
@@ -361,7 +372,12 @@ function App() {
 							/>
 							<Route
 								path='/signin'
-								element={<Login onLogin={onLogin} errorText={errorText} />}
+								element={
+									<Login
+										onLogin={onLogin}
+										errorText={errorText}
+									/>
+								}
 							/>
 							<Route
 								path='/movies'
@@ -404,12 +420,14 @@ function App() {
 							/>
 							<Route path='*' element={<Notfounderr />} />
 						</Routes>
-						{popupStatus && <InfoPopup onClosePopup={onClosePopup} />}
+						{popupStatus && (
+							<InfoPopup onClosePopup={onClosePopup} />
+						)}
 						{preloaderStatus && <Preloader />}
 					</div>
-					{location.pathname !== "/profile" && !loc && !modalState && (
-						<Footer />
-					)}
+					{location.pathname !== "/profile" &&
+						!loc &&
+						!modalState && <Footer />}
 				</div>
 			</CurrentUserContext.Provider>
 		</>

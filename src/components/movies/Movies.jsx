@@ -4,6 +4,8 @@ import Searchform from "../searchform/Searchform";
 import Moviecardlist from "../moviecardlist/Moviecardlist";
 import Savedmovies from "../savedmovies/Savedmovies";
 import FilmError from "../filmerror/Filmerror";
+import { searchResultError } from "../../constants/errorText/searchError";
+import { haveNotSavedMovies } from "../../constants/errorText/searchError";
 
 function Movies({
 	movies,
@@ -17,25 +19,35 @@ function Movies({
 	const location = useLocation();
 	const [checkBox, setCheckBox] = useState(false);
 	const [moviesPresence, setMoviesPresence] = useState(true);
+	const [searchValue, setSearchValue] = useState("");
+	const [text, setText] = useState("");
 
 	useEffect(() => {
 		if (location.pathname === "/movies") {
-			movies.length > 0
+			setText(searchResultError);
+			movies.length > 0 && searchValue.length > 0
 				? setMoviesPresence(true)
 				: setMoviesPresence(false);
 		}
-	}, [movies.length, location.pathname]);
+	}, [movies.length, location.pathname, searchValue.length]);
 
 	useEffect(() => {
 		if (location.pathname === "/saved-movies") {
+			savedMovies.length === 0
+				? setText(haveNotSavedMovies)
+				: setText(searchResultError);
 			savedMovies.length > 0
 				? setMoviesPresence(true)
 				: setMoviesPresence(false);
 		}
-	}, [savedMovies.length, location.pathname]);
+	}, [savedMovies.length, location.pathname, searchValue.length]);
 
 	function getShortFilms(checked) {
 		setCheckBox(checked);
+	}
+
+	function getInputValue(value) {
+		setSearchValue(value);
 	}
 
 	return (
@@ -46,6 +58,7 @@ function Movies({
 				movies={movies}
 				savedMovies={savedMovies}
 				onSavedSearch={onSavedSearch}
+				getInputValue={getInputValue}
 			/>
 			{location.pathname === "/saved-movies"
 				? moviesPresence && (
@@ -56,9 +69,7 @@ function Movies({
 							checkBox={checkBox}
 						/>
 				  )
-				: !moviesPresence && (
-						<FilmError moviesPresence={moviesPresence} />
-				  )}
+				: !moviesPresence && <FilmError text={text} />}
 			{location.pathname === "/movies"
 				? moviesPresence && (
 						<Moviecardlist
@@ -68,9 +79,7 @@ function Movies({
 							onAddToFavorite={onAddToFavorite}
 						/>
 				  )
-				: !moviesPresence && (
-						<FilmError moviesPresence={moviesPresence} />
-				  )}
+				: !moviesPresence && <FilmError text={text} />}
 		</div>
 	);
 }
