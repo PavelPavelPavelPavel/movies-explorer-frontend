@@ -127,7 +127,7 @@ function App() {
 		}
 	}, [loggedIn, location.pathname, navigate]);
 
-	function findFilm(arr, setArr, value) {
+	function findFilm(arr, value) {
 		const movies = [];
 		arr.filter((film) => {
 			if (
@@ -146,45 +146,45 @@ function App() {
 				movies.push(film);
 			} else if (film.year === value) {
 				movies.push(film);
-			} else {
-				setArr([]);
 			}
 		});
 		return movies;
 	}
 
 	function getFilms(inputValue) {
-		setPreloaderStatus(true);
-		movieApi
-			.getFilms()
-			.then((movies) => {
-				const addLikeFieldToMovies = movies.map((movie) => {
-					movie.isLiked = false;
-					return movie;
-				});
-				addLikeFieldToMovies.filter((mov) => {
-					return savedMovies.some((likedMov) => {
-						if (likedMov.movieId === mov.id) {
-							return (mov.isLiked = true);
-						}
+		if (inputValue.length > 0) {
+			setPreloaderStatus(true);
+			movieApi
+				.getFilms()
+				.then((movies) => {
+					const addLikeFieldToMovies = movies.map((movie) => {
+						movie.isLiked = false;
+						return movie;
 					});
-				});
-				const res = findFilm(
-					addLikeFieldToMovies,
-					setMovies,
-					inputValue
-				);
-				setMovies(res);
-			})
-			.catch((err) => {
-				console.log(err);
-			})
-			.finally(() => setPreloaderStatus(false));
+					addLikeFieldToMovies.filter((mov) => {
+						return savedMovies.some((likedMov) => {
+							if (likedMov.movieId === mov.id) {
+								return (mov.isLiked = true);
+							}
+						});
+					});
+					const res = findFilm(addLikeFieldToMovies, inputValue);
+					setMovies(res);
+				})
+				.catch((err) => {
+					console.log(err);
+				})
+				.finally(() => setPreloaderStatus(false));
+		}
 	}
 
 	function onSavedSearch(inputValue) {
-		const res = findFilm(savedMovies, setSavedMovies, inputValue);
-		setSavedMovies(res);
+		setPreloaderStatus(true);
+		mainApi.getSavedFilms().then((films) => {
+			const res = findFilm(films, inputValue);
+			setSavedMovies(res);
+			setPreloaderStatus(false);
+		});
 	}
 
 	function onAddToFavorite(filmId, urlApi) {
@@ -244,6 +244,7 @@ function App() {
 	}
 
 	function onDeleteFilm(filmId) {
+		setPreloaderStatus(true);
 		const updatedMovies = savedMovies;
 		updatedMovies.filter((film) => {
 			if (film._id === filmId) {
@@ -254,6 +255,7 @@ function App() {
 						});
 						setSavedMovies(res);
 					});
+					setPreloaderStatus(false);
 				});
 			}
 		});

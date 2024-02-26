@@ -1,9 +1,12 @@
 import { useState, useEffect } from "react";
 import Moviecard from "../moviecard/Moviecard";
 import Morebtn from "../morebtn/Morebtn";
+import { get } from "react-hook-form";
+import { shortMovies } from "../../constants/words";
 
 function Moviecardlist({
 	movies,
+	shortMovies,
 	cardQuantity,
 	checkBox,
 	onAddToFavorite,
@@ -13,10 +16,10 @@ function Moviecardlist({
 	const [moreBtnVision, setMoreBtnVision] = useState();
 	const [moreElement, setMoreElement] = useState(12);
 	const [renderMovies, setRenderMovies] = useState([]);
+
 	useEffect(() => {
-		const shortMovies = movies.filter((film) => film.duration < 40);
 		checkBox ? setRenderMovies(shortMovies) : setRenderMovies(movies);
-	}, [movies, checkBox]);
+	}, [movies, shortMovies, checkBox]);
 
 	useEffect(() => {
 		if (cardQuantity >= 1210) {

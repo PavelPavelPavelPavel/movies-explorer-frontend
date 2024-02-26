@@ -39,6 +39,11 @@ function Searchform({ getShortFilms, getFilms, onSavedSearch, getInputValue }) {
 		setCheckBox(checked);
 		if (location.pathname === "/movies") {
 			localStorage.setItem("checkBox", checked);
+			localStorage.setItem(
+				"savedSearch",
+				JSON.stringify(searchRef.current.value)
+			);
+			getFilms(searchRef.current.value);
 		}
 	}
 
