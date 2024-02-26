@@ -47,7 +47,7 @@ function Moviecardlist({
 		renderMovies.length === elementOnPage
 			? setMoreBtnVision(false)
 			: setMoreBtnVision(true);
-		elementOnPage > renderMovies.length
+		elementOnPage >= renderMovies.length
 			? setMoreBtnVision(false)
 			: setMoreBtnVision(true);
 	}, [renderMovies.length, elementOnPage]);
