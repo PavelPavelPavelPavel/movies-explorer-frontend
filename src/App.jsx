@@ -30,6 +30,7 @@ function App() {
 	const [currentUser, setCurrentUser] = useState({ name: "", email: "" });
 	const [movies, setMovies] = useState([]);
 	const [savedMovies, setSavedMovies] = useState([]);
+	const [searchedMovies, setSearchedMovies] = useState([]);
 	const [loc, setLoc] = useState(false);
 	const [greetingText, setGreetingText] = useState("");
 	const [modalState, setModalState] = useState(false);
@@ -66,6 +67,7 @@ function App() {
 
 	useEffect(() => {
 		if (location.pathname === "/movies") {
+			setSearchedMovies([]);
 			const updatedMovies = movies;
 			if (savedMovies.length === 0) {
 				return updatedMovies.forEach((item) => (item.isLiked = false));
@@ -79,7 +81,7 @@ function App() {
 					}
 				});
 			});
-			setMovies(updatedMovies, savedMovies);
+			setMovies(updatedMovies);
 		}
 	}, [location.pathname, savedMovies, movies]);
 
@@ -182,7 +184,8 @@ function App() {
 		setPreloaderStatus(true);
 		mainApi.getSavedFilms().then((films) => {
 			const res = findFilm(films, inputValue);
-			setSavedMovies(res);
+			setSearchedMovies(res);
+			// setSavedMovies(res);
 			setPreloaderStatus(false);
 		});
 	}
@@ -401,6 +404,7 @@ function App() {
 									<ProtectedRoute loggedIn={loggedIn}>
 										<Movies
 											movies={movies}
+											searchedMovies={searchedMovies}
 											savedMovies={savedMovies}
 											onDeleteFilm={onDeleteFilm}
 											onSavedSearch={onSavedSearch}

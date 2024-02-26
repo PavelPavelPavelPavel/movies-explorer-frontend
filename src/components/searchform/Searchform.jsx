@@ -8,15 +8,6 @@ function Searchform({ getShortFilms, getFilms, onSavedSearch, getInputValue }) {
 	const searchRef = useRef("");
 	const [checkBox, setCheckBox] = useState(false);
 
-	// useEffect(() => {
-	// 	if (location.pathname === "/movies") {
-	// 		setCheckBox(JSON.parse(localStorage.getItem("checkBox")));
-	// 		searchRef.current.value = JSON.parse(
-	// 			localStorage.getItem("savedSearch")
-	// 		);
-	// 	}
-	// }, []);
-
 	useEffect(() => {
 		if (location.pathname === "/saved-movies") {
 			setCheckBox(false);

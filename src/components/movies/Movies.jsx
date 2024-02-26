@@ -10,6 +10,7 @@ import { haveNotSavedMovies } from "../../constants/errorText/searchError";
 function Movies({
 	movies,
 	savedMovies,
+	searchedMovies,
 	cardQuantity,
 	getFilms,
 	onSavedSearch,
@@ -120,9 +121,10 @@ function Movies({
 			{location.pathname === "/saved-movies"
 				? moviesPresence && (
 						<Savedmovies
-							movies={movies}
 							shortMovies={shortMovies}
+							searchValue={searchValue}
 							savedMovies={savedMovies}
+							searchedMovies={searchedMovies}
 							onDeleteFilm={onDeleteFilm}
 							checkBox={checkBox}
 						/>

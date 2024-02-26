@@ -1,8 +1,6 @@
 import { useState, useEffect } from "react";
 import Moviecard from "../moviecard/Moviecard";
 import Morebtn from "../morebtn/Morebtn";
-import { get } from "react-hook-form";
-import { shortMovies } from "../../constants/words";
 
 function Moviecardlist({
 	movies,

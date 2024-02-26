@@ -1,19 +1,31 @@
 import { useState, useEffect } from "react";
 import Moviecard from "../moviecard/Moviecard";
+import { useLocation } from "react-router-dom";
 
 function Savedmovies({
 	savedMovies,
+	searchedMovies,
 	checkBox,
-	movies,
+	searchValue,
+	shortMovies,
 	onDeleteFilm,
 	getDifference,
 }) {
+	const location = useLocation();
 	const [renderMovies, setRenderMovies] = useState([]);
 
 	useEffect(() => {
-		const shortMovies = savedMovies.filter((film) => film.duration < 40);
 		checkBox ? setRenderMovies(shortMovies) : setRenderMovies(savedMovies);
-	}, [savedMovies, checkBox]);
+	}, [savedMovies, checkBox, shortMovies]);
+
+	useEffect(() => {
+		if (
+			searchedMovies.length > 0 &&
+			location.pathname === "/saved-movies"
+		) {
+			setRenderMovies(searchedMovies);
+		}
+	}, [searchedMovies, savedMovies, location.pathname, searchValue.length]);
 
 	return (
 		<section className='savedmovies'>
@@ -29,7 +41,6 @@ function Savedmovies({
 						trailerLink={movie.trailerLink}
 						onDeleteFilm={onDeleteFilm}
 						getDifference={getDifference}
-						movies={movies}
 					/>
 				);
 			})}
