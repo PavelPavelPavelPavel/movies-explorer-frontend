@@ -44,7 +44,6 @@ function App() {
 		const jwt = localStorage.getItem("jwt");
 		if (jwt && !null) {
 			setLoggedIn(true);
-			navigate("/movies");
 			setErrorText("");
 		} else {
 			setLoggedIn(false);
@@ -52,6 +51,29 @@ function App() {
 			setErrorText("");
 		}
 	}, []);
+
+	useEffect(() => {
+		const loc = location.pathname;
+		if (loggedIn && loc === "/signin") {
+			navigate("/");
+		} else if (loggedIn && loc === "/signup") {
+			navigate("/");
+		}
+
+		if (loc === "/signin") {
+			setLoc(true);
+			setGreetingText("Рады видеть!");
+			setErrorText("");
+		} else if (loc === "/signup") {
+			setLoc(true);
+			setGreetingText("Добро пожаловать!");
+			setErrorText("");
+		} else if (loc === "/profile") {
+			setErrorText("");
+		} else {
+			setLoc(false);
+		}
+	}, [loggedIn, location.pathname, navigate]);
 
 	useEffect(() => {
 		if (loggedIn) {
@@ -105,29 +127,6 @@ function App() {
 		}
 		setCardQuantity(resize.width);
 	}, [resize]);
-
-	useEffect(() => {
-		const loc = location.pathname;
-		if (loggedIn && loc === "/signin") {
-			navigate("/");
-		} else if (loggedIn && loc === "/signup") {
-			navigate("/");
-		}
-
-		if (loc === "/signin") {
-			setLoc(true);
-			setGreetingText("Рады видеть!");
-			setErrorText("");
-		} else if (loc === "/signup") {
-			setLoc(true);
-			setGreetingText("Добро пожаловать!");
-			setErrorText("");
-		} else if (loc === "/profile") {
-			setErrorText("");
-		} else {
-			setLoc(false);
-		}
-	}, [loggedIn, location.pathname, navigate]);
 
 	function findFilm(arr, value) {
 		const movies = [];
@@ -261,8 +260,7 @@ function App() {
 	}
 
 	function onDeleteFilm(filmId) {
-		console.log(filmId);
-		// setPreloaderStatus(true);
+		setPreloaderStatus(true);
 		const updatedMovies = savedMovies;
 		updatedMovies.filter((film) => {
 			if (film._id === filmId) {
@@ -415,7 +413,7 @@ function App() {
 								}
 							/>
 							<Route
-								path='saved-movies'
+								path='/saved-movies'
 								element={
 									<ProtectedRoute loggedIn={loggedIn}>
 										<Movies

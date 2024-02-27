@@ -60,7 +60,6 @@ function Moviecardlist({
 		<>
 			<section className='moviecardlist'>
 				{renderMovies.slice(0, elementOnPage).map((movie) => {
-					// console.log(movie);
 					return (
 						<Moviecard
 							key={movie.id}

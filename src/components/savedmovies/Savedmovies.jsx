@@ -30,7 +30,6 @@ function Savedmovies({
 	return (
 		<section className='savedmovies'>
 			{renderMovies.map((movie) => {
-				// console.log(movie);
 				return (
 					<Moviecard
 						key={movie._id}
