@@ -6,7 +6,6 @@ import Savedmovies from "../savedmovies/Savedmovies";
 import FilmError from "../filmerror/Filmerror";
 import { searchResultError } from "../../constants/errorText/searchError";
 import { haveNotSavedMovies } from "../../constants/errorText/searchError";
-import { save } from "../../constants/words";
 
 function Movies({
 	movies,
@@ -22,13 +21,22 @@ function Movies({
 	const [checkBox, setCheckBox] = useState(false);
 	const [moviesPresence, setMoviesPresence] = useState(true);
 	const [searchValue, setSearchValue] = useState("");
+	const [savedSearchValue, setSavedSearchValue] = useState("");
 	const [text, setText] = useState("");
 	const [shortMovies, setShortMovies] = useState([]);
+	const [savedShortMovies, setSavedShortMovies] = useState([]);
 
 	useEffect(() => {
 		const resShortMovies = movies.filter((film) => film.duration < 40);
 		checkBox ? setShortMovies(resShortMovies) : setShortMovies([]);
 	}, [movies, checkBox]);
+
+	useEffect(() => {
+		const resShortMovies = savedMovies.filter((film) => film.duration < 40);
+		checkBox
+			? setSavedShortMovies(resShortMovies)
+			: setSavedShortMovies([]);
+	}, [savedMovies, checkBox]);
 
 	useEffect(() => {
 		if (
@@ -57,7 +65,6 @@ function Movies({
 			searchValue.length > 0 &&
 			movies.length >= 0
 		) {
-			// setText(haveNotSavedMovies);
 			setMoviesPresence(true);
 		}
 	}, [
@@ -74,16 +81,16 @@ function Movies({
 			setMoviesPresence(false);
 		} else if (
 			location.pathname === "/saved-movies" &&
-			savedMovies.length > 0 &&
-			searchValue.length > 0 &&
-			checkBox
+			checkBox &&
+			savedShortMovies.length === 0
 		) {
 			setText(searchResultError);
 			setMoviesPresence(false);
 		} else if (
 			location.pathname === "/saved-movies" &&
-			shortMovies.length === 0 &&
-			checkBox
+			savedMovies.length > 0 &&
+			savedSearchValue.length > 0 &&
+			searchedMovies.length === 0
 		) {
 			setText(searchResultError);
 			setMoviesPresence(false);
@@ -96,9 +103,10 @@ function Movies({
 	}, [
 		savedMovies.length,
 		location.pathname,
-		shortMovies.length,
+		savedSearchValue,
 		checkBox,
-		searchValue.length,
+		searchedMovies,
+		savedShortMovies.length,
 	]);
 
 	function getShortFilms(checked) {
@@ -107,6 +115,10 @@ function Movies({
 
 	function getInputValue(value) {
 		setSearchValue(value);
+	}
+
+	function getSavedInputValue(value) {
+		setSavedSearchValue(value);
 	}
 
 	return (
@@ -118,14 +130,15 @@ function Movies({
 				savedMovies={savedMovies}
 				onSavedSearch={onSavedSearch}
 				getInputValue={getInputValue}
+				getSavedInputValue={getSavedInputValue}
 			/>
 			{location.pathname === "/saved-movies"
 				? moviesPresence && (
 						<Savedmovies
-							shortMovies={shortMovies}
 							searchValue={searchValue}
 							savedMovies={savedMovies}
 							searchedMovies={searchedMovies}
+							savedShortMovies={savedShortMovies}
 							onDeleteFilm={onDeleteFilm}
 							checkBox={checkBox}
 						/>

@@ -6,9 +6,8 @@ import { twentyNine, zero } from "../../constants/numbers";
 function Savedmovies({
 	savedMovies,
 	searchedMovies,
+	savedShortMovies,
 	checkBox,
-	searchValue,
-	shortMovies,
 	onDeleteFilm,
 	getDifference,
 }) {
@@ -16,8 +15,10 @@ function Savedmovies({
 	const [renderMovies, setRenderMovies] = useState([]);
 
 	useEffect(() => {
-		checkBox ? setRenderMovies(shortMovies) : setRenderMovies(savedMovies);
-	}, [savedMovies, checkBox, shortMovies]);
+		checkBox
+			? setRenderMovies(savedShortMovies)
+			: setRenderMovies(savedMovies);
+	}, [savedMovies, savedShortMovies, checkBox]);
 
 	useEffect(() => {
 		if (
@@ -26,7 +27,7 @@ function Savedmovies({
 		) {
 			setRenderMovies(searchedMovies);
 		}
-	}, [searchedMovies, savedMovies, location.pathname, searchValue.length]);
+	}, [searchedMovies, location.pathname]);
 
 	return (
 		<section className='savedmovies'>

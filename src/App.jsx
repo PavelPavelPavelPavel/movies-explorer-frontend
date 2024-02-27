@@ -26,7 +26,9 @@ function App() {
 	const resize = useResize();
 	const location = useLocation();
 	const navigate = useNavigate();
-	const [loggedIn, setLoggedIn] = useState(false);
+	const [loggedIn, setLoggedIn] = useState(
+		JSON.parse(localStorage.getItem("loggedIn") || false)
+	);
 	const [currentUser, setCurrentUser] = useState({ name: "", email: "" });
 	const [movies, setMovies] = useState([]);
 	const [savedMovies, setSavedMovies] = useState([]);
@@ -43,11 +45,11 @@ function App() {
 	useEffect(() => {
 		const jwt = localStorage.getItem("jwt");
 		if (jwt && !null) {
+			localStorage.setItem("loggedIn", true);
 			setLoggedIn(true);
 			setErrorText("");
 		} else {
 			setLoggedIn(false);
-			navigate("/");
 			setErrorText("");
 		}
 	}, []);
@@ -109,10 +111,12 @@ function App() {
 
 	useEffect(() => {
 		if (location.pathname === "/saved-movies") {
+			setPreloaderStatus(true);
 			mainApi
 				.getSavedFilms()
 				.then((films) => {
 					setSavedMovies(films);
+					setPreloaderStatus(false);
 				})
 				.catch((err) => console.log(err));
 		}
@@ -179,6 +183,7 @@ function App() {
 					});
 					const res = findFilm(addLikeFieldToMovies, inputValue);
 					setMovies(res);
+					setPreloaderStatus(false);
 				})
 				.catch((err) => {
 					console.log(err);

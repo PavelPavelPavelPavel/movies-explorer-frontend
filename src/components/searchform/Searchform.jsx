@@ -3,7 +3,13 @@ import { useState, useEffect, useRef } from "react";
 import { useLocation } from "react-router-dom";
 import { shortMovies } from "../../constants/words";
 
-function Searchform({ getShortFilms, getFilms, onSavedSearch, getInputValue }) {
+function Searchform({
+	getShortFilms,
+	getFilms,
+	onSavedSearch,
+	getInputValue,
+	getSavedInputValue,
+}) {
 	const location = useLocation();
 	const searchRef = useRef("");
 	const [checkBox, setCheckBox] = useState(false);
@@ -12,6 +18,7 @@ function Searchform({ getShortFilms, getFilms, onSavedSearch, getInputValue }) {
 		if (location.pathname === "/saved-movies") {
 			setCheckBox(false);
 			searchRef.current.value = "";
+			onSavedSearch("");
 		}
 		if (location.pathname === "/movies") {
 			setCheckBox(JSON.parse(localStorage.getItem("checkBox")));
@@ -48,7 +55,7 @@ function Searchform({ getShortFilms, getFilms, onSavedSearch, getInputValue }) {
 			);
 			getInputValue(searchRef.current.value);
 		} else if (location.pathname === "/saved-movies") {
-			getInputValue(searchRef.current.value);
+			getSavedInputValue(searchRef.current.value);
 			onSavedSearch(searchRef.current.value);
 		}
 	}
