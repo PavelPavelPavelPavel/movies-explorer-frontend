@@ -18,7 +18,7 @@ function Searchform({
 		if (location.pathname === "/saved-movies") {
 			setCheckBox(false);
 			searchRef.current.value = "";
-			onSavedSearch("");
+			getSavedInputValue("");
 		}
 		if (location.pathname === "/movies") {
 			setCheckBox(JSON.parse(localStorage.getItem("checkBox")));
