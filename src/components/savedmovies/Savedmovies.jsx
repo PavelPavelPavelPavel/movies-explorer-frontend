@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import Moviecard from "../moviecard/Moviecard";
 import { useLocation } from "react-router-dom";
+import { twentyNine, zero } from "../../constants/numbers";
 
 function Savedmovies({
 	savedMovies,
@@ -20,7 +21,7 @@ function Savedmovies({
 
 	useEffect(() => {
 		if (
-			searchedMovies.length > 0 &&
+			searchedMovies.length > zero &&
 			location.pathname === "/saved-movies"
 		) {
 			setRenderMovies(searchedMovies);
@@ -35,7 +36,7 @@ function Savedmovies({
 						key={movie._id}
 						id={movie.id}
 						filmId={movie._id}
-						filmImage={movie.image.slice(29)}
+						filmImage={movie.image.slice(twentyNine)}
 						title={movie.nameRU}
 						duration={movie.duration}
 						trailerLink={movie.trailerLink}

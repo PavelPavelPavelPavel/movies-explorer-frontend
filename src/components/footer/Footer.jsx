@@ -1,14 +1,12 @@
 import { footerText, yaPraktik, gitHub } from "../../constants/words";
+import { footerYear } from "../../constants/texts";
 
 function Footer() {
-	const date = new Date();
-	const year = date.getFullYear();
-
 	return (
 		<footer className='footer'>
 			<p className='footer__text'>{footerText}</p>
 			<div className='footer__signature-wrapper'>
-				<p className='footer__signature-caption'>{`©${year}`}</p>
+				<p className='footer__signature-caption'>{footerYear}</p>
 				<ul className='footer__signature-label'>
 					<li className='footer__signature-label_item'>
 						<a

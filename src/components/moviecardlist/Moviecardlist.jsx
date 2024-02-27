@@ -1,6 +1,16 @@
 import { useState, useEffect } from "react";
 import Moviecard from "../moviecard/Moviecard";
 import Morebtn from "../morebtn/Morebtn";
+import {
+	zero,
+	two,
+	three,
+	five,
+	eight,
+	twelve,
+	middleWidth,
+	largeWidth,
+} from "../../constants/numbers";
 
 function Moviecardlist({
 	movies,
@@ -12,9 +22,9 @@ function Moviecardlist({
 	onDeleteFilm,
 	savedMovies,
 }) {
-	const [elementOnPage, setElementOnPage] = useState(12);
+	const [elementOnPage, setElementOnPage] = useState(twelve);
 	const [moreBtnVision, setMoreBtnVision] = useState();
-	const [moreElement, setMoreElement] = useState(12);
+	const [moreElement, setMoreElement] = useState(twelve);
 	const [renderMovies, setRenderMovies] = useState([]);
 
 	useEffect(() => {
@@ -22,22 +32,22 @@ function Moviecardlist({
 	}, [movies, shortMovies, checkBox]);
 
 	useEffect(() => {
-		if (cardQuantity >= 1210) {
-			setElementOnPage(12);
-			setMoreElement(3);
-			renderMovies.length > 12
+		if (cardQuantity >= largeWidth) {
+			setElementOnPage(twelve);
+			setMoreElement(three);
+			renderMovies.length > twelve
 				? setMoreBtnVision(true)
 				: setMoreBtnVision(false);
-		} else if (cardQuantity >= 737 && cardQuantity < 1210) {
-			setElementOnPage(8);
-			setMoreElement(2);
-			renderMovies.length > 8
+		} else if (cardQuantity >= middleWidth && cardQuantity < largeWidth) {
+			setElementOnPage(eight);
+			setMoreElement(two);
+			renderMovies.length > eight
 				? setMoreBtnVision(true)
 				: setMoreBtnVision(false);
-		} else if (cardQuantity < 737) {
-			setElementOnPage(5);
-			setMoreElement(2);
-			renderMovies.length > 5
+		} else if (cardQuantity < middleWidth) {
+			setElementOnPage(five);
+			setMoreElement(two);
+			renderMovies.length > five
 				? setMoreBtnVision(true)
 				: setMoreBtnVision(false);
 		}
@@ -59,7 +69,7 @@ function Moviecardlist({
 	return (
 		<>
 			<section className='moviecardlist'>
-				{renderMovies.slice(0, elementOnPage).map((movie) => {
+				{renderMovies.slice(zero, elementOnPage).map((movie) => {
 					return (
 						<Moviecard
 							key={movie.id}

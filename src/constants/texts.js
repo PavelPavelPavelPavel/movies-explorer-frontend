@@ -1,3 +1,5 @@
+import { year } from "./numbers";
+
 const promoHeader = 'Учебный проект студента факультета Веб-разработки.';
 const techsText = 'На курсе веб-разработки мы освоили технологии, которые применили в дипломном проекте.'
 const aboutMeText = '  Я родился и живу в Москве, закончил МКЖТ по специальности оптоволоконные системы связи. Люблю слушать музыку, а ещё увлекаюсь бегом, борьбой и велоспортом. Долгое время работал на гос предприятии, потом поменял работу и сейчас устанавливаю кухни.Как закончу обучение  - сразу буду искать работу по новой специальности.'
@@ -11,9 +13,17 @@ const aboutProjectText = {
     back: 'Back-end',
     front: 'Front-end',
 }
+const footerYear = `©${year}`;
+
+function renderHours(hours) {
+    return hours > 0 ? `${hours}ч` : "";
+}
+
 export {
     promoHeader,
     techsText,
     aboutMeText,
-    aboutProjectText
+    aboutProjectText,
+    footerYear,
+    renderHours
 }

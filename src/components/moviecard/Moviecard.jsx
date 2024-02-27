@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import saveIcon from "../../images/saved-icon.svg";
 import { save } from "../../constants/words";
+import { renderHours } from "../../constants/texts";
 
 function Moviecard({
 	filmImage,
@@ -13,17 +14,15 @@ function Moviecard({
 	id,
 	filmId,
 	onDeleteFilm,
-	savedMovies,
 }) {
 	const location = useLocation();
 	const [initSaveBtn, setInitSaveBtn] = useState(false);
 	const [locMovie, setLocMovie] = useState(true);
 	const [savedIcon, setSavedIcon] = useState(false);
 	const [deleteBtn, setDeleteBtn] = useState(false);
+	const urlApi = "https://api.nomoreparties.co/.";
 	const hours = Math.floor(duration / 60);
 	const minutes = Math.floor(duration % 60);
-	const urlApi = "https://api.nomoreparties.co/.";
-	const renderHours = hours > 0 ? `${hours}ч` : "";
 
 	useEffect(() => {
 		if (location.pathname === "/movies") {
@@ -51,7 +50,6 @@ function Moviecard({
 			setSavedIcon(false);
 		}
 		onDeleteFilm(filmId);
-		// console.log(filmId);
 	}
 
 	function handleMouseEnter() {
@@ -105,7 +103,9 @@ function Moviecard({
 				</a>
 				<figcaption className='moviecard__description'>
 					<p className='moviecard__name'>{title}</p>
-					<p className='moviecard__duration'>{`${renderHours} ${minutes}м`}</p>
+					<p className='moviecard__duration'>{`${renderHours(
+						hours
+					)} ${minutes}м`}</p>
 				</figcaption>
 			</figure>
 		</article>
