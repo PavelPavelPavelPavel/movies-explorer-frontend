@@ -13,6 +13,7 @@ function Moviecard({
 	id,
 	filmId,
 	onDeleteFilm,
+	savedMovies,
 }) {
 	const location = useLocation();
 	const [initSaveBtn, setInitSaveBtn] = useState(false);
@@ -45,7 +46,12 @@ function Moviecard({
 	}
 
 	function handleDeleteCard() {
+		if (location.pathname === "/movies") {
+			setInitSaveBtn(true);
+			setSavedIcon(false);
+		}
 		onDeleteFilm(filmId);
+		// console.log(filmId);
 	}
 
 	function handleMouseEnter() {
@@ -64,6 +70,7 @@ function Moviecard({
 				{locMovie && savedIcon && (
 					<img
 						src={saveIcon}
+						onClick={handleDeleteCard}
 						className='moviecard__added-icon'
 						alt='Галка в розовом кругев'
 					/>

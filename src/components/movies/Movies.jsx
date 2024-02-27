@@ -6,6 +6,7 @@ import Savedmovies from "../savedmovies/Savedmovies";
 import FilmError from "../filmerror/Filmerror";
 import { searchResultError } from "../../constants/errorText/searchError";
 import { haveNotSavedMovies } from "../../constants/errorText/searchError";
+import { save } from "../../constants/words";
 
 function Movies({
 	movies,
@@ -134,10 +135,12 @@ function Movies({
 				? moviesPresence && (
 						<Moviecardlist
 							movies={movies}
+							savedMovies={savedMovies}
 							shortMovies={shortMovies}
 							cardQuantity={cardQuantity}
 							checkBox={checkBox}
 							onAddToFavorite={onAddToFavorite}
+							onDeleteFilm={onDeleteFilm}
 						/>
 				  )
 				: !moviesPresence && <FilmError text={text} />}

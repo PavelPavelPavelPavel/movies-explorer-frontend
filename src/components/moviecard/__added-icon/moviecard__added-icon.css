@@ -8,6 +8,11 @@
 	height: 21px;
 }
 
+.moviecard__added-icon:hover {
+	cursor: pointer;
+	opacity: 0.8;
+}
+
 @media screen and (max-width: 400px) {
 	.moviecard__added-icon {
 		top: 10px;

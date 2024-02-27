@@ -9,6 +9,8 @@ function Moviecardlist({
 	checkBox,
 	onAddToFavorite,
 	getDifference,
+	onDeleteFilm,
+	savedMovies,
 }) {
 	const [elementOnPage, setElementOnPage] = useState(12);
 	const [moreBtnVision, setMoreBtnVision] = useState();
@@ -58,10 +60,12 @@ function Moviecardlist({
 		<>
 			<section className='moviecardlist'>
 				{renderMovies.slice(0, elementOnPage).map((movie) => {
+					// console.log(movie);
 					return (
 						<Moviecard
 							key={movie.id}
 							id={movie.id}
+							filmId={movie._id}
 							filmImage={movie.image.url}
 							title={movie.nameRU}
 							isLiked={movie.isLiked}
@@ -69,6 +73,8 @@ function Moviecardlist({
 							trailerLink={movie.trailerLink}
 							onAddToFavorite={onAddToFavorite}
 							getDifference={getDifference}
+							onDeleteFilm={onDeleteFilm}
+							savedMovies={savedMovies}
 						/>
 					);
 				})}

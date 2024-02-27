@@ -161,7 +161,15 @@ function App() {
 				.then((movies) => {
 					const addLikeFieldToMovies = movies.map((movie) => {
 						movie.isLiked = false;
+						movie._id = "";
 						return movie;
+					});
+					addLikeFieldToMovies.map((mov) => {
+						savedMovies.some((likedMov) => {
+							if (likedMov.movieId === mov.id) {
+								return (mov._id = likedMov._id);
+							}
+						});
 					});
 					addLikeFieldToMovies.filter((mov) => {
 						return savedMovies.some((likedMov) => {
@@ -185,7 +193,6 @@ function App() {
 		mainApi.getSavedFilms().then((films) => {
 			const res = findFilm(films, inputValue);
 			setSearchedMovies(res);
-			// setSavedMovies(res);
 			setPreloaderStatus(false);
 		});
 	}
@@ -228,6 +235,13 @@ function App() {
 						addedCard.push(res);
 						setSavedMovies(addedCard);
 						const likedMovies = movies;
+						likedMovies.map((mov) => {
+							addedCard.some((likedMov) => {
+								if (likedMov.movieId === mov.id) {
+									return (mov._id = likedMov._id);
+								}
+							});
+						});
 						likedMovies.filter((mov) => {
 							return addedCard.some((likedMov) => {
 								if (likedMov.movieId === mov.id) {
@@ -247,7 +261,8 @@ function App() {
 	}
 
 	function onDeleteFilm(filmId) {
-		setPreloaderStatus(true);
+		console.log(filmId);
+		// setPreloaderStatus(true);
 		const updatedMovies = savedMovies;
 		updatedMovies.filter((film) => {
 			if (film._id === filmId) {
@@ -257,8 +272,8 @@ function App() {
 							return (item.isLiked = false);
 						});
 						setSavedMovies(res);
+						setPreloaderStatus(false);
 					});
-					setPreloaderStatus(false);
 				});
 			}
 		});
@@ -392,6 +407,7 @@ function App() {
 											movies={movies}
 											savedMovies={savedMovies}
 											cardQuantity={cardQuantity}
+											onDeleteFilm={onDeleteFilm}
 											getFilms={getFilms}
 											onAddToFavorite={onAddToFavorite}
 										/>
