@@ -4,12 +4,23 @@ import { useInput } from "../../utils/UseInput";
 import { emailRegex } from "../../constants/regexp";
 import { emailError, lengthError } from "../../constants/errorText/formError";
 import { name, email, logout, edit } from "../../constants/words";
+
 function Profile({ logOut, updateUserInfo, errorText }) {
 	const { currentUser } = useContext(CurrentUserContext);
 	const [btnSubmitState, setBtnSubmitState] = useState(true);
 	const userName = useInput(currentUser.name, { minLength: 2 });
 	const userEmail = useInput(currentUser.email, { email: emailRegex });
 	const [validErrorText, setValidErrorText] = useState("");
+
+	useEffect(() => {
+		if (userEmail.emailError) {
+			setValidErrorText(emailError);
+		} else if (userName.minLengthError) {
+			setValidErrorText(lengthError);
+		} else {
+			setValidErrorText("");
+		}
+	}, [userEmail, userName]);
 
 	useEffect(() => {
 		if (userEmail.emailError || userName.minLengthError) {
@@ -21,13 +32,6 @@ function Profile({ logOut, updateUserInfo, errorText }) {
 			setBtnSubmitState(true);
 		} else {
 			setBtnSubmitState(false);
-		}
-		if (userEmail.emailError) {
-			setValidErrorText(emailError);
-		} else if (userName.minLengthError) {
-			setValidErrorText(lengthError);
-		} else {
-			setValidErrorText("");
 		}
 	}, [
 		userName,

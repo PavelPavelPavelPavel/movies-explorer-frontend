@@ -29,7 +29,10 @@ function App() {
 	const [loggedIn, setLoggedIn] = useState(
 		JSON.parse(localStorage.getItem("loggedIn") || false)
 	);
-	const [currentUser, setCurrentUser] = useState({ name: "", email: "" });
+	const [currentUser, setCurrentUser] = useState({
+		name: JSON.parse(localStorage.getItem("userName")),
+		email: JSON.parse(localStorage.getItem("userEmail")),
+	});
 	const [movies, setMovies] = useState(
 		JSON.parse(localStorage.getItem("movies")) || []
 	);
@@ -50,9 +53,14 @@ function App() {
 			localStorage.setItem("loggedIn", true);
 			setLoggedIn(true);
 			setErrorText("");
+			mainApi.getInfo().then((user) => {
+				localStorage.setItem("userName", JSON.stringify(user.name));
+				localStorage.setItem("userEmail", JSON.stringify(user.email));
+			});
 		} else {
 			setLoggedIn(false);
 			setErrorText("");
+			localStorage.clear();
 		}
 	}, []);
 
@@ -330,11 +338,13 @@ function App() {
 		setPreloaderStatus(true);
 		mainApi
 			.updateInfo(name, email)
-			.then((res) => {
+			.then((user) => {
 				setCurrentUser({
-					name: res.name,
-					email: res.email,
+					name: user.name,
+					email: user.email,
 				});
+				localStorage.setItem("userName", JSON.stringify(user.name));
+				localStorage.setItem("userEmail", JSON.stringify(user.email));
 				setPreloaderStatus(false);
 				setPopupStatus(true);
 			})
