@@ -124,8 +124,6 @@ function Movies({
 
 	function getInputValue(value) {
 		setSearchValue(value);
-		const searchResMovies = JSON.stringify(movies);
-		localStorage.setItem("movies", searchResMovies);
 	}
 
 	function getSavedInputValue(value) {

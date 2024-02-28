@@ -34,7 +34,7 @@ function App() {
 		email: JSON.parse(localStorage.getItem("userEmail")),
 	});
 	const [movies, setMovies] = useState(
-		JSON.parse(localStorage.getItem("movies")) || []
+		JSON.parse(localStorage.getItem("movies"))
 	);
 	const [savedMovies, setSavedMovies] = useState([]);
 	const [searchedMovies, setSearchedMovies] = useState([]);
@@ -193,6 +193,7 @@ function App() {
 					});
 					const res = findFilm(addLikeFieldToMovies, inputValue);
 					setMovies(res);
+					localStorage.setItem("movies", JSON.stringify(res));
 					setPreloaderStatus(false);
 				})
 				.catch((err) => {
