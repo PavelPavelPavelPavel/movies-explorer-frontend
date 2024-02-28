@@ -6,6 +6,11 @@ import Savedmovies from "../savedmovies/Savedmovies";
 import FilmError from "../filmerror/Filmerror";
 import { searchResultError } from "../../constants/errorText/searchError";
 import { haveNotSavedMovies } from "../../constants/errorText/searchError";
+import {
+	shortFilmDuration,
+	freeStateInput,
+	minimalArrLength,
+} from "../../constants/variable";
 
 function Movies({
 	movies,
@@ -27,12 +32,16 @@ function Movies({
 	const [savedShortMovies, setSavedShortMovies] = useState([]);
 
 	useEffect(() => {
-		const resShortMovies = movies.filter((film) => film.duration < 40);
+		const resShortMovies = movies.filter(
+			(film) => film.duration < shortFilmDuration
+		);
 		checkBox ? setShortMovies(resShortMovies) : setShortMovies([]);
 	}, [movies, checkBox]);
 
 	useEffect(() => {
-		const resShortMovies = savedMovies.filter((film) => film.duration < 40);
+		const resShortMovies = savedMovies.filter(
+			(film) => film.duration < shortFilmDuration
+		);
 		checkBox
 			? setSavedShortMovies(resShortMovies)
 			: setSavedShortMovies([]);
@@ -41,29 +50,29 @@ function Movies({
 	useEffect(() => {
 		if (
 			location.pathname === "/movies" &&
-			searchValue.length === 0 &&
-			movies.length >= 0
+			searchValue.length === freeStateInput &&
+			movies.length >= minimalArrLength
 		) {
 			setText(searchResultError);
 			setMoviesPresence(false);
 		} else if (
 			location.pathname === "/movies" &&
-			searchValue.length > 0 &&
-			movies.length === 0
+			searchValue.length > freeStateInput &&
+			movies.length === minimalArrLength
 		) {
 			setText(searchResultError);
 			setMoviesPresence(false);
 		} else if (
 			location.pathname === "/movies" &&
 			checkBox &&
-			shortMovies.length === 0
+			shortMovies.length === minimalArrLength
 		) {
 			setText(searchResultError);
 			setMoviesPresence(false);
 		} else if (
 			location.pathname === "/movies" &&
-			searchValue.length > 0 &&
-			movies.length >= 0
+			searchValue.length > freeStateInput &&
+			movies.length >= minimalArrLength
 		) {
 			setMoviesPresence(true);
 		}
@@ -82,21 +91,21 @@ function Movies({
 		} else if (
 			location.pathname === "/saved-movies" &&
 			checkBox &&
-			savedShortMovies.length === 0
+			savedShortMovies.length === minimalArrLength
 		) {
 			setText(searchResultError);
 			setMoviesPresence(false);
 		} else if (
 			location.pathname === "/saved-movies" &&
-			savedMovies.length > 0 &&
-			savedSearchValue.length > 0 &&
-			searchedMovies.length === 0
+			savedMovies.length > minimalArrLength &&
+			savedSearchValue.length > freeStateInput &&
+			searchedMovies.length === minimalArrLength
 		) {
 			setText(searchResultError);
 			setMoviesPresence(false);
 		} else if (
 			location.pathname === "/saved-movies" &&
-			savedMovies.length > 0
+			savedMovies.length > minimalArrLength
 		) {
 			setMoviesPresence(true);
 		}

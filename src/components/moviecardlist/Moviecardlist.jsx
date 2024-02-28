@@ -2,15 +2,15 @@ import { useState, useEffect } from "react";
 import Moviecard from "../moviecard/Moviecard";
 import Morebtn from "../morebtn/Morebtn";
 import {
-	zero,
-	two,
-	three,
-	five,
-	eight,
-	twelve,
+	highScreenElementQuantity,
+	lowScreenElementQuantity,
+	mediumScreenElementQuantity,
+	slicedPositionElement,
+	highScreenMoreElement,
+	lowScreenMoreElement,
 	middleWidth,
 	largeWidth,
-} from "../../constants/numbers";
+} from "../../constants/variable";
 
 function Moviecardlist({
 	movies,
@@ -22,9 +22,11 @@ function Moviecardlist({
 	onDeleteFilm,
 	savedMovies,
 }) {
-	const [elementOnPage, setElementOnPage] = useState(twelve);
+	const [elementOnPage, setElementOnPage] = useState(
+		highScreenElementQuantity
+	);
 	const [moreBtnVision, setMoreBtnVision] = useState();
-	const [moreElement, setMoreElement] = useState(twelve);
+	const [moreElement, setMoreElement] = useState(highScreenElementQuantity);
 	const [renderMovies, setRenderMovies] = useState([]);
 
 	useEffect(() => {
@@ -33,21 +35,21 @@ function Moviecardlist({
 
 	useEffect(() => {
 		if (cardQuantity >= largeWidth) {
-			setElementOnPage(twelve);
-			setMoreElement(three);
-			renderMovies.length > twelve
+			setElementOnPage(highScreenElementQuantity);
+			setMoreElement(highScreenMoreElement);
+			renderMovies.length > highScreenElementQuantity
 				? setMoreBtnVision(true)
 				: setMoreBtnVision(false);
 		} else if (cardQuantity >= middleWidth && cardQuantity < largeWidth) {
-			setElementOnPage(eight);
-			setMoreElement(two);
-			renderMovies.length > eight
+			setElementOnPage(mediumScreenElementQuantity);
+			setMoreElement(lowScreenMoreElement);
+			renderMovies.length > mediumScreenElementQuantity
 				? setMoreBtnVision(true)
 				: setMoreBtnVision(false);
 		} else if (cardQuantity < middleWidth) {
-			setElementOnPage(five);
-			setMoreElement(two);
-			renderMovies.length > five
+			setElementOnPage(lowScreenElementQuantity);
+			setMoreElement(lowScreenMoreElement);
+			renderMovies.length > lowScreenElementQuantity
 				? setMoreBtnVision(true)
 				: setMoreBtnVision(false);
 		}
@@ -69,24 +71,26 @@ function Moviecardlist({
 	return (
 		<>
 			<section className='moviecardlist'>
-				{renderMovies.slice(zero, elementOnPage).map((movie) => {
-					return (
-						<Moviecard
-							key={movie.id}
-							id={movie.id}
-							filmId={movie._id}
-							filmImage={movie.image.url}
-							title={movie.nameRU}
-							isLiked={movie.isLiked}
-							duration={movie.duration}
-							trailerLink={movie.trailerLink}
-							onAddToFavorite={onAddToFavorite}
-							getDifference={getDifference}
-							onDeleteFilm={onDeleteFilm}
-							savedMovies={savedMovies}
-						/>
-					);
-				})}
+				{renderMovies
+					.slice(slicedPositionElement, elementOnPage)
+					.map((movie) => {
+						return (
+							<Moviecard
+								key={movie.id}
+								id={movie.id}
+								filmId={movie._id}
+								filmImage={movie.image.url}
+								title={movie.nameRU}
+								isLiked={movie.isLiked}
+								duration={movie.duration}
+								trailerLink={movie.trailerLink}
+								onAddToFavorite={onAddToFavorite}
+								getDifference={getDifference}
+								onDeleteFilm={onDeleteFilm}
+								savedMovies={savedMovies}
+							/>
+						);
+					})}
 			</section>
 			{moreBtnVision && <Morebtn getMoreFilms={getMoreFilms} />}
 		</>

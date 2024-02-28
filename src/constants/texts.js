@@ -1,4 +1,4 @@
-import { year } from "./numbers";
+import { year } from "./variable";
 
 const promoHeader = 'Учебный проект студента факультета Веб-разработки.';
 const techsText = 'На курсе веб-разработки мы освоили технологии, которые применили в дипломном проекте.'
