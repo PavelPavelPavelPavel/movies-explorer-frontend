@@ -30,7 +30,9 @@ function App() {
 		JSON.parse(localStorage.getItem("loggedIn") || false)
 	);
 	const [currentUser, setCurrentUser] = useState({ name: "", email: "" });
-	const [movies, setMovies] = useState([]);
+	const [movies, setMovies] = useState(
+		JSON.parse(localStorage.getItem("movies")) || []
+	);
 	const [savedMovies, setSavedMovies] = useState([]);
 	const [searchedMovies, setSearchedMovies] = useState([]);
 	const [loc, setLoc] = useState(false);
