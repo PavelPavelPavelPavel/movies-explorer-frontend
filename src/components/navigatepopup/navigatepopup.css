@@ -1,25 +1,18 @@
 .navigatepopup {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.3);
-  display: flex;
-  min-height: 1024px;
-  height: 100%;
-  z-index: 2;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(0, 0, 0, 0.3);
+	display: flex;
+	min-height: 1024px;
+	height: 100%;
+	z-index: 2;
 }
 
 @media screen and (max-width: 400px) {
-    .navigatepopup {
-        height: 100vh;
-    }
+	.navigatepopup {
+		height: 100vh;
+	}
 }
-
-
-
-
-
-
-

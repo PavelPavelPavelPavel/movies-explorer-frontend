@@ -1,21 +1,21 @@
 .form__btn-capcha {
-    margin: 0;
-    padding: 0;
-    color: #8B8B8B;
-    font-family: Inter, Arial, Helvetica, sans-serif;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 17px;
-    text-align: center;
+	margin: 0;
+	padding: 0;
+	color: #8b8b8b;
+	font-family: Inter, Arial, Helvetica, sans-serif;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 17px;
+	text-align: center;
 }
 
 .form__btn-capcha:hover {
-    cursor: default;
+	cursor: default;
 }
 
 @media screen and (max-width: 450px) {
-    .form__btn-capcha {
-       font-size: 12px;
-       line-height: 14.5px;
-    }
-  }
+	.form__btn-capcha {
+		font-size: 12px;
+		line-height: 14.5px;
+	}
+}

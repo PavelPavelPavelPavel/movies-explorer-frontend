@@ -1,19 +1,19 @@
 .portfolio__title {
-    margin: 0;
-    padding: 0;
-    max-width: 250px;
-    max-height: 20px;
-    color: #8B8B8B;
-    font-family: Inter, Arial, Helvetica, sans-serif;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 20px;
+	margin: 0;
+	padding: 0;
+	max-width: 250px;
+	max-height: 20px;
+	color: #8b8b8b;
+	font-family: Inter, Arial, Helvetica, sans-serif;
+	font-weight: 400;
+	font-size: 18px;
+	line-height: 20px;
 }
 
 @media screen and (max-width: 400px) {
-    .portfolio__title {
-        margin: 20px 0 0 0;
-        font-size: 14px;
-        color: #A0A0A0;
-    }
-  }
+	.portfolio__title {
+		margin: 20px 0 0 0;
+		font-size: 14px;
+		color: #a0a0a0;
+	}
+}

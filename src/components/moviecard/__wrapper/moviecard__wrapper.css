@@ -1,19 +1,17 @@
 .moviecard__wrapper {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    row-gap: 14px;
-    border-radius: 5px;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	row-gap: 14px;
+	border-radius: 5px;
 }
 
 @media screen and (max-width: 715px) {
-    .moviecard__wrapper {
-     max-width: 300px;
-     row-gap: 16px;
-    }
-  }
-
-
+	.moviecard__wrapper {
+		max-width: 300px;
+		row-gap: 16px;
+	}
+}

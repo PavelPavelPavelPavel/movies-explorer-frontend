@@ -6,7 +6,7 @@ import {
     SCREEN_XS,
     SCREEN_XL,
     SCREEN_XXL,
-} from '../constants'
+} from '../constants/resizeWidth';
 
 function useResize() {
     const [width, setWidth] = useState(window.innerWidth);

@@ -1,21 +1,19 @@
 .techs {
-    margin: 0;
-    padding: 0;
-    max-width: 1280px;
-    background-color: #272727;
-
-
+	margin: 0;
+	padding: 0;
+	max-width: 1280px;
+	background-color: #272727;
 }
 
 @media screen and (max-width: 672px) {
-    .techs {
-        max-width: 700px;
-    }
-  }
+	.techs {
+		max-width: 700px;
+	}
+}
 
 @media screen and (max-width: 450px) {
-    .techs {
-        margin: 0 0 70px 0;
-        background-color: #202020;
-    }
-  }
+	.techs {
+		margin: 0 0 70px 0;
+		background-color: #202020;
+	}
+}

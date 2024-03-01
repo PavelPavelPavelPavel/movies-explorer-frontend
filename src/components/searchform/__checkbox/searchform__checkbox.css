@@ -1,9 +1,9 @@
 .searchform__checkbox {
-    appearance: none;
-    position: absolute;
+	appearance: none;
+	position: absolute;
 }
 
 .searchform__checkbox:checked + .searchform__checkbox-capcha:before {
-    background-image: url("../../../images/searchform-checkbox-activ.svg");
-    background-position: center;
+	background-image: url("../../../images/searchform-checkbox-activ.svg");
+	background-position: center;
 }

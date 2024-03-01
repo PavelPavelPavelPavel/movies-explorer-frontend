@@ -1,8 +1,7 @@
 .header__btn {
-    border: none;
+	border: none;
 }
 
 .header__btn:hover {
-    opacity: 0.8;
-    
+	opacity: 0.8;
 }

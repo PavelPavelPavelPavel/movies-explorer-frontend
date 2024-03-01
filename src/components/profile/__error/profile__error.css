@@ -1,0 +1,24 @@
+.profile__error {
+	margin: 199px 0 auto 0;
+	padding: 0;
+	height: 14px;
+	background-color: inherit;
+	color: #ff004c;
+	font-family: Inter, Arial, Helvetica, sans-serif;
+	font-weight: 400;
+	font-size: 11px;
+	line-height: 13.3px;
+	text-align: center;
+}
+
+@media screen and (max-width: 800px) {
+	.profile__error {
+		margin: 164px auto 0 auto;
+	}
+}
+
+@media screen and (max-width: 450px) {
+	.profile__error {
+		margin: 336px auto 0 auto;
+	}
+}

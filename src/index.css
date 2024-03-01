@@ -99,6 +99,7 @@
 @import url(./components/moviecard/__added-icon/moviecard__added-icon.css);
 @import url(./components/moviecard/__duration/moviecard__duration.css);
 @import url(./components/moviecard/__img/moviecard__img.css);
+@import url(./components/moviecard/__img-wrapper/movicard__img-wrapper.css);
 @import url(./components/moviecard/__name/moviecard__name.css);
 @import url(./components/moviecard/__remove/moviecard__remove.css);
 @import url(./components/moviecard/__wrapper/moviecard__wrapper.css);
@@ -110,10 +111,14 @@
 @import url(./components/profile/__logout/profile__logout.css);
 @import url(./components/profile/__title/profile__title.css);
 @import url(./components/profile/__input-wrapper/profile__input-wrapper.css);
+@import url(./components/profile/__error/profile__error.css);
 @import url(./components/form/form.css);
 @import url(./components/form/__btn-capcha/form__btn-capcha.css);
 @import url(./components/form/__btn-submit/form__btn-submit.css);
 @import url(./components/form/__btn/form__btn.css);
+@import url(./components/form/__submit-error/form__submit-error.css);
+@import url(./components/form/__submit-error/_place/form__submit-error_place_login.css);
+@import url(./components/form/__submit-error/_place/form__submit-error_place_register.css);
 @import url(./components/form/__input-wrapper/form__input-wrapper.css);
 @import url(./components/form/__btn-wrapper/form__btn-wrapper.css);
 @import url(./components/register/register.css);
@@ -121,6 +126,10 @@
 @import url(./components/input/__label/input__label.css);
 @import url(./components/input/input.css);
 @import url(./components/login/login.css);
-@import url(./components/form/__btn-submit/_place/form__btn-submit_place_login.css);
-@import url(./components/form/__btn-submit/_place/form__btn-submit_place_register.css);
 @import url(./components/savedmovies/savedmovies.css);
+@import url(./components/infopopup/infopopup.css);
+@import url(./components/infopopup/__close-btn/infopopup__close-btn.css);
+@import url(./components/infopopup/__text/infopopup__text.css);
+@import url(./components/infopopup/__wrapper/infopopup__wrapper.css);
+@import url(./components/filmerror/filmerror.css);
+@import url(./components/filmerror/__text/filmerror__text.css);

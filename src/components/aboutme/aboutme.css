@@ -1,21 +1,20 @@
 .aboutme {
-    display: flex;
-    flex-direction: column;
-    margin: 0 auto 0 auto;
-    padding: 0;
-    max-width: 1280px;
-    background-color: #202020;
+	display: flex;
+	flex-direction: column;
+	margin: 0 auto 0 auto;
+	padding: 0;
+	max-width: 1280px;
+	background-color: #202020;
 }
 
 @media screen and (max-width: 768px) {
-    .aboutme {
-      max-width: 768px;
-    }
+	.aboutme {
+		max-width: 768px;
+	}
 }
 
 @media screen and (max-width: 400px) {
-    .aboutme {
-      max-width: 320px;
-    }
+	.aboutme {
+		max-width: 320px;
+	}
 }
-

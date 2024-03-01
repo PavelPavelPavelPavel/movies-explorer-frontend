@@ -1,20 +1,19 @@
 .profile__label {
-    margin: 0 147px 0 0;
-    padding: 0;
-    display: inline-block;
-    background-color: inherit;
-    border: none;
-    font-family: Inter, Arial, Helvetica, sans-serif;
-    font-weight: 500;
-    font-size: 11px;
-    line-height: 13.3px;
-    color: #FFFFFF;
+	margin: 0 147px 0 0;
+	padding: 0;
+	display: inline-block;
+	background-color: inherit;
+	border: none;
+	font-family: Inter, Arial, Helvetica, sans-serif;
+	font-weight: 500;
+	font-size: 11px;
+	line-height: 13.3px;
+	color: #ffffff;
 }
 
-
 @media screen and (max-width: 450px) {
-    .profile__label {
-        margin: 0 10px 0 0;
-        width: 130px;
-    }
-  }
+	.profile__label {
+		margin: 0 10px 0 0;
+		width: 130px;
+	}
+}
